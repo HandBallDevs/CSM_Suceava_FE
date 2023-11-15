@@ -1,0 +1,117 @@
+/* src/App.css */
+.app-container {
+  background-color: rgba(199, 213, 247, 1);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.word-list {
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: top-center;
+  align-items:center;
+  margin-left:auto;
+}
+.word {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 32px;
+}
+.imagelogo {
+  max-width: 50%;
+  height: auto;
+  margin-right:auto;
+}
+.csu-suceava {
+
+  color: rgba(0, 13, 132, 1);
+  margin-left:auto;
+  margin-right: 150px;
+
+}
+.imageuser {
+  max-width: 50%;
+  height: 25px;
+  margin-top:0px;
+  margin:0px;
+  margin-left:10px;
+}
+.imagecos {
+  max-width: 50%;
+  height: auto;
+  margin-top:0px;
+  margin:0px;
+  margin-left:0px;
+}
+.contact{
+  margin-right: auto;
+}
+.csu-login{
+  margin-left:350px;
+  margin-right: -5px;
+}
+.csu-cos{
+  margin-right:0;
+}
+
+.frame-image {
+  max-width: auto;
+  height:200px;
+  align-items: center;
+  display:flex;
+}
+
+
+.word-list-2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top:800px;
+  margin-left:auto;
+  margin-right: auto;
+}
+
+
+.word-2{
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 32px;
+}
+.contact-2{
+  margin-right: 50px;
+}
+
+.divider-image {
+  max-width: auto;
+  height:2px;
+  align-items: center;
+  margin-left:30%;
+  margin-right:30%
+
+}
+.word-list-3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top:50px;
+  margin-left:auto;
+  margin-right: auto;
+}
+
+.word-3{
+  font-size: 0.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 32px;
+}
+.termen{
+  margin-top: -40px;
+}
+.word.acasa {
+  cursor: pointer; /* Change cursor on hover to indicate it's clickable */
+  padding: 10px; /* Adjust padding as needed */
+}
+
