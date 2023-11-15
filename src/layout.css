@@ -1,4 +1,9 @@
 /* src/App.css */
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .app-container {
   background-color: rgba(199, 213, 247, 1);
   min-height: 100vh;
@@ -8,110 +13,146 @@
 
 .word-list {
   display: flex;
-  flex-wrap:wrap;
-  justify-content: top-center;
-  align-items:center;
-  margin-left:auto;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  flex-wrap: wrap;
 }
+
 .word {
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
-  margin: 32px;
+  margin: 16px; /* Adjusted margin */
 }
+
 .imagelogo {
-  max-width: 50%;
+  max-width: 100%; /* Adjusted to 100% */
   height: auto;
-  margin-right:auto;
+  margin-right: auto;
+  margin-left: auto;
 }
+
 .csu-suceava {
-
   color: rgba(0, 13, 132, 1);
-  margin-left:auto;
-  margin-right: 150px;
+  margin-left: auto;
+  margin-right: 16px; /* Adjusted margin */
+}
 
-}
-.imageuser {
-  max-width: 50%;
-  height: 25px;
-  margin-top:0px;
-  margin:0px;
-  margin-left:10px;
-}
+.imageuser,
 .imagecos {
-  max-width: 50%;
+  max-width: 100%; /* Adjusted to 100% */
   height: auto;
-  margin-top:0px;
-  margin:0px;
-  margin-left:0px;
+  margin: 0;
 }
-.contact{
+
+.contact {
   margin-right: auto;
 }
-.csu-login{
-  margin-left:350px;
-  margin-right: -5px;
+
+.csu-login {
+  margin-left: 16px; /* Adjusted margin */
 }
-.csu-cos{
-  margin-right:0;
+
+.csu-cos {
+  margin-right: 0;
 }
 
 .frame-image {
-  max-width: auto;
-  height:200px;
+  max-width: 100%; /* Adjusted to 100% */
+  height: auto;
   align-items: center;
-  display:flex;
+  display: flex;
 }
-
 
 .word-list-2 {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-top:800px;
-  margin-left:auto;
-  margin-right: auto;
+  justify-content: center; /* Center horizontally */
+  position: fixed;
+  bottom: 60px;
+  width: auto;
+  margin-bottom: 16px; /* Adjusted margin for spacing from the bottom */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 
-.word-2{
+.word-2 {
   font-size: 0.7rem;
   font-weight: bold;
   text-transform: uppercase;
-  margin: 32px;
+  margin: 16px; /* Adjusted margin */
 }
-.contact-2{
-  margin-right: 50px;
+
+.contact-2 {
+  margin-right: 16px; /* Adjusted margin */
 }
 
 .divider-image {
-  max-width: auto;
-  height:2px;
+  max-width: 100%; /* Adjusted to 100% */
+  height: 2px;
   align-items: center;
-  margin-left:30%;
-  margin-right:30%
+  justify-content: center;
+  margin-left: 5%; /* Adjusted margin */
+  margin-right: 5%; /* Adjusted margin */
+  position: fixed;
+  bottom:45px;
+  left: 0;
+  width: 90%; /* Make it full-width */
+  margin-bottom: 16px; /* Adjusted margin for spacing from the bottom */
+  
 
 }
+.csu-suceava2{
+  color: rgba(0, 13, 132, 1);
+  margin-left: auto;
+  margin-right: 16px; /* Adjusted margin */
+}
+
 .word-list-3 {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-top:50px;
-  margin-left:auto;
-  margin-right: auto;
+  justify-content: center; /* Center horizontally */
+  position: fixed;
+  bottom:0;
+  left: 0;
+  width: 100%; /* Make it full-width */
+  margin-bottom: 16px; /* Adjusted margin for spacing from the bottom */
 }
 
-.word-3{
+
+.word-3 {
   font-size: 0.5rem;
   font-weight: bold;
   text-transform: uppercase;
-  margin: 32px;
-}
-.termen{
-  margin-top: -40px;
-}
-.word.acasa {
-  cursor: pointer; /* Change cursor on hover to indicate it's clickable */
-  padding: 10px; /* Adjust padding as needed */
+  margin: 16px; /* Adjusted margin */
 }
 
+.termen {
+  margin-top: -16px; /* Adjusted margin */
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+  .word-list,
+  .word-list-2,
+  .word-list-3 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .word {
+    margin: 8px; /* Adjusted margin */
+  }
+
+  .imagelogo,
+  .imageuser,
+  .imagecos,
+  .frame-image,
+  .divider-image {
+    width: 100%; /* Adjusted width */
+  }
+}
