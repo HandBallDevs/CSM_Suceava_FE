@@ -39,7 +39,7 @@ const Layout = () => {
         <p className="word-2">Meciuri</p>
         <p className="word-2">Noutăți</p>
         <p className="word-2 contact-2">Contact</p>
-        <img src={LogoImage} alt="" className="imagelogo" />
+        <img src={LogoImage} alt="" className="imagelogo-2" />
         <p className="word-2 csu-suceava2">CSU Suceava</p>
       </div>
       <img src={DividerImage} alt="" className="divider-image" />
