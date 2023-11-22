@@ -1,10 +1,11 @@
 // App.js
 import React from 'react';
-import Layout from './layout';
+//import Layout from './layout';
+import Acasa from './Acasa';
 
 function App() {
   return (
-    <Layout />
+    <Acasa />
   );
 }
 
