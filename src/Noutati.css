@@ -106,7 +106,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 0;
+  margin-top: 0vw;
  
 }
 
@@ -244,7 +244,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center; 
-    padding-top: 50vw;
+    padding-top: 0vw;
     width: auto;
     margin-bottom: 1vw; 
     left: 30vw;
@@ -332,7 +332,7 @@ body {
   .sponsor-container {
     text-align: center;
     margin: 5rem; /* Adjust margin as needed */
-    padding-top:5vw;
+    padding-top:-100vw;
   }
   
   .sponsor-heading {
@@ -347,10 +347,18 @@ body {
     margin-top: 1rem; /* Adjust margin as needed */
   }
   
-  .place-image {
-    max-width: 100%;
-    height: auto;
-    margin: 0 0.5rem; /* Adjust margin as needed */
+  .sponsor-image {
+  
+    width: auto;
+    height:8rem;
+    max-width: 15rem;
+  }
+  .image-caption {
+    margin-top: 0.5rem;
+    text-align: center;
+    white-space:pre-line; /* or white-space: pre-wrap; */
+    font-weight: bold;
+    font-size: 1.0rem;
   }
   
   .editie {
@@ -365,7 +373,6 @@ body {
     text-transform: uppercase;
     margin: 0.5rem 0; /* Adjust margin as needed */
   }
-  
   
   /* Optimizari */
   @media only screen and (min-resolution: 150dpi) {

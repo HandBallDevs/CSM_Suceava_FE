@@ -26,6 +26,7 @@ import ButtonaiciImage from './imagini/buttonaici.png';
 import DetaliiImage from './imagini/detalii.png';
 
 
+
 const Acasa = () => {
   const handleAcasaClick = () => {
    
@@ -58,11 +59,12 @@ const Acasa = () => {
         <img src={CosImage} alt="" className="imagecos" />
       </div>
       <img src={LotImage} alt="" className="lot-image" />
+
       <div className="frame-overlay">
-        <img src={FrameImage} alt="" className="frame-image" />
+        <img src={FrameImage} alt="" className="frame-noutati" />
         <div className="word-list-4">
           <p className="word-4 ultimele">Ultimele Noutăți</p>
-          <div className="news-container">
+          <div className="noutati-container">
             <div className="news-item">
               <p className="word-4 meciul">Meci decisiv pentru CSU Suceava</p>
               <img src={IntoarcereImage} alt="" className="imageintoarcere" />
@@ -190,26 +192,18 @@ const Acasa = () => {
           </div>
         </div>
         </div>
+        
 
-
-
-
-
-
-
-
-
-
-        <div className="sponsor-container">
-      <h2 className="sponsor-heading">Sponsorii noștrii</h2>
-      <div className="image-row">
-        <div className="image-item">
-          <img src={FitermanImage} alt="Sponsor1" className="sponsor-image" />
-          <p className="image-caption">
-    FITERMAN<br />
-    PHARMA
-  </p>
-        </div>
+      <div className="sponsor-container">
+        <h2 className="sponsor-heading">Sponsorii noștrii</h2>
+           <div className="image-row">
+            <div className="image-item">
+              <img src={FitermanImage} alt="Sponsor1" className="sponsor-image" />
+                <p className="image-caption">
+          FITERMAN<br />
+             PHARMA
+         </p>
+      </div>
         <div className="image-item">
           <img src={SiglaImage} alt="Sponsor2" className="sponsor-image" />
           <p className="image-caption">
@@ -245,11 +239,11 @@ const Acasa = () => {
           <img src={CelestinImage} alt="Sponsor8" className="sponsor-image" />
           <p className="image-caption">CELESTIN</p>
         </div>
-        
+      
 
-      </div>
-    </div>
-    </div>
+        </div>
+        </div>
+       </div>
     <div className="editie">
       <p className="centered-text">Ediție sponsorizată</p>
       <p className="centered-text">2023-2024</p>

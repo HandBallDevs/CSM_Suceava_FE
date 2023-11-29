@@ -240,7 +240,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center; /* Center horizontally */
-    padding-top: 50vw;
+    padding-top: 0vw;
     width: auto;
     margin-bottom: 1vw; /* Adjusted margin for spacing from the bottom */
     left: 30vw;
@@ -324,6 +324,50 @@ body {
     border: 0.00001vw solid rgba(0, 13, 132, 1); /* Culoare border */
   }
   
+  .sponsor-container {
+    text-align: center;
+    margin: 2rem; /* Adjust margin as needed */
+    padding-top:10vw;
+  }
+  
+  .sponsor-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .image-row {
+    display: flex;
+    justify-content: space-around; /* Adjust as needed */
+    margin-top: 1rem; /* Adjust margin as needed */
+  }
+  
+  .sponsor-image {
+  
+    width: auto;
+    height:8rem;
+    max-width: 15rem;
+  }
+  .image-caption {
+    margin-top: 0.5rem;
+    text-align: center;
+    white-space:pre-line; /* or white-space: pre-wrap; */
+    font-weight: bold;
+    font-size: 1.0rem;
+  }
+  
+  .editie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .centered-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0.5rem 0; /* Adjust margin as needed */
+  }
   
   /* Optimizari */
   @media only screen and (min-resolution: 150dpi) {
