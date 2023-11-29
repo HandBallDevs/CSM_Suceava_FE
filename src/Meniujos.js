@@ -1,5 +1,5 @@
 import React from "react";
-import "./Acasa.css";
+import "./Meniujos.css";
 import LogoImage from "./imagini/logo.png";
 import DividerImage from "./imagini/divider.png";
 import FacebookImage from "./imagini/facebook.png";

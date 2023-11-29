@@ -148,7 +148,6 @@ const Acasa = () => {
           </div>
         </div>
         <Meniujos />
-
       </div>
     </div>
   );
