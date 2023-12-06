@@ -2,11 +2,11 @@ import React from "react";
 import "./Noutati.css";
 
 import FrameImage from "./imagini/frame.png";
-import frame_noutati from "./imagini/frame_noutati.png";
-import Stire1 from "./imagini/stire1.png";
-import Stire2 from "./imagini/stire2.png";
-import Clasament from "./imagini/clasament.png";
-import Meciuri_viitoare from "./imagini/meciuri_viitoare.png";
+import FrameNoutatiImage from './imagini/frame_noutati.png';
+import Stire1Image from './imagini/stire1.png';
+import Stire2Image from './imagini/stire2.png';
+import MeciuriViitoareImage from './imagini/meciuri_viitoare.png';
+import ClasamentImage from './imagini/clasament.png';
 import Meniusus from "./Meniusus";
 import Meniujos from "./Meniujos";
 
@@ -28,39 +28,31 @@ const Noutăti = () => {
         </div>
       </div>
 
-      <div class="container_noutati">
-        <img src={frame_noutati} alt="" class="frame_noutati-image" />
-
-        <div class="main-news-container">
-          <div class="form-row-container">
-            <label for="label1" class="label">
-              Categorie:
-            </label>
-            <input type="text" id="label1" class="textbox" />
-            <label for="label2" class="label">
-              Ordine:
-            </label>
-            <input type="text" id="label2" class="textbox" />
-            <button class="button">FILTREAZA</button>
+      
+      <div className="News">
+        <img src={FrameNoutatiImage} alt="" className="FrameNoutati_image" />
+        <div className="Filter-row">
+          <label  class="label_Filter" for="categorie">Categorie</label>
+          <input type="text" id="categorie" name="categorie" class="textbox_filter"/>
+          <label  class="label_Filter" for="ordine">Ordine</label>
+          <input type="text" id="ordine" name="ordine" class="textbox_filter"/>
+          <button class="button_filtreaza">Filtreaza</button>
+        </div>
+        <div className="news-row">
+          <div class="news-column"> 
+           <img src={Stire1Image} alt="" className="Stiri_image" />
+            <img src={Stire2Image} alt="" className="Stiri_image" />
           </div>
-          <div class="container">
-            <div class="news-container">
-              <img src={Stire1} alt="" class="News-image" />
-              <img src={Stire2} alt="" class="News-image2" />
-            </div>
-            <div class="news-container2">
-              <label for="labelMeciuri" class="news-labels">
-                Urmatoarele Meciuri:
-              </label>
-              <img src={Meciuri_viitoare} alt="" class="Meciuri_viitoare" />
-              <label for="labelClasament" class="news-labels">
-                Clasament:
-              </label>
-              <img src={Clasament} alt="" class="Clasament" />
-            </div>
+          <div class="news-column_1"> 
+           <label  class="label_image_news" >Urmatoarele meciuri</label>
+           <img src={MeciuriViitoareImage} alt="" className="Clasament-Meciuri_image" />
+           <label  class="label_image_news">Liga Clasament</label>
+           <img src={ClasamentImage} alt="" className="Clasament-Meciuri_image" />
           </div>
         </div>
+
       </div>
+
       <Meniujos/>
     </div>
   );
