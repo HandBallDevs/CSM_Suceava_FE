@@ -1,7 +1,7 @@
 
  /*Titlu*/
 
- .frame-image {
+ .frame-image-PGNoutati {
   width: 100%; 
   padding-top: 1rem;
   height: auto;
@@ -9,13 +9,13 @@
   display: flex;
 }
 
-  .title {
+  .title-PGNoutati {
     position: relative;
     text-align: center; 
    
 }
 
-.label-container {
+.label-container-PGNoutati {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,34 +27,34 @@
 }
 
 
-.label_title {
+.label_title-PGNoutati {
   font-size: 3rem; 
   margin: 0.55rem; 
 }
-.label_subtitle {
+.label_subtitle-PGNoutati {
   font-size: 1rem; 
   margin: 0.55rem; 
 }
 
-.label_subtitle_noutati {
+.label_subtitle_noutati-PGNoutati {
   font-size: 1rem; 
   color: white;
 }
 
 /*Noutati*/
   
-.News{
+.News-PGNoutati{
   margin-top: 7vw;
 }
 
-.FrameNoutati_image {
+.FrameNoutati_image-PGNoutati {
   width: 100%;
   height: auto;
  
 
 }
 
-.Filter-row {
+.Filter-row-PGNoutati {
   margin-top: -60vw;
   display: flex;
   margin-left: 6vw;
@@ -62,7 +62,7 @@
   align-items: center;
 }
 
-.textbox_filter{
+.textbox_filter-PGNoutati{
       width: 17%;
       height: 1.5vw;
       border-radius: 25rem;
@@ -71,12 +71,12 @@
       padding-left: 0.5rem;
 }
 
-.label_Filter{
+.label_Filter-PGNoutati{
       font-size:2vw;
   
 }
 
-.button_filtreaza{
+.button_filtreaza-PGNoutati{
      
       display: flex;
       justify-content: center;
@@ -90,7 +90,7 @@
       height: 2vw;
 }
 
-.news-row
+.news-row-PGNoutati
 {
       margin-top: 5vw;
       display: flex;
@@ -100,7 +100,7 @@
       margin-bottom: 10vw;
      
 }
-.news-column {
+.news-column-PGNoutati {
       margin-top: -0.5vw;
       display: flex;
       flex-direction: column;
@@ -109,7 +109,7 @@
     
 }
 
-    .news-column_1 {
+    .news-column_1-PGNoutati {
       margin-top: -4vw;
       display: flex;
       flex-direction: column;
@@ -118,17 +118,17 @@
     
     }
 
-    .Stiri_image{
+    .Stiri_image-PGNoutati{
       width: 85%;
       height: auto;
     }
 
-    .Clasament-Meciuri_image{
+    .Clasament-Meciuri_image-PGNoutati{
       width: 83%;
       height: auto;
     }
 
-    .label_image_news{
+    .label_image_news-PGNoutati{
       font-size:1.5vw;
       font-weight: bold;
      

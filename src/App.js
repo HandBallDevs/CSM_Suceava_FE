@@ -13,7 +13,7 @@ import AdminMeciuri from "./AdminMeciuri";
 //pentru ca va fi complicat cand vom avea functionalitati.Am updatat eu tot codul si arata mai bine acum.Sry daca ai facut modificari intre timp
 
 function App() {
-  return <AdminMeciuri />;
+  return <AdminMeciuri/>;
 }
 
 export default App;

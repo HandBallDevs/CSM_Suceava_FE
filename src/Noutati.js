@@ -16,38 +16,38 @@ const Noutăti = () => {
   return (
     <div className="app-container">
       <Meniusus />
-      <div class="title">
-        <img src={FrameImage} alt="" className="frame-image" />
-        <div class="label-container">
-          <label class="label_title">Noutăți</label>
-          <div class="row-title">
-            <label class="label_subtitle">Acasa</label>
-            <label class="label_subtitle">/</label>
-            <label class="label_subtitle_noutati">Noutăți</label>
+      <div class="title-PGNoutati">
+        <img src={FrameImage} alt="" className="frame-image-PGNoutati" />
+        <div class="label-container-PGNoutati">
+          <label class="label_title-PGNoutati">Noutăți</label>
+          <div class="row-title-PGNoutati">
+            <label class="label_subtitle-PGNoutati">Acasa</label>
+            <label class="label_subtitle-PGNoutati">/</label>
+            <label class="label_subtitle_noutati-PGNoutati">Noutăți</label>
           </div>
         </div>
       </div>
 
       
-      <div className="News">
-        <img src={FrameNoutatiImage} alt="" className="FrameNoutati_image" />
-        <div className="Filter-row">
-          <label  class="label_Filter" for="categorie">Categorie</label>
-          <input type="text" id="categorie" name="categorie" class="textbox_filter"/>
-          <label  class="label_Filter" for="ordine">Ordine</label>
-          <input type="text" id="ordine" name="ordine" class="textbox_filter"/>
-          <button class="button_filtreaza">Filtreaza</button>
+      <div className="News-PGNoutati">
+        <img src={FrameNoutatiImage} alt="" className="FrameNoutati_image-PGNoutati" />
+        <div className="Filter-row-PGNoutati">
+          <label  class="label_Filter-PGNoutati" for="categorie">Categorie</label>
+          <input type="text" id="categorie" name="categorie" class="textbox_filter-PGNoutati"/>
+          <label  class="label_Filter-PGNoutati" for="ordine">Ordine</label>
+          <input type="text" id="ordine" name="ordine" class="textbox_filter-PGNoutati"/>
+          <button class="button_filtreaza-PGNoutati">Filtreaza</button>
         </div>
-        <div className="news-row">
-          <div class="news-column"> 
-           <img src={Stire1Image} alt="" className="Stiri_image" />
-            <img src={Stire2Image} alt="" className="Stiri_image" />
+        <div className="news-row-PGNoutati">
+          <div class="news-column-PGNoutati"> 
+           <img src={Stire1Image} alt="" className="Stiri_image-PGNoutati" />
+            <img src={Stire2Image} alt="" className="Stiri_image-PGNoutati" />
           </div>
-          <div class="news-column_1"> 
-           <label  class="label_image_news" >Urmatoarele meciuri</label>
-           <img src={MeciuriViitoareImage} alt="" className="Clasament-Meciuri_image" />
-           <label  class="label_image_news">Liga Clasament</label>
-           <img src={ClasamentImage} alt="" className="Clasament-Meciuri_image" />
+          <div class="news-column_1-PGNoutati"> 
+           <label  class="label_image_news-PGNoutati" >Urmatoarele meciuri</label>
+           <img src={MeciuriViitoareImage} alt="" className="Clasament-Meciuri_image-PGNoutati" />
+           <label  class="label_image_news-PGNoutati">Liga Clasament</label>
+           <img src={ClasamentImage} alt="" className="Clasament-Meciuri_image-PGNoutati" />
           </div>
         </div>
 

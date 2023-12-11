@@ -1,7 +1,7 @@
 
  /*Titlu*/
 
- .frame-image {
+ .frame-image-ADMStiri {
     width: 100%; 
     padding-top: 1rem;
     height: auto;
@@ -9,13 +9,13 @@
     display: flex;
   }
   
-   .title {
+   .title-ADMStiri {
       position: relative;
       text-align: center; 
      
   }
   
-  .label-container {
+  .label-container-ADMStiri {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,23 +27,23 @@
   }
   
   
-  .label_title {
+  .label_title-ADMStiri {
     font-size: 3rem; 
     margin: 0.55rem; 
   }
-  .label_subtitle {
+  .label_subtitle-ADMStiri {
     font-size: 1rem; 
     margin: 0.55rem; 
   }
   
-  .label_subtitle_admin {
+  .label_subtitle_admin-ADMStiri {
     font-size: 1rem; 
     color: white;
   }
   
   /*Admin*/
   
-  .admin {
+  .admin-ADMStiri {
     display: flex;
     margin: 2vw;
     gap: 3vw;
@@ -54,32 +54,32 @@
     
 }
 
-  .admin_menu,.admin_workspace {
+  .admin_menu-ADMStiri,.admin_workspace-ADMStiri {
     display: flex;
     flex-direction: column;
   }
-  .admin_workspace{
+  .admin_workspace-ADMStiri{
     gap:0.7vw;
   }
   
-  .AdminMenuImage,.AdminWorkSpaceImage, .AdminIndexImage{
+  .AdminMenuImage-ADMStiri,.AdminWorkSpaceImage-ADMStiri, .AdminIndexImage-ADMStiri{
       width: 100%;
       height: auto;
      
   }
-  .AdminIndexImage
+  .AdminIndexImage-ADMStiri
   {
     width: 98%;
   }
   
-  .admin_titles {
+  .admin_titles-ADMStiri {
     font-size: 1.3vw;
     margin-top: -175%;
     font-weight: bold;
     text-transform: uppercase;
   }
   
-  .admin_options{
+  .admin_options-ADMStiri{
     font-size: 1.3vw;
     text-transform: uppercase;
     cursor: pointer;
@@ -87,11 +87,11 @@
   }
   
   
-  .admin_options.underline {
+  .admin_options.underline-ADMStiri{
     text-decoration: underline;
   }
   
-  .options_admin_container
+  .options_admin_container-ADMStiri
   {
     display: flex;
     flex-direction: column;
@@ -100,7 +100,7 @@
   }
 
   
-  .admin_titles1{
+  .admin_titles1-ADMStiri{
     font-size: 1.3vw;
     margin-top: -88.5%;
     font-weight: bold;
@@ -108,7 +108,7 @@
 
   }
 
-  .workspace-row, .workspace-row1, .workspace-row2 {
+  .workspace-row-ADMStiri, .workspace-row1-ADMStiri, .workspace-row2-ADMStiri {
     margin-top: 2vw;
     display: flex;
     justify-content:center;
@@ -117,41 +117,41 @@
    
     
   }
-  .workspace-row1
+  .workspace-row1-ADMStiri
   {
     
     gap:1.3vw;
   }
-  .workspace-row2
+  .workspace-row2-ADMStiri
   {
     margin-left: -22%;
   }
  
   
-  .workspace-inputs, .workspace-choicebox{
+  .workspace-inputs-ADMStiri, .workspace-choicebox-ADMStiri{
     width: 30%;
     height: auto;
     border-radius: 25rem; 
     padding: 0.4rem;
     
   }
-  .workspace-choicebox
+  .workspace-choicebox-ADMStiri
   {
     width: 15%;
   }
-  .workspace-inputs-descriere{
+  .workspace-inputs-descriere-ADMStiri{
     width: 30%;
     height: 10vw;
     border-radius:0.7rem; 
     padding: 0.4rem;}
 
-  .workspace-labels
+  .workspace-labels-ADMStiri
   {
     font-size: 1.1rem;
     font-weight: bold;
   }
 
-  .workspace-labels1
+  .workspace-labels1-ADMStiri
   {
  
     font-size: 1.1rem;
@@ -160,14 +160,14 @@
    
   }
 
-  .workspace-labels-upper
+  .workspace-labels-upper-ADMStiri
   {
     font-size: 1.1rem;
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
   }
-  .workspace-button , .workspace-button-programare{
+  .workspace-button-ADMStiri , .workspace-button-programare-ADMStiri{
     
     width: 15%;
     height: 2vw;
@@ -183,7 +183,7 @@
     font-size: 0.7rem;
     margin-top:-6vw;
 }
-.workspace-button-programare
+.workspace-button-programare-ADMStiri
 {
     margin-top:0vw;
 }
