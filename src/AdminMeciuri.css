@@ -1,0 +1,211 @@
+
+ /*Titlu*/
+
+ .frame-image-ADMmeciuri {
+    width: 100%; 
+    padding-top: 1rem;
+    height: auto;
+    align-items: center;
+    display: flex;
+  }
+  
+   .title-ADMmeciuri {
+      position: relative;
+      text-align: center; 
+     
+  }
+  
+  .label-container-ADMmeciuri {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    text-align: center;
+  }
+  
+  
+  .label_title-ADMmeciuri {
+    font-size: 3rem; 
+    margin: 0.55rem; 
+  }
+  .label_subtitle-ADMmeciuri {
+    font-size: 1rem; 
+    margin: 0.55rem; 
+  }
+  
+  .label_subtitle_admin-ADMmeciuri {
+    font-size: 1rem; 
+    color: white;
+  }
+  
+  /*Admin*/
+  
+  .admin-ADMmeciuri {
+    display: flex;
+    margin: 2vw;
+    gap: 3vw;
+    position: relative;
+    text-align: center; 
+    margin-top: 7vw;
+    position: relative;
+    
+}
+
+  .admin_menu-ADMmeciuri,.admin_workspace-ADMmeciuri {
+    display: flex;
+    flex-direction: column;
+  }
+  .admin_workspace-ADMmeciuri{
+    gap:0.7vw;
+  }
+  
+  .AdminMenuImage-ADMmeciuri,.AdminWorkSpaceImage-ADMmeciuri, .AdminIndexImage-ADMmeciuri{
+      width: 100%;
+      height: auto;
+     
+  }
+  .AdminIndexImage-ADMmeciuri
+  {
+    width: 98%;
+  }
+  
+  .admin_titles-ADMmeciuri {
+    font-size: 1.3vw;
+    margin-top: -175%;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .admin_options-ADMmeciuri{
+    font-size: 1.3vw;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: text-decoration 0.3s ease-in-out;
+  }
+  
+  
+  .admin_options.underline-ADMmeciuri {
+    text-decoration: underline;
+  }
+  
+  .options_admin_container-ADMmeciuri
+  {
+    display: flex;
+    flex-direction: column;
+    margin-top: 18%;
+    gap: 2.5rem;;
+  }
+
+  
+  .admin_titles1-ADMmeciuri{
+    font-size: 1.3vw;
+    margin-top: -88.5%;
+    font-weight: bold;
+    text-transform: uppercase;
+
+  }
+  
+  .workspace-row-ADMmeciuri, .workspace-row1-ADMmeciuri {
+    margin-top: 2vw;
+    display: flex;
+    align-items: flex-start;
+    gap:0;
+    margin-left: 5vw;
+    margin-right: 5vw;
+   
+    
+  }
+  .workspace-row1-ADMmeciuri
+  {
+    gap: 3vw;
+    margin-left: 40vw;
+    margin-right: -26vw;
+  }
+  
+  .workspace-row-index-ADMmeciuri
+  {
+    margin-top: 2.2vw;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 1.7vw;
+  }
+
+  .workspace-collumn-ADMmeciuri, .workspace-collumn-input-ADMmeciuri{
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+    align-items: center;
+
+
+    
+  }
+  .workspace-collumn-input-ADMmeciuri
+  {
+    width:50%;
+  }
+  .workspace-collumn-ADMmeciuri
+  {
+    width: 18%;
+    gap:3.8vw;
+  }
+  
+  .workspace-inputs-ADMmeciuri, .workspace-choicebox-ADMmeciuri{
+    width: 75%;
+    height: auto;
+    border-radius: 25rem; 
+    padding: 0.4rem;
+    
+  }
+
+  .workspace-choicebox-ADMmeciuri
+  {
+    width: 80%;
+  }
+  
+ 
+  .workspace-labels-ADMmeciuri
+  {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  .workspace-button-submit-ADMmeciuri
+  {
+    width: 18%;
+    height: 2.3vw;
+    border-radius: 25rem;
+    padding: 0.4rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color:white;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    margin-top:-5.1vw;
+
+  }
+
+  .workspace-labels-upper-ADMmeciuri
+  {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+
+  
+
+
+
+  
+  
+  
+  
+  
