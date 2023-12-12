@@ -13,9 +13,6 @@ import DetaliiImage from "./imagini/detalii.png";
 import Meniusus from "./Meniusus";
 import Meniujos from "./Meniujos";
 const Acasa = () => {
-  const handleAcasaClick = () => {};
-
-
   return (
     <div className="app-container">
       <Meniusus />
@@ -135,8 +132,8 @@ const Acasa = () => {
             </div>
           </div>
         </div>
-
-        <div className="frame-overlay2">
+      </div>
+      <div className="frame-overlay2">
           <img src={LotframeImage} alt="" className="lot-frame" />
           <div className="word-list-5">
             <p className="word-5 intalneste">Intâlnește echipa de seniori</p>
@@ -147,8 +144,7 @@ const Acasa = () => {
             </div>
           </div>
         </div>
-        <Meniujos />
-      </div>
+      <Meniujos />
     </div>
   );
 };
