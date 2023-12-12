@@ -3,29 +3,40 @@ import "./Meniusus.css";
 import LogoImage from "./imagini/logo.png";
 import CosImage from "./imagini/cos.png";
 import UserImage from "./imagini/user.png";
+import { Link } from 'react-router-dom';
 
 const Meniusus = () => {
-  const handleAcasaClick = () => {};
-
   return (
-    
-      <div className="word-list">
-        <img src={LogoImage} alt="" className="imagelogo" />
-        <p className="word csu-suceava">CSU Suceava</p>
-        <p className="word acasa" onClick={handleAcasaClick}>
-          Acasă
-        </p>
-        <p className="word">Magazin</p>
-        <p className="word">Club</p>
-        <p className="word">Meciuri</p>
-        <p className="word">Noutăți</p>
-        <p className="word contact">Contact</p>
-        <p className="word csu-login">Login</p>
-        <img src={UserImage} alt="" className="imageuser" />
-        <p className="word csu-cos">Coș</p>
-        <img src={CosImage} alt="" className="imagecos" />
-      </div>
-   
+    <div className="word-list">
+      <img src={LogoImage} alt="" className="imagelogo" />
+      <p className="word csu-suceava">CSU SUCEAVA</p>
+      <Link to="/" className="word">
+       Acasa
+      </Link>
+      <Link to="/" className="word">
+        Magazin
+      </Link>
+      <Link to="/ClubClasament" className="word">
+        Club
+      </Link>
+      <Link to="/" className="word">
+        Meciuri
+      </Link>
+      <Link to="/noutati" className="word">
+        Noutăți
+      </Link>
+      <Link to="/contact" className="word contact">
+        Contact
+      </Link>
+      <Link to="/" className="word csu-login">
+        Login
+      </Link>
+      <img src={UserImage} alt="" className="imageuser" />
+      <Link to="/" className="word csu-cos">
+        Coș
+      </Link>
+      <img src={CosImage} alt="" className="imagecos" />
+    </div>
   );
 };
 

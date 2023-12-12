@@ -28,17 +28,8 @@
   width: 80%;
   height: 25rem;
   
-
 }
-/* Optimizari */
-@media only screen and (min-resolution: 150dpi) {
-  .word {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin: 1.5rem;
-    /* Adjusted margin */
-
-  }
-
+.select-clasament{
+  text-decoration: underline;
+  cursor: pointer; /* Add this line if you want to show a pointer on hover */
 }

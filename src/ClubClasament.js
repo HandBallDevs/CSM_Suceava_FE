@@ -16,7 +16,7 @@ const ClubClasament = () => {
         <div className="words-club">
           <p>LOTUL CLUBULUI</p>
           <p>DETALII CLUB</p>
-          <p>CLASAMENT FRH</p>
+          <p className="select-clasament">CLASAMENT FRH</p>
         </div>
       
       </div>

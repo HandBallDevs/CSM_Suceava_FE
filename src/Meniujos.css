@@ -40,6 +40,8 @@
   font-weight: bold;
   text-transform: uppercase;
   margin: 1vw;
+  color:black;
+  text-decoration: none;
   /* Adjusted margin */
 }
 

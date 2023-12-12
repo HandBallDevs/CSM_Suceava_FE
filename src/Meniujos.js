@@ -15,6 +15,7 @@ import OrasulImage from "./imaginisponsori/orasul.png";
 import PepeneroImage from "./imaginisponsori/pepenero.png";
 import SiglaImage from "./imaginisponsori/sigla.png";
 import VivendiImage from "./imaginisponsori/vivendi.png";
+import { Link } from 'react-router-dom';
 
 const Meniujos = () => {
   const handleAcasaClick = () => {};
@@ -103,15 +104,33 @@ const Meniujos = () => {
         <p className="centered-text">Ediție sponsorizată</p>
         <p className="centered-text">2023-2024</p>
       </div>
+      
+
+
+
+
+
       <div className="word-list-2">
-        <p className="word-2">Acasă</p>
-        <p className="word-2">Magazin</p>
-        <p className="word-2">Club</p>
-        <p className="word-2">Meciuri</p>
-        <p className="word-2">Noutăți</p>
-        <p className="word-2 contact-2">Contact</p>
-        <img src={LogoImage} alt="" className="imagelogo-2" />
-        <p className="word-2 csu-suceava2">CSU Suceava</p>
+      <Link to="/" className="word-2">
+       Acasa
+      </Link>
+      <Link to="/" className="word-2">
+        Magazin
+      </Link>
+      <Link to="/clubclasament" className="word-2">
+        Club
+      </Link>
+      <Link to="/" className="word-2">
+        Meciuri
+      </Link>
+      <Link to="/noutati" className="word-2">
+        Noutăți
+      </Link>
+      <Link to="/contact" className="word-2 contact-2">
+        Contact
+      </Link>
+      <img src={LogoImage} alt="" className="imagelogo-2" />
+      <p className="word-2 csu-suceava">CSU SUCEAVA</p>
       </div>
       <img src={DividerImage} alt="" className="divider-image" />
 
