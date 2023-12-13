@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import React from "react";
+//import Layout from './layout';
+import Acasa from "./Acasa";
+import Noutati from "./Noutati";
+import Contact from "./Contact";
+import Meniusus from "./Meniusus";
+import Meniujos from "./Meniujos";
+import Admin from "./Admin";
+import AdminStiri from "./AdminStiri";
+import AdminMeciuri from "./AdminMeciuri";
+import ClubClasament from "./ClubClasament";
+import ClubLot from "./ClubLot";
+import DetaliiClub from "./DetaliiClub";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Acasa />} />
+        <Route path="/noutati" element={<Noutati />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/clubclasament" element={<ClubClasament />} />
+        <Route path="/clublot" element={<ClubLot />} />
+        <Route path="/detaliiclub" element={<DetaliiClub />} />
+
+        {/* Add more routes for other pages */}
+      </Routes>
+    </Router>
   );
 }
 
