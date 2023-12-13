@@ -1,5 +1,5 @@
 import React from "react";
-import "./ClubClasament.css";
+import "./ClubLot.css";
 import FrameImage from "./imagini/frame.png";
 //import IconImage from "./imagini/icon.png";
 //import CrossImage from './imagini/cross.png';
@@ -7,17 +7,17 @@ import FrameImage from "./imagini/frame.png";
 import Meniusus from "./Meniusus";
 import Meniujos from "./Meniujos";
 import { Link } from 'react-router-dom';
-const ClubClasament = () => {
+const ClubLot = () => {
   return (
     <div className="app-container">
-      <Meniusus applyUnderlineStyle={true} />
+     <Meniusus applyUnderlineStyle={true} />
 
       <div className="frame-overlay-club">
         <img src={FrameImage} alt="" className="frame-club" />
-        <div className="words-clasament">
+        <div className="words-lot">
           <p>LOTUL CLUBULUI</p>
           <p>DETALII CLUB</p>
-          <p className="select-clasament">CLASAMENT FRH</p>
+          <p>CLASAMENT FRH</p>
         </div>
       
       </div>
@@ -32,4 +32,4 @@ const ClubClasament = () => {
   );
 };
 
-export default ClubClasament;
+export default ClubLot;

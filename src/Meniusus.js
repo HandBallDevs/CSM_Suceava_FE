@@ -4,8 +4,9 @@ import LogoImage from "./imagini/logo.png";
 import CosImage from "./imagini/cos.png";
 import UserImage from "./imagini/user.png";
 import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-const Meniusus = () => {
+const Meniusus = ({ applyUnderlineStyle }) => {
   return (
     <div className="word-list">
       <img src={LogoImage} alt="" className="imagelogo" />
@@ -16,7 +17,10 @@ const Meniusus = () => {
       <Link to="/" className="word">
         Magazin
       </Link>
-      <Link to="/ClubClasament" className="word">
+      <Link
+        to="/clublot"
+        className={`word ${applyUnderlineStyle ? "club-under" : ""}`}
+      >
         Club
       </Link>
       <Link to="/" className="word">

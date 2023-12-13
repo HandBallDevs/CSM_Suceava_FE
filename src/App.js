@@ -11,6 +11,8 @@ import Admin from "./Admin";
 import AdminStiri from "./AdminStiri";
 import AdminMeciuri from "./AdminMeciuri";
 import ClubClasament from "./ClubClasament";
+import ClubLot from "./ClubLot";
+import DetaliiClub from "./DetaliiClub";
 
 function App() {
   return (
@@ -20,6 +22,9 @@ function App() {
         <Route path="/noutati" element={<Noutati />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/clubclasament" element={<ClubClasament />} />
+        <Route path="/clublot" element={<ClubLot />} />
+        <Route path="/detaliiclub" element={<DetaliiClub />} />
+
         {/* Add more routes for other pages */}
       </Routes>
     </Router>

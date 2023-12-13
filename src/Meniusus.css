@@ -58,7 +58,9 @@ body {
   margin-right: 0.5vw;
 }
 
-
+.club-under{
+  text-decoration: underline;
+}
 
 /* Optimizari */
 @media only screen and (min-resolution: 150dpi) {
