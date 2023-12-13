@@ -6,27 +6,26 @@ import FrameImage from "./imagini/frame.png";
 //import PlaceImage from './imagini/place.png';
 import Meniusus from "./Meniusus";
 import Meniujos from "./Meniujos";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 const ClubLot = () => {
   return (
     <div className="app-container">
-     <Meniusus applyUnderlineStyle={true} />
+      <Meniusus applyUnderlineStyle={true} />
 
       <div className="frame-overlay-club">
         <img src={FrameImage} alt="" className="frame-club" />
         <div className="words-lot">
-          <p>LOTUL CLUBULUI</p>
-          <p>DETALII CLUB</p>
-          <p>CLASAMENT FRH</p>
+          <Link to="/clublot" className="wordslot-list-link-lot">
+            LOTUL CLUBULUI
+          </Link>
+          <Link to="/detaliiclub" className="wordslot-list-link">
+            DETALII CLUB
+          </Link>
+          <Link to="/clubclasament" className="wordslot-list-link">
+            CLASAMENT FRH
+          </Link>
         </div>
-      
       </div>
-      <iframe
-          title="Background iFrame"
-          src="https://frh.ro/clasament.php?id=552#clasament" 
-           style={{ display: 'block', margin: '0 auto' }}
-          className="icon-clasament"
-        />
       <Meniujos />
     </div>
   );

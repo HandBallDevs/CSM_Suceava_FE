@@ -29,7 +29,19 @@
   height: 25rem;
   
 }
-.select-clasament{
-  text-decoration: underline;
-  cursor: pointer; /* Add this line if you want to show a pointer on hover */
+.wordsclasament-list-link {
+  /* Add your styles for the links here */
+  color: black; /* Change the color as per your preference */
+  text-decoration: none;
+  font-weight: bold;
+  margin:1vw;
 }
+
+.wordsclasament-list-link-clas {
+  /* Add your styles for the links here */
+  color: black; /* Change the color as per your preference */
+  text-decoration: underline;
+  font-weight: bold;
+  margin:1vw;
+}
+

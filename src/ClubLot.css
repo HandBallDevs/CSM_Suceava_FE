@@ -23,9 +23,20 @@
   font-weight: bold;
 }
 
-.icon-clasament{
-  padding-top: 2rem;
-  width: 80%;
-  height: 25rem;
-  
+.wordslot-list-link {
+  /* Add your styles for the links here */
+  color: black; /* Change the color as per your preference */
+  text-decoration: none;
+  font-weight: bold;
+  margin:1vw;
 }
+
+.wordslot-list-link-lot {
+  /* Add your styles for the links here */
+  color: black; /* Change the color as per your preference */
+  text-decoration: underline;
+  font-weight: bold;
+  margin:1vw;
+}
+
+

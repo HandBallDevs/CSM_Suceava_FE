@@ -15,9 +15,15 @@ const ClubClasament = () => {
       <div className="frame-overlay-club">
         <img src={FrameImage} alt="" className="frame-club" />
         <div className="words-clasament">
-          <p>LOTUL CLUBULUI</p>
-          <p>DETALII CLUB</p>
-          <p className="select-clasament">CLASAMENT FRH</p>
+        <Link to="/clublot" className="wordsclasament-list-link">
+            LOTUL CLUBULUI
+          </Link>
+          <Link to="/detaliiclub" className="wordsclasament-list-link">
+            DETALII CLUB
+          </Link>
+          <Link to="/clubclasament" className="wordsclasament-list-link-clas">
+            CLASAMENT FRH
+          </Link>
         </div>
       
       </div>
