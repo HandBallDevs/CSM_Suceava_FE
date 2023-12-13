@@ -3,9 +3,14 @@ import "./Meniusus.css";
 import LogoImage from "./imagini/logo.png";
 import CosImage from "./imagini/cos.png";
 import UserImage from "./imagini/user.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-const Meniusus = ({ applyUnderlineStyle }) => {
+const Meniusus = () => {
+  const location = useLocation();
+  const pathname = location.pathname;
+
+  const isClubPage =
+  pathname === "/clublot" || pathname === "/detaliiclub" || pathname === "/clubclasament";
   return (
     <div className="word-list">
       <img src={LogoImage} alt="" className="imagelogo" />
@@ -18,17 +23,22 @@ const Meniusus = ({ applyUnderlineStyle }) => {
       </Link>
       <Link
         to="/clublot"
-        className={`word ${applyUnderlineStyle ? "selectare-pagina" : ""}`}
+        className={`word ${isClubPage ? "selectare-pagina" : ""}`}
       >
         Club
       </Link>
       <Link to="/" className="word">
         Meciuri
       </Link>
-      <Link to="/noutati" className="word">
+      <Link to="/noutati" className={`word ${pathname === '/noutati' ? 'selectare-pagina' : ''}`}>
         Noutăți
       </Link>
-      <Link to="/contact" className="word contact">
+      <Link
+        to="/contact"
+        className={`word contact ${
+          pathname === "/contact" ? "selectare-pagina" : ""
+        }`}
+      >
         Contact
       </Link>
       <Link to="/" className="word csu-login">

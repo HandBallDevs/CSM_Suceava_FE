@@ -20,7 +20,7 @@ const Contact = () => {
 
   return (
     <div className="app-container">
-      <Meniusus />
+       <Meniusus/>
 
       <div class="title">
         <img src={FrameImage} alt="" className="frame-image" />

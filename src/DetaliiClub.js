@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const DetaliiClub = () => {
   return (
     <div className="app-container">
-      <Meniusus applyUnderlineStyle={true} />
+      <Meniusus />
 
       <div className="frame-overlay-club">
         <img src={FrameImage} alt="" className="frame-club" />
@@ -19,6 +19,7 @@ const DetaliiClub = () => {
             LOTUL CLUBULUI
           </Link>
           <Link to="/detaliiclub" className="wordsclub-list-link-detalii">
+            
             DETALII CLUB
           </Link>
           <Link to="/clubclasament" className="wordsclub-list-link">

@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const ClubLot = () => {
   return (
     <div className="app-container">
-      <Meniusus applyUnderlineStyle={true} />
+      <Meniusus />
 
       <div className="frame-overlay-club">
         <img src={FrameImage} alt="" className="frame-club" />
