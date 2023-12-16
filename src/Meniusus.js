@@ -41,7 +41,7 @@ const Meniusus = () => {
       >
         Contact
       </Link>
-      <Link to="/" className="word csu-login">
+      <Link to="/login" className={`word ${pathname === '/login' ? 'selectare-pagina' : ''}`}>
         Login
       </Link>
       <img src={UserImage} alt="" className="imageuser" />

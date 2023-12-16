@@ -1,0 +1,182 @@
+
+ /*Titlu*/
+
+ .frame-image-LOGIN {
+    width: 100%; 
+    padding-top: 1vw;
+    height: auto;
+    align-items: center;
+    display: flex;
+  }
+  
+   .title-LOGIN {
+      position: relative;
+      text-align: center; 
+     
+  }
+  
+  .label-container-LOGIN {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    margin: 0.55vw;
+    gap:0.5vw
+  }
+  
+  
+  .label_title-LOGIN {
+    font-size: 3.8vw; 
+    margin: 0.55vw; 
+   
+  }
+
+  .row-title-LOGIN
+  {
+    display: flex;
+    gap: 1vw;
+  }
+  .label_subtitle-LOGIN {
+    font-size: 1.3vw; 
+   
+  }
+  
+  .label_subtitle_admin-LOGIN {
+    font-size: 1.3vw; 
+    color: white;
+  }
+
+  /*Login*/
+
+  .image-border-LOGIN {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: auto;
+    margin: auto;
+    margin-top: 7vw;
+    margin-bottom: 9vw;
+  }
+
+  .content-LOGIN
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -35vw;
+    gap:2vw;
+    margin-bottom: 25VW;
+  }
+
+
+  .content-label-LOGIN
+  {
+    font-size: 2.3vw;
+
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .container-INPUT-LOGIN
+  {
+    display: flex;
+    flex-direction: column;
+
+    gap:0.5vw;
+  }
+
+  .input-LOGIN
+  {
+    width: 25vw;
+    height: 2vw;
+    position: relative;
+    border: 0.05vw solid #999;
+  }
+ 
+
+.input-LOGIN::placeholder {
+    color: #999; 
+    font-size: 1vw;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+  .row-retine-LOGIN {
+    margin-top: 1vw;
+    display: flex;
+    gap: 0.5vw;
+    align-items: center;
+    justify-content: flex-start; 
+}
+
+  .save-label-LOGIN
+  {
+    font-size: 0.9vw;
+    color: gray;
+  }
+
+.Submit-LOGIN
+{
+  margin-top: 1vw;
+  background-color: black; 
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15vw;
+  height: 2.5vw;
+  border-radius: 25vw;
+  font-size: 1.1vw;
+  margin: 0vw;
+  border: 1vw;
+}
+
+
+
+
+
+
+/*IOS BUTTON */
+  .ios-switch {
+    display: flex;
+    align-items: center;
+  }
+
+  .ios-switch input {
+    display: none;
+  }
+
+  .ios-switch-label {
+  position: relative;
+  width: 2.5vw; 
+  height:1.5vw; 
+  background-color: black; 
+  border-radius: 50vw; 
+  cursor: pointer;
+  padding-right: 0.02vw;
+}
+
+.ios-switch-slider {
+  position: absolute;
+  top: 0.1vw; 
+  left: 0.1vw;
+  width: 1.3vw;
+  height: 1.3vw; 
+  background-color: #fff;
+  border-radius: 50%; 
+  transition: transform 0.3s ease;
+}
+
+.ios-switch input:checked + .ios-switch-label .ios-switch-slider {
+  transform: translateX(1vw); 
+}
+  
+  
+
+  
+  

@@ -13,21 +13,28 @@ import AdminMeciuri from "./AdminMeciuri";
 import ClubClasament from "./ClubClasament";
 import ClubLot from "./ClubLot";
 import DetaliiClub from "./DetaliiClub";
+import Login from "./Login";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Acasa />} />
-        <Route path="/noutati" element={<Noutati />} />
+        <Route path="/noutati" element={<Noutati/>} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/clubclasament" element={<ClubClasament />} />
         <Route path="/clublot" element={<ClubLot />} />
         <Route path="/detaliiclub" element={<DetaliiClub />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={<Admin />} />
+       
 
-        {/* Add more routes for other pages */}
+
+       
       </Routes>
     </Router>
+  
+    
   );
 }
 
