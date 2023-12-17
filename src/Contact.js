@@ -29,7 +29,7 @@ const Contact = () => {
           <div class="row-title-PGContact">
             <label class="label_subtitle-PGContact">Acasa</label>
             <label class="label_subtitle-PGContact">/</label>
-            <label class="label_subtitle_Contact-PGContact">Contact</label>
+            <label class="label_subtitle_admin-PGContact">Contact</label>
           </div>
         </div>
       </div>

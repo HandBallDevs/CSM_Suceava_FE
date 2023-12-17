@@ -23,7 +23,7 @@ const Noutăti = () => {
           <div class="row-title-PGNoutati">
             <label class="label_subtitle-PGNoutati">Acasa</label>
             <label class="label_subtitle-PGNoutati">/</label>
-            <label class="label_subtitle_noutati-PGNoutati">Noutăți</label>
+            <label class="label_subtitle_admin-PGNoutati">Noutăți</label>
           </div>
         </div>
       </div>
