@@ -27,6 +27,7 @@ function App() {
         <Route path="/detaliiclub" element={<DetaliiClub />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/adminstiri" element={<AdminStiri />} />
        
 
 

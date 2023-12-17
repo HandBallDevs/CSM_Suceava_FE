@@ -211,10 +211,6 @@
   
 }
 
-a {
-  text-decoration: none; /* Remove default underline */
-  border-bottom: 0.05vw solid; /* Set the underline width */
-}
 
 
 /*End*/

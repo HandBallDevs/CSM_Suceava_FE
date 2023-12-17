@@ -4,7 +4,7 @@ import Meniusus from "./Meniusus";
 import FrameImage from "./imagini/frame.png";
 import AdminMenuImage from "./imagini/AdminMenuImage.png";
 import AdminInvisibleBackground from "./imagini/AdminInvisibleBackground.png";
-
+import { useNavigate,Link } from "react-router-dom";
 const Admin = () => {
   return (
     <div className="app-container">
@@ -27,7 +27,7 @@ const Admin = () => {
           <img src={AdminMenuImage} alt="" className="Admin-menu-img-ADM" />
           <label className="ADM_titles">Panou Administrator</label>
           <div className="options_ADM">
-            <label className="ADM_options">Stiri</label>
+            <Link to="/adminstiri" className="ADM_options">Stiri</Link>
             <label className="ADM_options">Meciuri</label>
             <label className="ADM_options">Utilizatori</label>
             <label className="ADM_options">Magazin</label>
