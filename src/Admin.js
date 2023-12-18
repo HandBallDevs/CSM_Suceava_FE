@@ -28,7 +28,7 @@ const Admin = () => {
           <label className="ADM_titles">Panou Administrator</label>
           <div className="options_ADM">
             <Link to="/adminstiri" className="ADM_options">Stiri</Link>
-            <label className="ADM_options">Meciuri</label>
+            <Link to="/adminmeciuri" className="ADM_options">Meciuri</Link>
             <label className="ADM_options">Utilizatori</label>
             <label className="ADM_options">Magazin</label>
             <label className="ADM_options">Jucatorii Seniori</label>

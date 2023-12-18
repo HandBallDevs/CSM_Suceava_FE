@@ -59,7 +59,7 @@
   align-items: flex-start;
   gap: 3%;
   margin-left: 5%;
-  margin-right: 2,5%;
+  margin-right: 0.5%;
   
 }
 
@@ -197,6 +197,7 @@
   }
   .workspace-choicebox-ADMStiri {
     width: 12vw;
+    text-align: center;
     height: auto;
     border-radius: 25vw;
     padding: 0.4vw;

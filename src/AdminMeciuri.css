@@ -2,183 +2,215 @@
  /*Titlu*/
 
  .frame-image-ADMmeciuri {
-    width: 100%; 
-    padding-top: 1rem;
-    height: auto;
-    align-items: center;
-    display: flex;
-  }
-  
-   .title-ADMmeciuri {
-      position: relative;
-      text-align: center; 
-     
-  }
-  
-  .label-container-ADMmeciuri {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    text-align: center;
-  }
-  
-  
-  .label_title-ADMmeciuri {
-    font-size: 3rem; 
-    margin: 0.55rem; 
-  }
-  .label_subtitle-ADMmeciuri {
-    font-size: 1rem; 
-    margin: 0.55rem; 
-  }
-  
-  .label_subtitle_admin-ADMmeciuri {
-    font-size: 1rem; 
-    color: white;
-  }
-  
-  /*Admin*/
-  
-  .admin-ADMmeciuri {
-    display: flex;
-    margin: 2vw;
-    gap: 3vw;
-    position: relative;
-    text-align: center; 
-    margin-top: 7vw;
-    position: relative;
-    
+  width: 100%; 
+  padding-top: 1vw;
+  height: auto;
+  align-items: center;
+  display: flex;
 }
 
-  .admin_menu-ADMmeciuri,.admin_workspace-ADMmeciuri {
+ .title-ADMmeciuri {
+    position: relative;
+    text-align: center; 
+   
+}
+
+.label-container-ADMmeciuri {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  margin: 0.55vw;
+  gap:0.5vw
+}
+
+
+.label_title-ADMmeciuri  {
+  font-size: 3.8vw; 
+  margin: 0.55vw; 
+ 
+}
+
+.row-title-ADMmeciuri
+{
+  display: flex;
+  gap: 1vw;
+}
+.label_subtitle-ADMmeciuri  {
+  font-size: 1.3vw; 
+ 
+}
+
+.label_subtitle_admin-ADMmeciuri  {
+  font-size: 1.3vw; 
+  color: white;
+}
+  
+  /*Admin*/
+
+  .Container-ADMmeciuri
+{
+  margin-top: 7vw;
+  display: flex;
+  align-items: flex-start;
+  gap: 3%;
+  margin-left: 5%;
+  margin-right: 0.5%;
+  
+}
+  
+  .Menu-ADMmeciuri{
+    position: relative;
     display: flex;
     flex-direction: column;
-  }
-  .admin_workspace-ADMmeciuri{
-    gap:0.7vw;
+    align-items: center;
+    justify-content: center;
+    width: 22.5%;
+    height: auto;
+    
   }
   
-  .AdminMenuImage-ADMmeciuri,.AdminWorkSpaceImage-ADMmeciuri, .AdminIndexImage-ADMmeciuri{
-      width: 100%;
-      height: auto;
-     
-  }
-  .AdminIndexImage-ADMmeciuri
+  .Workspace-ADMmeciuri
   {
-    width: 98%;
+    width: 70%;
+  height: auto;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  }
+  .Admin-menu-img-ADMmeciuri
+  {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 40vw;
   }
   
-  .admin_titles-ADMmeciuri {
-    font-size: 1.3vw;
-    margin-top: -175%;
+  .Admin-workspace-img-ADMmeciuri
+  {
+    width: 100%;
+    height: auto;
+  }
+  
+  .ADMmeciuri_titles {
+    position: absolute; 
+    top: 1.5vw;
+    font-size: 1.5vw;
     font-weight: bold;
     text-transform: uppercase;
   }
   
-  .admin_options-ADMmeciuri{
-    font-size: 1.3vw;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: text-decoration 0.3s ease-in-out;
-  }
+  .options_ADMmeciuri{
   
-  
-  .admin_options.underline-ADMmeciuri {
-    text-decoration: underline;
-  }
-  
-  .options_admin_container-ADMmeciuri
-  {
+    position: absolute; 
     display: flex;
     flex-direction: column;
-    margin-top: 18%;
-    gap: 2.5rem;;
+    top: 8vw;
+    align-items: center;
+    gap: 2.5vw;
+    text-transform: uppercase;
+  }
+  
+  .ADMmeciuri_options
+  {
+    font-size:1.5vw;
   }
 
-  
+  /*Editeaza Meciuri*/
+
   .admin_titles1-ADMmeciuri{
-    font-size: 1.3vw;
+    font-size: 1.4vw;
     margin-top: -88.5%;
     font-weight: bold;
     text-transform: uppercase;
-
-  }
   
-  .workspace-row-ADMmeciuri, .workspace-row1-ADMmeciuri {
-    margin-top: 2vw;
+  }
+
+  .workspace-row-ADMmeciuri,
+  .workspace-row1-ADMmeciuri {
+    margin-top: 4vw;
     display: flex;
     align-items: flex-start;
     gap:0;
     margin-left: 5vw;
     margin-right: 5vw;
-   
+    
+
     
   }
-  .workspace-row1-ADMmeciuri
-  {
-    gap: 3vw;
-    margin-left: 40vw;
-    margin-right: -26vw;
-  }
-  
-  .workspace-row-index-ADMmeciuri
-  {
-    margin-top: 2.2vw;
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    gap: 1.7vw;
+
+  .workspace-row1-ADMmeciuri{
+    margin-top: -2.1vw;
+    gap:2vw;
+    margin-left: 11vw;
+    margin-right: -15vw;
   }
 
-  .workspace-collumn-ADMmeciuri, .workspace-collumn-input-ADMmeciuri{
+  
+
+  .workspace-collumn-ADMmeciuri, 
+  .workspace-collumn-input-ADMmeciuri{
     display: flex;
     flex-direction: column;
     gap: 3vw;
     align-items: center;
+    
 
 
     
   }
-  .workspace-collumn-input-ADMmeciuri
-  {
-    width:50%;
-  }
+
   .workspace-collumn-ADMmeciuri
   {
-    width: 18%;
-    gap:3.8vw;
+    width: 8vw;
+    gap:3.55vw;
   }
-  
+
+  .workspace-collumn-input-ADMmeciuri
+  {
+    width:20vw;
+  }
+
+  .workspace-labels-ADMmeciuri
+  {
+    font-size: 1.25vw;
+    font-weight: bold;
+  }
+
   .workspace-inputs-ADMmeciuri, .workspace-choicebox-ADMmeciuri{
     width: 75%;
     height: auto;
-    border-radius: 25rem; 
-    padding: 0.4rem;
+    border-radius: 25vw; 
+    padding: 0.4vw;
+    font-size: 1vw;
+    outline: none;
+    border: 0.1vw solid #999;
     
   }
 
   .workspace-choicebox-ADMmeciuri
   {
     width: 80%;
-  }
-  
- 
-  .workspace-labels-ADMmeciuri
-  {
-    font-size: 1.1rem;
-    font-weight: bold;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="%23999"><polygon points="0,0 5,8 10,0"/></svg>');
+    background-repeat: no-repeat;
+    background-position: 95% 50%; /* Adjust the position of the arrow */
+    background-size: 1vw; /* Adjust the size of the arrow */
   }
 
   .workspace-button-submit-ADMmeciuri
   {
-    width: 18%;
-    height: 2.3vw;
-    border-radius: 25rem;
-    padding: 0.4rem;
+    width: 12vw;
+    height: 2.1vw;
+    border-radius: 25vw;
+    padding: 0.4vw;
     text-align: center;
     display: flex;
     align-items: center;
@@ -186,26 +218,34 @@
     background-color: black;
     color:white;
     text-transform: uppercase;
-    font-size: 0.7rem;
-    margin-top:-5.1vw;
+    font-size: 0.8vw;
+    outline: none;
+    border: 0.1vw solid black;
 
+  }
+
+  .workspace-row-index-ADMmeciuri
+  {
+    margin-top: 2.7vw;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 1.7vw;
   }
 
   .workspace-labels-upper-ADMmeciuri
-  {
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: center;
-  }
+{
+  font-size: 1.3vw;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 2vw;
+}
 
-
-  
-
-
-
-  
-  
-  
-  
+.AdminIndexImage-ADMmeciuri{
+  width: 64vw;
+  height: auto;
+  margin-top: -0.8vw
+   
+}
   

@@ -28,6 +28,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/adminstiri" element={<AdminStiri />} />
+        <Route path="/adminmeciuri" element={<AdminMeciuri />} />
        
 
 
