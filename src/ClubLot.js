@@ -27,6 +27,7 @@ const ClubLot = () => {
         </div>
       </div>
       <Meniujos />
+      
     </div>
   );
 };
