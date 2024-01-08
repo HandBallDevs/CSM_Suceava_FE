@@ -120,7 +120,7 @@ const Meniujos = () => {
       <Link to="/clubclasament" className="word-2">
         Club
       </Link>
-      <Link to="/" className="word-2">
+      <Link to="/calendarmeciuri" className="word-2">
         Meciuri
       </Link>
       <Link to="/noutati" className="word-2">

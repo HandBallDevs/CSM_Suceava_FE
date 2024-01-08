@@ -10,7 +10,11 @@ const Meniusus = () => {
   const pathname = location.pathname;
 
   const isClubPage =
-  pathname === "/clublot" || pathname === "/detaliiclub" || pathname === "/clubclasament";
+    pathname === "/clublot" ||
+    pathname === "/detaliiclub" ||
+    pathname === "/clubclasament";
+  const isMeciuriPage =
+    pathname === "/calendarmeciuri" || pathname === "/rezultatemeciuri";
   return (
     <div className="word-list">
       <img src={LogoImage} alt="" className="imagelogo" />
@@ -27,10 +31,16 @@ const Meniusus = () => {
       >
         Club
       </Link>
-      <Link to="/" className="word">
+      <Link
+        to="/calendarmeciuri"
+        className={`word ${isMeciuriPage ? "selectare-pagina" : ""}`}
+      >
         Meciuri
       </Link>
-      <Link to="/noutati" className={`word ${pathname === '/noutati' ? 'selectare-pagina' : ''}`}>
+      <Link
+        to="/noutati"
+        className={`word ${pathname === "/noutati" ? "selectare-pagina" : ""}`}
+      >
         Noutăți
       </Link>
       <Link
@@ -41,7 +51,10 @@ const Meniusus = () => {
       >
         Contact
       </Link>
-      <Link to="/login" className={`word ${pathname === '/login' ? 'selectare-pagina' : ''}`}>
+      <Link
+        to="/login"
+        className={`word ${pathname === "/login" ? "selectare-pagina" : ""}`}
+      >
         Login
       </Link>
       <img src={UserImage} alt="" className="imageuser" />
