@@ -46,4 +46,140 @@
 }
 
 
+ /* Pt meciuri viitoare*/
 
+.word-list-viitoare {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top:-40vw;
+
+}
+
+
+
+.word-viitoare {
+  font-size: 2.5vw;
+  font-weight: bold;
+  margin:0vw;
+  color:black;
+  padding-top:10vw
+  
+}
+
+
+
+.frameviitoare {
+ width: 100vw;
+  height: 30vw;
+  padding-top: 10vw;
+  align-items: center;
+  display: flex;
+}
+
+
+.news-rezultate {
+  display: flex;
+  justify-content: space-between;
+}
+
+.image-with-text {
+  text-align: center;
+  margin-left:2vw;
+  margin:2vw
+
+}
+
+
+.text-between-viitoare {
+  font-size: 1.5vw;
+  font-weight: bold;
+  margin-left:0vw;
+  margin-right:0vw;
+  margin-top: 6vw;
+}
+
+
+.text-sub-club {
+  margin-top:0vw; /* Adjust as needed */
+  font-size: 1vw; /* Adjust as needed */
+  font-size: 1.2vw;
+  font-weight: bold;
+  
+}
+.viitoare-image {
+  width: 8vw;
+  height: 8w;
+  padding-top: 0vw;
+  margin-left: -5vw;
+  margin-right: -5vw;
+
+}
+
+.detalii-image3 {
+
+  padding-top: 6vw;
+  height: 2vw;
+  
+  
+
+}
+.text-deasupra-viitoare {
+  top: 50%;
+  left: 50%;
+  font-weight: bold;
+  color: black; /* Adjust the color as needed */
+  font-size: 1.5vw;
+}
+
+.text-deasupra-vs{
+  font-weight: bold;
+  font-size:1vw;
+  padding-top: 2vw;
+
+}
+
+
+/* Pt urmatorul meci*/
+
+.word-list-urmatorul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top:-30vw;
+
+}
+
+
+
+.word-urmatorul {
+  font-size: 2.5vw;
+  font-weight: bold;
+  margin:0vw;
+  color:black;
+  padding-top:0vw;
+  
+}
+
+
+
+.frameurmatorul {
+ width: 100vw;
+  height: 30vw;
+  padding-top: 2vw;
+  align-items: center;
+  display: flex;
+}
+
+
+
+
+
+.detalii-image4 {
+
+  padding-top: 5vw;
+  height: 2vw;
+  
+  
+
+}

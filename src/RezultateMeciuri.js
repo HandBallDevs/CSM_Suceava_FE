@@ -24,14 +24,23 @@ const RezultateMeciuri = () => {
           <Link to="/calendarmeciuri" className="wordsmeciuri-list-link">
             CALENDAR MECIURI
           </Link>
-          <Link to="/rezultatemeciuri" className="wordsmeciuri-list-link-rezultate">
+          <Link
+            to="/rezultatemeciuri"
+            className="wordsmeciuri-list-link-rezultate"
+          >
             REZULTATE MECIURI
           </Link>
         </div>
       </div>
 
-      
-    
+      <div className="frame-rezultate">
+        <img src={FrameImage} alt="" className="framerezultate" />
+        <div className="word-list-rezultate">
+          <p className="word-rezultate">REZULTATE MECIURI</p>
+         
+        </div>
+      </div>
+
       <Meniujos />
     </div>
   );

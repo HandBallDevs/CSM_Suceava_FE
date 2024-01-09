@@ -21,7 +21,10 @@ const CalendarMeciuri = () => {
       <div className="frame-overlay-meciuri">
         <img src={FrameImage} alt="" className="frame-meciuri" />
         <div className="words-club">
-          <Link to="/calendarmeciuri" className="wordsmeciuri-list-link-calendar">
+          <Link
+            to="/calendarmeciuri"
+            className="wordsmeciuri-list-link-calendar"
+          >
             CALENDAR MECIURI
           </Link>
           <Link to="/rezultatemeciuri" className="wordsmeciuri-list-link">
@@ -29,9 +32,88 @@ const CalendarMeciuri = () => {
           </Link>
         </div>
       </div>
+      <div className="frame-urmatorul">
+        <img src={FrameImage} alt="" className="frameurmatorul" />
+        <div className="word-list-urmatorul">
+          <p className="word-urmatorul rezultate">URMATORUL MECI</p>
+          <div className="news-rezultate">
+            <div className="image-with-text">
+              <p className="text-deasupra-viitoare">
+                DATA: <br />
+                02/11/2023
+              </p>
+              <img src={LogoImage} alt="" className="viitoare-image" />
+              <p className="text-sub-club">CSU SUCEAVA</p>
+            </div>
+            <div className="image-with-text">
 
-      
-    
+              <p className="text-deasupra-vs">17:30</p>
+              <p className="text-between-viitoare">VS</p>
+
+              <img src={DetaliiImage} alt="" className="detalii-image4" />
+            </div>
+            <div className="image-with-text">
+              <p className="text-deasupra-viitoare">
+                LOCATIA: <br /> SALA POLIVALENTA
+              </p>
+              <img src={LogoImage} alt="" className="viitoare-image" />
+              <p className="text-sub-club">CSU SUCEAVA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div className="frame-viitoare">
+        <img src={FrameImage} alt="" className="frameviitoare" />
+        <div className="word-list-viitoare">
+          <p className="word-viitoare rezultate">MECIURILE VIITOARE</p>
+          <div className="news-rezultate">
+            <div className="image-with-text">
+              <p className="text-deasupra-viitoare">
+                DATA: <br />
+                02/11/2023
+              </p>
+              <img src={LogoImage} alt="" className="viitoare-image" />
+              <p className="text-sub-club">CSU SUCEAVA</p>
+            </div>
+            <div className="image-with-text">
+              <p className="text-deasupra-vs">17:30</p>
+              <p className="text-between-viitoare">VS</p>
+
+              <img src={DetaliiImage} alt="" className="detalii-image3" />
+            </div>
+            <div className="image-with-text">
+              <p className="text-deasupra-viitoare">
+                LOCATIA: <br /> SALA POLIVALENTA
+              </p>
+              <img src={LogoImage} alt="" className="viitoare-image" />
+              <p className="text-sub-club">CSU SUCEAVA</p>
+            </div>
+
+            <div className="image-with-text">
+              <p className="text-deasupra-viitoare">
+                DATA: <br /> 02/11/2023
+              </p>
+              <img src={LogoImage} alt="" className="viitoare-image" />
+              <p className="text-sub-club">CSU SUCEAVA</p>
+            </div>
+            <div className="image-with-text">
+              <p className="text-deasupra-vs">17:30</p>
+              <p className="text-between-viitoare">VS</p>
+              <img src={DetaliiImage} alt="" className="detalii-image3" />
+            </div>
+            <div className="image-with-text">
+              <p className="text-deasupra-viitoare">
+                LOCATIA: <br /> SALA POLIVALENTA
+              </p>
+              <img src={LogoImage} alt="" className="viitoare-image" />
+              <p className="text-sub-club">CSU SUCEAVA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <Meniujos />
     </div>
   );

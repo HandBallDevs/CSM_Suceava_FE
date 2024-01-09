@@ -134,16 +134,16 @@ const Acasa = () => {
         </div>
       </div>
       <div className="frame-overlay2">
-          <img src={LotframeImage} alt="" className="lot-frame" />
-          <div className="word-list-5">
-            <p className="word-5 intalneste">Intâlnește echipa de seniori</p>
-            <div className="news-container2">
-              <div className="news-item2">
-                <img src={ButtonaiciImage} alt="" className="imageaici" />
-              </div>
+        <img src={LotframeImage} alt="" className="lot-frame" />
+        <div className="word-list-5">
+          <p className="word-5 intalneste">Intâlnește echipa de seniori</p>
+          <div className="news-container2">
+            <div className="news-item2">
+              <img src={ButtonaiciImage} alt="" className="imageaici" />
             </div>
           </div>
         </div>
+      </div>
       <Meniujos />
     </div>
   );
