@@ -53,15 +53,15 @@
 }
 
 .istoriaclub {
-  font-size: 2.5vw;
+  font-size: 2.5rem;
   font-weight: bold;
   
   text-align: center;
 }
 
 .text-istorie {
-  font-size: 1.3vw;
-  margin: 3vw;
+  font-size: 1.3rem;
+  margin: 3rem;
 }
 
 
@@ -71,7 +71,19 @@
     display: flex;
     justify-content: space-between;
     margin-top: 2rem;
-    margin:1rem;
+    margin:5rem;
+    position: relative;
+  }
+  .trofee-item {
+    position: relative; 
+    text-align: center;
+    top:0;
+  }
+
+  .trofee-word {
+
+    font-weight: bold;
+    font-size: 1.5rem;
   }
   
   .titlutrofee{
@@ -79,6 +91,6 @@
   }
   .trofee-image{
     text-align: center;
-    width: 20rem;
+    width: 15rem;
   }
   
