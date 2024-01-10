@@ -1,6 +1,5 @@
 .frame-club {
   width: 20vw;
-  /* Adjusted to 100% */
   height: 12vw;
   align-items: center;
   padding-left: 40%;
@@ -24,19 +23,95 @@
 }
 
 .wordslot-list-link {
-  /* Add your styles for the links here */
-  color: black; /* Change the color as per your preference */
+  color: black;
   text-decoration: none;
   font-weight: bold;
-  margin:1vw;
+  margin: 1vw;
 }
 
 .wordslot-list-link-lot {
-  /* Add your styles for the links here */
-  color: black; /* Change the color as per your preference */
+  color: black;
   text-decoration: underline;
   font-weight: bold;
-  margin:1vw;
+  margin: 1vw;
+}
+
+/* Pentru club seniori */
+.frame-club-seniori {
+  width: 100vw;
+  height: 4vw;
+  align-items: center;
+  padding-top:4vw;
+  display: flex;
+}
+
+.frame-overlay-club-seniori {
+  position: relative;
+}
+
+.words-lot-seniori {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2vw;
+  font-weight: bold;
+}
+.wordslot-list-lot-seniori {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 1vw;
+}
+
+/* Pentru playeri pentru seniori */
+.player-info-senior {
+  display: flex;
+  align-items: center;
+  padding-top: 4vw;
+  padding-left:2vw;
+}
+
+.player-image-senior {
+  width: 15vw; 
+  height: auto;
+  margin-right: 2vw; 
+}
+
+.player-detalii-senior {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2vw;
+  
+}
+
+.detalii-label-senior {
+  font-weight: none;
+  margin-bottom: 0.5vw; 
+  margin-right: 0.5vw; 
+  color:gray;
+  font-size: 1.5vw;
+}
+
+.detalii-label-senior-nume {
+  font-weight: bold;
+  margin-bottom: 0.5vw; 
+  margin-right: 0.5vw; 
+  font-size: 2vw;
+  color:blue;
 }
 
 
+.detalii-value-senior {
+  margin-bottom: 1vw; 
+  font-size: 1.2vw;
+
+}
+.detail-item-senior {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1vw; 
+}

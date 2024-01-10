@@ -37,7 +37,6 @@ const RezultateMeciuri = () => {
         <img src={FrameImage} alt="" className="framerezultate" />
         <div className="word-list-rezultate">
           <p className="word-rezultate">REZULTATE MECIURI</p>
-         
         </div>
       </div>
 
