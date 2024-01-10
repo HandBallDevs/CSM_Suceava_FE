@@ -48,7 +48,7 @@
 
 /* Pt meciuri viitoare*/
 
-.word-list-rezultate {
+.word-list-rezultate-meciuri {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,7 +58,7 @@
 
 
 
-.word-rezultate {
+.word-rezultate-meciuri {
   font-size: 2.5vw;
   font-weight: bold;
   margin:0vw;
@@ -69,7 +69,7 @@
 
 
 
-.framerezultate {
+.framerezultate-meciuri {
  width: 100vw;
   height: 30vw;
   padding-top: 10vw;
@@ -77,12 +77,5 @@
   display: flex;
 }
 
-
-.image-with-text {
-  text-align: center;
-  margin-left:2vw;
-  margin:2vw
-
-}
 
 

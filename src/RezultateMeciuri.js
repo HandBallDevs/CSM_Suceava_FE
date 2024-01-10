@@ -33,10 +33,10 @@ const RezultateMeciuri = () => {
         </div>
       </div>
 
-      <div className="frame-rezultate">
-        <img src={FrameImage} alt="" className="framerezultate" />
-        <div className="word-list-rezultate">
-          <p className="word-rezultate">REZULTATE MECIURI</p>
+      <div className="frame-rezultate-meciuri">
+        <img src={FrameImage} alt="" className="framerezultate-meciuri" />
+        <div className="word-list-rezultate-meciuri">
+          <p className="word-rezultate-meciuri">REZULTATE MECIURI</p>
         </div>
       </div>
 
