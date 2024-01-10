@@ -5,51 +5,47 @@ import FrameImage from './imagini/frame.png';
 import AdminMenuImage from './imagini/AdminMenuImage.png';
 import AdminWorkSpaceImage from './imagini/AdminWorkSpaceImage.png';
 import AdminIndexImage from './imagini/AdminiIndexImage.png';
-
+import { Link } from "react-router-dom";
 
 const AdminStiri = () => {
-    useEffect(() => {
-        populateDateAndTimeOptions();
-      }, []); // Empty dependency array ensures this effect runs only once after mount
-    
-      const toggleUnderline = (label) => {
-        label.classList.toggle('underline');
-      };
-    
-      const populateDateAndTimeOptions = () => {
-        // Populate date options for the next 30 days
-        const dataSelect = document.getElementById('data');
-        const today = new Date();
-    
-        // Clear existing options
-        dataSelect.innerHTML = '';
-    
-        for (let i = 0; i < 30; i++) {
-          const dateOption = new Date();
-          dateOption.setDate(today.getDate() + i);
-    
-          const option = document.createElement('option');
-          option.value = dateOption.toISOString().split('T')[0];
-          option.text = dateOption.toDateString();
-          dataSelect.add(option);
-        }
-    
-        // Populate time options for hours (24-hour format)
-        const oraSelect = document.getElementById('ora');
-    
-        // Clear existing options
-        oraSelect.innerHTML = '';
-    
-        for (let j = 0; j < 24; j++) {
-          const hour = ('0' + j).slice(-2);
-    
-          const option = document.createElement('option');
-          option.value = hour;
-          option.text = hour + ':00';
-          oraSelect.add(option);
-        }
-      };
+  
+  useEffect(() => {
+    populateDateAndTimeOptions();
+  }, []); // Empty dependency array ensures this effect runs only once after mount
 
+  const populateDateAndTimeOptions = () => {
+    // Populate date options for the next 30 days
+    const dataSelect = document.getElementById('data');
+    const today = new Date();
+
+    // Clear existing options
+    dataSelect.innerHTML = '';
+
+    for (let i = 0; i < 30; i++) {
+      const dateOption = new Date();
+      dateOption.setDate(today.getDate() + i);
+
+      const option = document.createElement('option');
+      option.value = dateOption.toISOString().split('T')[0];
+      option.text = dateOption.toDateString();
+      dataSelect.add(option);
+    }
+
+    // Populate time options for hours (24-hour format)
+    const oraSelect = document.getElementById('ora');
+
+    // Clear existing options
+    oraSelect.innerHTML = '';
+
+    for (let j = 0; j < 24; j++) {
+      const hour = ('0' + j).slice(-2);
+
+      const option = document.createElement('option');
+      option.value = hour;
+      option.text = hour + ':00';
+      oraSelect.add(option);
+    }
+  };
   return (
     <div className="app-container">
       <Meniusus />
@@ -66,38 +62,22 @@ const AdminStiri = () => {
         </div>
       </div>
 
-      <div className="admin-ADMStiri">
-        <div className="admin_menu-ADMStiri">
-          <img src={AdminMenuImage} alt="" className="AdminMenuImage-ADMStiri" />
-          <label className="admin_titles-ADMStiri">Panou Administrator</label>
-          <div className="options_admin_container-ADMStiri">
-            <label className="admin_options-ADMStiri" onClick={(e) => toggleUnderline(e.target)}>
-              Stiri
-            </label>
-            <label className="admin_options-ADMStiri" onClick={(e) => toggleUnderline(e.target)}>
-              Meciuri
-            </label>
-            <label className="admin_options-ADMStiri" onClick={(e) => toggleUnderline(e.target)}>
-              Utilizatori
-            </label>
-            <label className="admin_options-ADMStiri" onClick={(e) => toggleUnderline(e.target)}>
-              Magazin
-            </label>
-            <label className="admin_options-ADMStiri" onClick={(e) => toggleUnderline(e.target)}>
-              Jucatori Seniori
-            </label>
-            <label className="admin_options-ADMStiri" onClick={(e) => toggleUnderline(e.target)}>
-              Staff
-            </label>
-            <label className="admin_options-ADMStiri" onClick={(e) => toggleUnderline(e.target)}>
-              Jucatori Juvenili 
-            </label>
-          
+      <div className="Container-ADMStiri">
+        <div className="Menu-ADMStiri">
+          <img src={AdminMenuImage} alt="" className="Admin-menu-img-ADMStiri" />
+          <label className="ADMStiri_titles">Panou Administrator</label>
+          <div className="options_ADMStiri">
+            <Link to="/adminstiri" className="ADMStiri_options">Stiri</Link>
+            <Link to="/adminmeciuri" className="ADM_options">Meciuri</Link>
+            <label className="ADMStiri_options">Utilizatori</label>
+            <label className="ADMStiri_options">Magazin</label>
+            <label className="ADMStiri_options">Jucatorii Seniori</label>
+            <label className="ADMStiri_options">Staff</label>
+            <label className="ADMStiri_options">Jucatorii Juvenili</label>
           </div>
-        </div>
-
-        <div className="admin_workspace-ADMStiri">
-          <img src={AdminWorkSpaceImage} alt="" className="AdminWorkSpaceImage-ADMStiri" />
+        </div>  
+        <div className="Workspace-ADMStiri">
+          <img src={AdminWorkSpaceImage} alt="" className="Admin-workspace-img-ADMStiri" />
           <label className="admin_titles1-ADMStiri">Creaza Stire Noua / Editeaza stire</label>
           <div className="workspace-row-ADMStiri">
             <label className="workspace-labels-ADMStiri" htmlFor="titlu">
@@ -110,6 +90,7 @@ const AdminStiri = () => {
             </label>
             <input type="text" id="definire" className="workspace-inputs-ADMStiri" />
           </div>
+
           <div className="workspace-row1-ADMStiri">
             <label className="workspace-labels1-ADMStiri" htmlFor="descriere">
               Descriere
@@ -119,8 +100,9 @@ const AdminStiri = () => {
             <button className="workspace-button-ADMStiri">Salveaza draft</button>
             <button className="workspace-button-ADMStiri">Actualizeaza stire</button>
           </div>
-          <div className="workspace-row1-ADMStiri">
-            <label className="workspace-labels-ADMStiri">Programeaza postare stire:</label>
+
+          <div className="workspace-row2-ADMStiri">
+            <label className="workspace-labels-ADMStiri1">Programeaza postare stire:</label>
             <label className="workspace-labels-ADMStiri" htmlFor="data">
               Data:
             </label>
@@ -132,17 +114,19 @@ const AdminStiri = () => {
             <select id="ora" className="workspace-choicebox-ADMStiri"></select>
             <button className="workspace-button-programare-ADMStiri">Programeaza stire</button>
           </div>
-          <div className="workspace-row2-ADMStiri">
+
+          <div className="workspace-row3-ADMStiri">
             <label className="workspace-labels-ADMStiri">Incarca intr-o postare:</label>
             <button className="workspace-button-programare-ADMStiri">Alege Foto/Video</button>
             <button className="workspace-button-programare-ADMStiri">Incarca</button>
           </div>
-          <div className="workspace-row-ADMStiri">
-          <label className="workspace-labels-upper-ADMStiri">Stiri publicate</label>
-          </div>
-          <div className="workspace-row-ADMStiri">
-          <img src={AdminIndexImage} alt="" className="AdminIndexImage-ADMStiri" />
 
+          <div className="workspace-row-ADMStiri">
+            <label className="workspace-labels-upper-ADMStiri">Stiri publicate</label>
+          </div>
+          
+          <div className="workspace-row-ADMStiri">
+            <img src={AdminIndexImage} alt="" className="AdminIndexImage-ADMStiri" />
           </div>
 
         </div>

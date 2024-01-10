@@ -3,13 +3,13 @@
 
  .frame-image-PGNoutati {
   width: 100%; 
-  padding-top: 1rem;
+  padding-top: 1vw;
   height: auto;
   align-items: center;
   display: flex;
 }
 
-  .title-PGNoutati {
+ .title-PGNoutati {
     position: relative;
     text-align: center; 
    
@@ -24,20 +24,29 @@
   left: 50%; 
   transform: translate(-50%, -50%); 
   text-align: center;
+  margin: 0.55vw;
+  gap:0.5vw
 }
 
 
 .label_title-PGNoutati {
-  font-size: 3rem; 
-  margin: 0.55rem; 
-}
-.label_subtitle-PGNoutati {
-  font-size: 1rem; 
-  margin: 0.55rem; 
+  font-size: 3.8vw; 
+  margin: 0.55vw; 
+ 
 }
 
-.label_subtitle_noutati-PGNoutati {
-  font-size: 1rem; 
+.row-title-PGNoutati
+{
+  display: flex;
+  gap: 1vw;
+}
+.label_subtitle-PGNoutati {
+  font-size: 1.3vw; 
+ 
+}
+
+.label_subtitle_admin-PGNoutati {
+  font-size: 1.3vw; 
   color: white;
 }
 
@@ -62,14 +71,18 @@
   align-items: center;
 }
 
-.textbox_filter-PGNoutati{
-      width: 17%;
-      height: 1.5vw;
-      border-radius: 25rem;
-      background-color: #84BDE7;
-      padding: 0.1rem;
-      padding-left: 0.5rem;
+.textbox_filter-PGNoutati {
+  width: 17%;
+  height: 1.5vw;
+  border-radius: 25vw;
+  background-color: #84BDE7;
+  padding: 0.1vw;
+  padding-left: 0.5vw;
+  border: 0.05vw solid #999;
+  outline: none; 
+  font-size: 1.1vw;
 }
+
 
 .label_Filter-PGNoutati{
       font-size:2vw;
@@ -80,14 +93,16 @@
      
       display: flex;
       justify-content: center;
-      align-items: center; /* Add this line to vertically center the text */
+      align-items: center;
       text-transform: uppercase;
+      font-size: 1.4vw;
       text-align: center;
       background-color: black;
       color: white;
-      border-radius: 25rem;
+      border-radius: 25vw;
       width: 15%;
       height: 2vw;
+      border: 0.05vw solid black;
 }
 
 .news-row-PGNoutati
@@ -119,12 +134,12 @@
     }
 
     .Stiri_image-PGNoutati{
-      width: 85%;
+      width: 43vw;
       height: auto;
     }
 
     .Clasament-Meciuri_image-PGNoutati{
-      width: 83%;
+      width: 27vw;
       height: auto;
     }
 
@@ -143,21 +158,3 @@
 
 /*End Noutati*/
 
-  
-
- 
-  /* Optimizari */
-  @media only screen and (min-resolution: 150dpi) {
-    .word {
-      font-size: 1.5rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      margin: 1.5rem; /* Adjusted margin */
-  
-    }
-  
-    
-  }
-  
-  
-  

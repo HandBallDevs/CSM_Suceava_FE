@@ -9,11 +9,17 @@ import MeciuriViitoareImage from './imagini/meciuri_viitoare.png';
 import ClasamentImage from './imagini/clasament.png';
 import Meniusus from "./Meniusus";
 import Meniujos from "./Meniujos";
+import { useSpring, animated } from 'react-spring';
 
 const Noutăti = () => {
-  const handleAcasaClick = () => {};
+  const springProps = useSpring({
+    opacity: 1,
+    from: { opacity: 0 },
+  });
+
  
   return (
+    <animated.div style={springProps}>
     <div className="app-container">
       <Meniusus />
       <div class="title-PGNoutati">
@@ -23,7 +29,7 @@ const Noutăti = () => {
           <div class="row-title-PGNoutati">
             <label class="label_subtitle-PGNoutati">Acasa</label>
             <label class="label_subtitle-PGNoutati">/</label>
-            <label class="label_subtitle_noutati-PGNoutati">Noutăți</label>
+            <label class="label_subtitle_admin-PGNoutati">Noutăți</label>
           </div>
         </div>
       </div>
@@ -55,6 +61,7 @@ const Noutăti = () => {
 
       <Meniujos/>
     </div>
+    </animated.div>
   );
 };
 

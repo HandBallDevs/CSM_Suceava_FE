@@ -12,8 +12,15 @@ import ButtonaiciImage from "./imagini/buttonaici.png";
 import DetaliiImage from "./imagini/detalii.png";
 import Meniusus from "./Meniusus";
 import Meniujos from "./Meniujos";
+import { useSpring, animated } from 'react-spring';
 const Acasa = () => {
+  const springProps = useSpring({
+    opacity: 1,
+    from: { opacity: 0 },
+  });
   return (
+    <animated.div style={springProps}>
+
     <div className="app-container">
       <Meniusus />
 
@@ -134,18 +141,19 @@ const Acasa = () => {
         </div>
       </div>
       <div className="frame-overlay2">
-          <img src={LotframeImage} alt="" className="lot-frame" />
-          <div className="word-list-5">
-            <p className="word-5 intalneste">Intâlnește echipa de seniori</p>
-            <div className="news-container2">
-              <div className="news-item2">
-                <img src={ButtonaiciImage} alt="" className="imageaici" />
-              </div>
+        <img src={LotframeImage} alt="" className="lot-frame" />
+        <div className="word-list-5">
+          <p className="word-5 intalneste">Intâlnește echipa de seniori</p>
+          <div className="news-container2">
+            <div className="news-item2">
+              <img src={ButtonaiciImage} alt="" className="imageaici" />
             </div>
           </div>
         </div>
+      </div>
       <Meniujos />
     </div>
+    </animated.div>
   );
 };
 

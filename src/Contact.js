@@ -8,17 +8,17 @@ import DirectorIMG from "./imagini/DirectorIMG.png";
 import Meniusus from "./Meniusus";
 import Meniujos from "./Meniujos";
 
-const Contact = () => {
-  const handleAcasaClick = () => {};
-  const handleFacebookClick = () => {
-    window.location.href = "https://www.facebook.com/CSUSuceava"; // Redirectionare facebook
-  };
+import { useSpring, animated } from 'react-spring';
 
-  const handleInstagramClick = () => {
-    window.location.href = "https://www.instagram.com/csusuceava"; // Redirectionare instagram
-  };
+const Contact = () => {
+
+  const springProps = useSpring({
+    opacity: 1,
+    from: { opacity: 0 },
+  });
 
   return (
+    <animated.div style={springProps}>
     <div className="app-container">
       <Meniusus />
 
@@ -29,7 +29,7 @@ const Contact = () => {
           <div class="row-title-PGContact">
             <label class="label_subtitle-PGContact">Acasa</label>
             <label class="label_subtitle-PGContact">/</label>
-            <label class="label_subtitle_Contact-PGContact">Contact</label>
+            <label class="label_subtitle_admin-PGContact">Contact</label>
           </div>
         </div>
       </div>
@@ -120,6 +120,8 @@ const Contact = () => {
       </div>
       <Meniujos />
     </div>
+    </animated.div>
+    
   );
 };
 
