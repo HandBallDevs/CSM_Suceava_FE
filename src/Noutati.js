@@ -11,7 +11,7 @@ import Meniusus from "./Meniusus";
 import Meniujos from "./Meniujos";
 
 const Noutăti = () => {
-  const handleAcasaClick = () => {};
+
  
   return (
     <div className="app-container">
