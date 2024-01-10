@@ -12,8 +12,15 @@ import ButtonaiciImage from "./imagini/buttonaici.png";
 import DetaliiImage from "./imagini/detalii.png";
 import Meniusus from "./Meniusus";
 import Meniujos from "./Meniujos";
+import { useSpring, animated } from 'react-spring';
 const Acasa = () => {
+  const springProps = useSpring({
+    opacity: 1,
+    from: { opacity: 0 },
+  });
   return (
+    <animated.div style={springProps}>
+
     <div className="app-container">
       <Meniusus />
 
@@ -146,6 +153,7 @@ const Acasa = () => {
       </div>
       <Meniujos />
     </div>
+    </animated.div>
   );
 };
 

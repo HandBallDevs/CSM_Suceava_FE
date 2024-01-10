@@ -5,7 +5,7 @@ import FrameImage from './imagini/frame.png';
 import AdminMenuImage from './imagini/AdminMenuImage.png';
 import AdminWorkSpaceImage from './imagini/AdminWorkSpaceImage.png';
 import AdminIndexImage from './imagini/AdminiIndexImage.png';
-import { useNavigate,Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const AdminStiri = () => {
   

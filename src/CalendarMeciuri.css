@@ -92,17 +92,17 @@
 
 
 .text-between-viitoare {
-  font-size: 1.5vw;
+  font-size: 2vw;
   font-weight: bold;
   margin-left:0vw;
   margin-right:0vw;
-  margin-top: 6vw;
+  margin-top: 0vw;
 }
 
 
 .text-sub-club {
-  margin-top:0vw; /* Adjust as needed */
-  font-size: 1vw; /* Adjust as needed */
+  margin-top:0vw; 
+  font-size: 1vw; 
   font-size: 1.2vw;
   font-weight: bold;
   
@@ -118,7 +118,7 @@
 
 .detalii-image3 {
 
-  padding-top: 6vw;
+  padding-top: 2vw;
   height: 2vw;
   
   
@@ -128,14 +128,21 @@
   top: 50%;
   left: 50%;
   font-weight: bold;
-  color: black; /* Adjust the color as needed */
+  color: black;
   font-size: 1.5vw;
 }
 
 .text-deasupra-vs{
   font-weight: bold;
   font-size:1vw;
-  padding-top: 2vw;
+  padding-top: 0vw;
+
+}
+.text-deasupra-ora{
+  font-weight: bold;
+  font-size:2vw;
+  padding-top: -8vw;
+  color:white;
 
 }
 
@@ -174,10 +181,9 @@
 
 
 
-
 .detalii-image4 {
 
-  padding-top: 5vw;
+  padding-top: 4vw;
   height: 2vw;
   
   

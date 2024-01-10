@@ -2,14 +2,20 @@ import React from "react";
 import "./ClubLot.css";
 import FrameImage from "./imagini/frame.png";
 //import IconImage from "./imagini/icon.png";
-import CrossImage from "./imagini/cross.png";
+//import CrossImage from "./imagini/cross.png";
 //import PlaceImage from './imagini/place.png';
 import JucatorImage from './imagini/jucator.png';
 import Meniusus from "./Meniusus";
 import Meniujos from "./Meniujos";
 import { Link } from "react-router-dom";
+import { useSpring, animated } from 'react-spring';
 const ClubLot = () => {
+  const springProps = useSpring({
+    opacity: 1,
+    from: { opacity: 0 },
+  });
   return (
+    <animated.div style={springProps}>
     <div className="app-container">
       <Meniusus />
 
@@ -68,6 +74,7 @@ const ClubLot = () => {
 
       <Meniujos />
     </div>
+    </animated.div>
   );
 };
 
