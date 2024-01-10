@@ -62,11 +62,9 @@ const AdminMeciuri = () => {
           <div className="options_ADMmeciuri">
             <Link to="/adminstiri" className="ADMmeciuri_options">Stiri</Link>
             <Link to="/adminmeciuri" className="ADMmeciuri_options">Meciuri</Link>
-            <label className="ADMmeciuri_options">Utilizatori</label>
-            <label className="ADMmeciuri_options">Magazin</label>
+            <Link to="/adminusers" className="ADMmeciuri_options">Utilizatori</Link>
             <label className="ADMmeciuri_options">Jucatorii Seniori</label>
             <label className="ADMmeciuri_options">Staff</label>
-            <label className="ADMmeciuri_options">Jucatorii Juvenili</label>
           </div>
         </div>  
 

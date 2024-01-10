@@ -69,11 +69,9 @@ const AdminStiri = () => {
           <div className="options_ADMStiri">
             <Link to="/adminstiri" className="ADMStiri_options">Stiri</Link>
             <Link to="/adminmeciuri" className="ADM_options">Meciuri</Link>
-            <label className="ADMStiri_options">Utilizatori</label>
-            <label className="ADMStiri_options">Magazin</label>
+            <Link to="/adminusers" className="ADMStiri_options">Utilizatori</Link>
             <label className="ADMStiri_options">Jucatorii Seniori</label>
             <label className="ADMStiri_options">Staff</label>
-            <label className="ADMStiri_options">Jucatorii Juvenili</label>
           </div>
         </div>  
         <div className="Workspace-ADMStiri">

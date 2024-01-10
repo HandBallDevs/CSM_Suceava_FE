@@ -10,6 +10,7 @@ import Contact from "./Contact";
 import Admin from "./Admin";
 import AdminStiri from "./AdminStiri";
 import AdminMeciuri from "./AdminMeciuri";
+import AdminUsers from "./AdminUsers"
 import ClubClasament from "./ClubClasament";
 import ClubLot from "./ClubLot";
 import DetaliiClub from "./DetaliiClub";
@@ -32,7 +33,7 @@ function App() {
         <Route path="/adminmeciuri" element={<AdminMeciuri />} />
         <Route path="/calendarmeciuri" element={<CalendarMeciuri />} />
         <Route path="/rezultatemeciuri" element={<RezultateMeciuri />} />
-       
+        <Route path="/adminusers" element={<AdminUsers />} />
 
 
        
