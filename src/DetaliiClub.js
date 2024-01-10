@@ -6,6 +6,9 @@ import CrossImage from "./imagini/cross.png";
 //import PlaceImage from './imagini/place.png';
 import Meniusus from "./Meniusus";
 import Meniujos from "./Meniujos";
+import CampionatImage from './imagini/Campionat.png';
+import CupaRomanieiImage from './imagini/CupaRomaniei.png';
+import ParticipariEuropeneImage from './imagini/ParticipariEuropene.png';
 import { Link } from "react-router-dom";
 const DetaliiClub = () => {
   return (
@@ -64,15 +67,15 @@ const DetaliiClub = () => {
               CAMPIONATUL
               <br /> ROMÂNIEI
             </p>
-            <img src={CrossImage} alt="" className="trofee-image" />
+            <img src={CampionatImage} alt="" className="trofee-image" />
           </div>
           <div className="trofee-item">
             <p className="trofee-word">CUPA <br />  ROMÂNIEI</p>
-            <img src={CrossImage} alt="" className="trofee-image" />
+            <img src={CupaRomanieiImage} alt="" className="trofee-image" />
           </div>
           <div className="trofee-item">
             <p className="trofee-word">PARTICIPĂRI  <br /> EUROPENE</p>
-            <img src={CrossImage} alt="" className="trofee-image" />
+            <img src={ParticipariEuropeneImage} alt="" className="trofee-image" />
           </div>
         </div>
       </div>

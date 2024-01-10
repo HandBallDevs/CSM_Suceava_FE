@@ -34,9 +34,6 @@ const Meniusus = () => {
           Acasa
         </motion.div>
       </Link>
-      <Link to="/" className="word">
-        Magazin
-      </Link>
       <Link
         to="/clublot"
         className={`word ${isClubPage ? "selectare-pagina" : ""}`}
@@ -80,10 +77,6 @@ const Meniusus = () => {
         </motion.div>
       </Link>
       <img src={UserImage} alt="" className="imageuser" />
-      <Link to="/" className="word csu-cos">
-        Coș
-      </Link>
-      <img src={CosImage} alt="" className="imagecos" />
     </div>
   );
 };

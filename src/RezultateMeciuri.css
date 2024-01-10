@@ -48,34 +48,50 @@
 
 /* Pt meciuri viitoare*/
 
-.word-list-rezultate-meciuri {
+.frame-club-rezultate {
+  width: 100vw;
+  height: 40vw;
+  align-items: center;
+  padding-top:4vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.frame-overlay-club-rezultate {
+  position: relative;
+}
+
+.words-lot-rezultate {
+  position: absolute;
+  top:10%;
+  left:-10%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top:-40vw
-
+  font-size: 2vw;
+  font-weight: bold;
+  text-align: center;
+}
+.wordslot-list-lot-rezultate {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0vw;
 }
 
+.rezultate-words-container {
+  display: flex;
+  flex-direction:row;
+  margin-top:1vw;
+}
 
-
-.word-rezultate-meciuri {
-  font-size: 2.5vw;
+.rezultate-words-container span {
+  margin:0vw 12vw; /* Adjust the spacing between words as needed */
   font-weight: bold;
-  margin:0vw;
-  color:black;
-  padding-top:10vw
   
 }
-
-
-
-.framerezultate-meciuri {
- width: 100vw;
-  height: 30vw;
-  padding-top: 10vw;
-  align-items: center;
-  display: flex;
+.additionalmeci-info {
+  font-size: 1.5vw; /* Adjust the font size of additional information */
+  color: black;
+  margin: 0; /* Remove default margin to ensure spacing consistency */
 }
-
-
-

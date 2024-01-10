@@ -22,20 +22,19 @@ body {
 }
 
 .word {
-  font-size: 2rem;
+  font-size: 2.0vw;
   font-weight: bold;
   text-transform: uppercase;
-  margin: 2rem;
+  margin: 2vw;
   text-decoration: none;
   color:black;
-  /* Adjusted margin */
 }
 
 .imagelogo {
-  max-height: 5rem;
+  max-height: 5vw;
   margin-right: auto;
   margin-left: auto;
-  width: 5rem;
+  width: 5vw;
   display: flex;
 }
 
@@ -45,17 +44,16 @@ body {
 
 .imageuser,
 .imagecos {
-  max-width: 2rem;
-  /* Adjusted to 100% */
+  max-width: 2vw;
 
   height: auto;
-  width: 2rem;
+  width: 2vw;
   margin: 0;
 }
 
 .csu-cos,
 .csu-login {
-  margin-right: 0.5vw;
+  margin-left: auto;
 }
 
 .selectare-pagina{
@@ -65,10 +63,10 @@ body {
 /* Optimizari */
 @media only screen and (min-resolution: 151dpi) {
   .word {
-    font-size: 1.5rem;
+    font-size: 2vw;
     font-weight: bold;
     text-transform: uppercase;
-    margin: 1.5rem;
-    /* Adjusted margin */
+    margin: 2vw;
+  
   }
 }

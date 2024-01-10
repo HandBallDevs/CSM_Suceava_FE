@@ -12,6 +12,7 @@ import ButtonaiciImage from "./imagini/buttonaici.png";
 import DetaliiImage from "./imagini/detalii.png";
 import Meniusus from "./Meniusus";
 import Meniujos from "./Meniujos";
+import { Link } from "react-router-dom";
 import { useSpring, animated } from 'react-spring';
 const Acasa = () => {
   const springProps = useSpring({
@@ -147,11 +148,12 @@ const Acasa = () => {
           <div className="news-container2">
             <div className="news-item2">
               <img src={ButtonaiciImage} alt="" className="imageaici" />
+
             </div>
           </div>
         </div>
       </div>
-      <Meniujos />
+   
     </div>
     </animated.div>
   );

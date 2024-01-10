@@ -33,13 +33,35 @@ const RezultateMeciuri = () => {
         </div>
       </div>
 
-      <div className="frame-rezultate-meciuri">
-        <img src={FrameImage} alt="" className="framerezultate-meciuri" />
-        <div className="word-list-rezultate-meciuri">
-          <p className="word-rezultate-meciuri">REZULTATE MECIURI</p>
+      <div className="frame-overlay-club-rezultate">
+        <img src={FrameImage} alt="" className="frame-club-rezultate" />
+        <div className="words-lot-rezultate">
+          <Link to="/clublot" className="wordslot-list-lot-rezultate">
+            REZULTATE MECIURI
+          </Link>
+          <div className="rezultate-words-container">
+            <div className="infomeci-container">
+              <span>Data</span>
+              <p className="additionalmeci-info">13/02/20</p>
+              
+            </div>
+            <div className="infomeci-container">
+              <span>Meciuri</span>
+              <p className="additionalmeci-info">CSU Suceava vs Team B</p>
+            </div>
+            <div className="infomeci-container">
+              <span>Ora</span>
+              <p className="additionalmeci-info">20:30</p>
+            </div>
+            <div className="infomeci-container">
+              <span>Scor</span>
+              <p className="additionalmeci-info">45-30</p>
+            </div>
+          </div>
+          
+          
         </div>
       </div>
-
       <Meniujos />
     </div>
   );

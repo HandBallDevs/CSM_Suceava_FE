@@ -217,16 +217,3 @@
   
  
  
-  /* Optimizari */
-  @media only screen and (min-resolution: 150dpi) {
-    .word {
-      font-size: 1.5rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      margin: 1.5rem; /* Adjusted margin */
-  
-    }
-    
-  }
-  
-  
