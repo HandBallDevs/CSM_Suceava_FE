@@ -35,7 +35,7 @@ const AdminJucatori = () => {
             <Link to="/adminmeciuri" className="ADMJucatori_options">Meciuri</Link>
             <Link to="/adminusers" className="ADMJucatori_options">Utilizatori</Link>
             <Link to="/adminjucatori" className="ADMJucatori_options">Jucatorii Seniori</Link>
-            <label className="ADMJucatori_options">Staff</label>
+            <Link to="/adminstaff" className="ADMJucatori_options">Staff</Link>
           </div>
         </div>  
         <div className="Workspace-ADMJucatori">

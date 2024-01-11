@@ -18,6 +18,7 @@ import Login from "./Login";
 import CalendarMeciuri from "./CalendarMeciuri";
 import RezultateMeciuri from "./RezultateMeciuri";
 import AdminJucatori from "./AdminJucatori";
+import AdminStaff from "./AdminStaff";
 function App() {
   return (
     <Router>
@@ -36,7 +37,7 @@ function App() {
         <Route path="/rezultatemeciuri" element={<RezultateMeciuri />} />
         <Route path="/adminusers" element={<AdminUsers />} />
         <Route path="/adminjucatori" element={<AdminJucatori />} />
-
+        <Route path="/adminstaff" element={<AdminStaff />} />
 
        
       </Routes>

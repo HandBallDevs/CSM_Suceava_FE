@@ -1,7 +1,7 @@
 
  /*Titlu*/
 
- .frame-image-ADMJucatori {
+ .frame-image-ADMStaff {
     width: 100%; 
     padding-top: 1vw;
     height: auto;
@@ -9,13 +9,13 @@
     display: flex;
   }
   
-   .title-ADMJucatori {
+   .title-ADMStaff {
       position: relative;
       text-align: center; 
      
   }
   
-  .label-container-ADMJucatori {
+  .label-container-ADMStaff {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,30 +29,30 @@
   }
   
   
-  .label_title-ADMJucatori{
+  .label_title-ADMStaff{
     font-size: 3.8vw; 
     margin: 0.55vw; 
    
   }
   
-  .row-title-ADMJucatori
+  .row-title-ADMStaff
   {
     display: flex;
     gap: 1vw;
   }
-  .label_subtitle-ADMJucatori {
+  .label_subtitle-ADMStaff {
     font-size: 1.3vw; 
    
   }
   
-  .label_subtitle_admin-ADMJucatori {
+  .label_subtitle_admin-ADMStaff {
     font-size: 1.3vw; 
     color: white;
   }
   
   /*Admin*/
   
-  .Container-ADMJucatori
+  .Container-ADMStaff
   {
     margin-top: 7vw;
     display: flex;
@@ -63,7 +63,7 @@
     
   }
   
-  .Menu-ADMJucatori{
+  .Menu-ADMStaff{
     position: relative;
     display: flex;
     flex-direction: column;
@@ -74,7 +74,7 @@
     
   }
   
-  .Workspace-ADMJucatori
+  .Workspace-ADMStaff
   {
     width: 70%;
     height: auto;
@@ -83,7 +83,7 @@
     flex-direction: column;
     
   }
-  .Admin-menu-img-ADMJucatori
+  .Admin-menu-img-ADMStaff
   {
     position: relative;
     display: flex;
@@ -91,13 +91,13 @@
     height: 40vw;
   }
   
-  .Admin-workspace-img-ADMJucatori
+  .Admin-workspace-img-ADMStaff
   {
     width: 100%;
     height: auto;
   }
   
-  .ADMJucatori_titles {
+  .ADMStaff_titles {
     position: absolute; 
     top: 1.5vw;
     font-size: 1.5vw;
@@ -105,7 +105,7 @@
     text-transform: uppercase;
   }
   
-  .options_ADMJucatori{
+  .options_ADMStaff{
   
     position: absolute; 
     display: flex;
@@ -116,14 +116,14 @@
     text-transform: uppercase;
   }
   
-  .ADMJucatori_options
+  .ADMStaff_options
   {
     font-size:1.5vw;
   }
 
   /* Admin Jucatori*/
 
-  .Workspace-row-ADMJucatori {
+  .Workspace-row-ADMStaff {
     display: flex;
     justify-content: space-between; 
     align-items: center;
@@ -132,31 +132,31 @@
     margin-top: 1.8vw;
   }
   
-  .Workspace-row-ADMJucatori1 {
+  .Workspace-row-ADMStaff1 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
     gap: 0.5vw;
-    margin-right: 9vw;
+    margin-right: 15.1vw;
   }
   
-  .Workspace-row-ADMJucatori2 {
+  .Workspace-row-ADMStaff2 {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     flex-direction: row;
     gap: 2vw;
-    margin-left: auto; 
+    margin-left: -4vw; 
   }
   
 
-  .label-filter-ADMJucatori{
+  .label-filter-ADMStaff{
     font-size: 1vw;
 
   }
 
-  .textbox-filter-ADMJucatori
+  .textbox-filter-ADMStaff
   {
     width: 8vw;
     height: 0.5vw;
@@ -168,13 +168,13 @@
     background-color: #f0f0f0;
   }
  
-  .label-title_j-ADMJucatori {
+  .label-title_j-ADMStaff {
     font-size: 1.7vw;
     text-transform: uppercase; 
     font-weight: bold; 
   }
 
-  .button-adauga_jucator-ADMJucatori{
+  .button-adauga_jucator-ADMStaff{
     background-color: #624DE3;
     color:white;
     border-color:#999;
@@ -189,7 +189,7 @@
 
   
   
-  .Workspace-row-ADMJucatori3 {
+  .Workspace-row-ADMStaff3 {
     display: flex;
     justify-content: flex-start; 
     align-items: center;
@@ -201,14 +201,14 @@
 
   /*Player*/
 
-  .player-image-senior-ADMJucatori
+  .player-image-senior-ADMStaff
   {
     width: 11vw;
     height: auto;
   }
   
-.playercard-ADMJucatori,
-.detalii-item-ADMJucatori
+.playercard-ADMStaff,
+.detalii-item-ADMStaff
 {
   display: flex;
     justify-content: flex-start; 
@@ -218,7 +218,7 @@
 
 }
 
-  .Workspace-infoplayer-collumn {
+  .Workspace-infoplayer-collumn-ADMStaff{
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -226,20 +226,20 @@
     gap:0.2vw; 
   }
 
-  .detalii-label-ADMJucatori
+  .detalii-label-ADMStaff
   {
     font-size: 0.9vw;
     text-transform: uppercase;
     color: #999;
   }
-  .detalii-label-nume-ADMJucatori{
+  .detalii-label-nume-ADMStaff{
     color: blue;
     font-size: 1.2vw;
     font-weight: bold;
     text-transform: uppercase;
   }
 
-  .detalii-value-ADMJucatori
+  .detalii-value-ADMStaff
   {
     font-size: 1vw;
   }
@@ -254,7 +254,7 @@
   
  } 
 
- .Action-image-ADMJucatori{
+ .Action-image-ADMStaff{
   width:1.5vw;
   height: auto;
  }

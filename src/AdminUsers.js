@@ -35,7 +35,7 @@ const AdminUsers = () => {
             <Link to="/adminmeciuri" className="ADMUsers_options">Meciuri</Link>
             <Link to="/adminusers" className="ADMUsers_options">Utilizatori</Link>
             <Link to="/adminjucatori" className="ADMUsers_options">Jucatorii Seniori</Link>
-            <label className="ADMUsers_options">Staff</label>
+            <Link to="/adminstaff" className="ADMUsers_options">Staff</Link>
           </div>
         </div>  
         <div className="Workspace-ADMUsers">

@@ -31,7 +31,7 @@ const Admin = () => {
             <Link to="/adminmeciuri" className="ADM_options">Meciuri</Link>
             <Link to="/adminusers" className="ADM_options">Utilizatori</Link>
             <Link to="/adminjucatori" className="ADM_options">Jucatorii Seniori</Link>
-            <label className="ADM_options">Staff</label>
+            <Link to="/adminstaff" className="ADM_options">Staff</Link>
           </div>
         </div>  
         <div className="Workspace-ADM">
