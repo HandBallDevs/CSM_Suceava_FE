@@ -9,19 +9,19 @@ import AdminUsersImage from  "./imagini/AdminUsersImage.png";
 import EditImage from "./imagini/EditImage.png";
 import DeleteImage from "./imagini/DeleteImage.png";
 
-const Admin = () => {
+const AdminUsers = () => {
   return (
     <div className="app-container">
       <Meniusus/>
 
-      <div className="title-ADM">
-        <img src={FrameImage} alt="" className="frame-image-ADM" />
-        <div className="label-container-ADM">
-          <label className="label_title-ADM">Panou Administrator</label>
-          <div className="row-title-ADM">
-            <label className="label_subtitle-ADM">Acasa</label>
-            <label className="label_subtitle-ADM">/</label>
-            <label className="label_subtitle_admin-ADM">Panou Administrator</label>
+      <div className="title-ADMUsers">
+        <img src={FrameImage} alt="" className="frame-image-ADMUsers" />
+        <div className="label-container-ADMUsers">
+          <label className="label_title-ADMUsers">Panou Administrator</label>
+          <div className="row-title-ADMUsers">
+            <label className="label_subtitle-ADMUsers">Acasa</label>
+            <label className="label_subtitle-ADMUsers">/</label>
+            <label className="label_subtitle_admin-ADMUsers">Panou Administrator</label>
           </div>
         </div>
       </div>
@@ -34,7 +34,7 @@ const Admin = () => {
             <Link to="/adminstiri" className="ADMUsers_options">Stiri</Link>
             <Link to="/adminmeciuri" className="ADMUsers_options">Meciuri</Link>
             <Link to="/adminusers" className="ADMUsers_options">Utilizatori</Link>
-            <label className="ADMUsers_options">Jucatorii Seniori</label>
+            <Link to="/adminjucatori" className="ADMUsers_options">Jucatorii Seniori</Link>
             <label className="ADMUsers_options">Staff</label>
           </div>
         </div>  
@@ -98,4 +98,4 @@ const Admin = () => {
   );
 };
 
-export default Admin;
+export default AdminUsers;

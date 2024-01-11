@@ -17,6 +17,7 @@ import DetaliiClub from "./DetaliiClub";
 import Login from "./Login";
 import CalendarMeciuri from "./CalendarMeciuri";
 import RezultateMeciuri from "./RezultateMeciuri";
+import AdminJucatori from "./AdminJucatori";
 function App() {
   return (
     <Router>
@@ -34,6 +35,7 @@ function App() {
         <Route path="/calendarmeciuri" element={<CalendarMeciuri />} />
         <Route path="/rezultatemeciuri" element={<RezultateMeciuri />} />
         <Route path="/adminusers" element={<AdminUsers />} />
+        <Route path="/adminjucatori" element={<AdminJucatori />} />
 
 
        

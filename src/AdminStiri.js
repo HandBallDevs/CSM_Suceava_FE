@@ -70,7 +70,7 @@ const AdminStiri = () => {
             <Link to="/adminstiri" className="ADMStiri_options">Stiri</Link>
             <Link to="/adminmeciuri" className="ADM_options">Meciuri</Link>
             <Link to="/adminusers" className="ADMStiri_options">Utilizatori</Link>
-            <label className="ADMStiri_options">Jucatorii Seniori</label>
+            <Link to="/adminjucatori" className="ADMStiri_options">Jucatorii Seniori</Link>
             <label className="ADMStiri_options">Staff</label>
           </div>
         </div>  

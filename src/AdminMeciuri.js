@@ -63,7 +63,7 @@ const AdminMeciuri = () => {
             <Link to="/adminstiri" className="ADMmeciuri_options">Stiri</Link>
             <Link to="/adminmeciuri" className="ADMmeciuri_options">Meciuri</Link>
             <Link to="/adminusers" className="ADMmeciuri_options">Utilizatori</Link>
-            <label className="ADMmeciuri_options">Jucatorii Seniori</label>
+            <Link to="/adminjucatori" className="ADMmeciuri_options">Jucatorii Seniori</Link>
             <label className="ADMmeciuri_options">Staff</label>
           </div>
         </div>  
