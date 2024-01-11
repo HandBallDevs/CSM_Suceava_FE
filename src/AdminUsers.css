@@ -153,11 +153,55 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
+    margin-left: -32vw;
 }
+
+.workspace-row-ADMUsers2  {
+ margin-top: 3vw;
+  gap: 8vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.workspace-collumn-ADMUsers {
+  gap: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.actions-ADMUsers3
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.8vw;
+}
+
+.Action-image-ADMUsers{
+  width: 1.6vw;
+  height: auto;
+}
+
 .Show_Label_ADMUsers
 {
     font-size:1vw;
 
+}
+
+.label-list-ADMUsers
+{
+  font-size:1.6vw;
+  font-weight: bold;
+}
+.label-exemple-ADMUsers
+{
+  font-size: 1.2vw;
 }
 
 .workspace-choicebox-ADMUsers {
@@ -180,6 +224,7 @@
 
   .workspace-inputs-ADMUsers {
     width: 12vw;
+    height: 1.2vw;
     font-size: 1.2vw;
     border: 0.1vw solid white;
     padding: 0.4vw;
@@ -191,8 +236,14 @@
     background-position: 0.6vw center; 
     background-repeat: no-repeat;
     background-size: 1.2vw 1.2vw; 
+    color: white;
   }
   
   .workspace-inputs-ADMUsers::placeholder {
     color: #fff; 
   }
+
+  .workspace-inputs-ADMUsers:focus {
+    border: 0.1vw solid white;
+    outline: none; 
+}
