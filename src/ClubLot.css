@@ -68,50 +68,17 @@
 }
 
 /* Pentru playeri pentru seniori */
-.player-info-senior {
-  display: flex;
-  align-items: center;
-  padding-top: 4vw;
-  padding-left:2vw;
-}
-
-.player-image-senior {
-  width: 15vw; 
-  height: auto;
-  margin-right: 2vw; 
-}
-
-.player-detalii-senior {
-  display: flex;
-  flex-direction: column;
-  padding-top: 2vw;
-  
-}
-
-.detalii-label-senior {
-  font-weight: none;
-  margin-bottom: 0.5vw; 
-  margin-right: 0.5vw; 
-  color:gray;
-  font-size: 1.5vw;
-}
-
-.detalii-label-senior-nume {
-  font-weight: bold;
-  margin-bottom: 0.5vw; 
-  margin-right: 0.5vw; 
-  font-size: 2vw;
-  color:blue;
-}
 
 
-.detalii-value-senior {
-  margin-bottom: 1vw; 
-  font-size: 1.2vw;
+.jucator-container {
+display: flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
 
 }
-.detail-item-senior {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1vw; 
+.jucator {
+  /* Adjust styling for individual Jucator component as needed */
+
+  margin-bottom: -0vw; /* Add some spacing between rows */
+  width: 30%;
 }

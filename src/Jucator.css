@@ -1,0 +1,47 @@
+
+/* Pentru playeri pentru seniori */
+.player-info-senior {
+  display: flex;
+  align-items: center;
+  padding-top: 0vw;
+  padding-left:0vw;
+}
+
+.player-image-senior {
+  width: 12vw; 
+  height: auto;
+  margin-right: 2vw; 
+}
+
+.player-detalii-senior {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2vw;
+  
+}
+
+.detalii-label-senior {
+  font-weight: none;
+  margin-bottom: 0.5vw; 
+  margin-right: 0.5vw; 
+  color:gray;
+  font-size: 1.5vw;
+}
+
+.detalii-label-senior-nume {
+  font-weight: bold;
+  margin-bottom: 0.5vw; 
+  margin-right: 0.5vw; 
+  font-size: 2vw;
+  color:blue;
+}
+
+
+.detalii-value-senior {
+  font-size: 1.2vw;
+
+}
+.detail-item-senior {
+  display: flex;
+  align-items: center;
+}
