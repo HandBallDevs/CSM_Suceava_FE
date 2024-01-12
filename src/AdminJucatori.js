@@ -41,14 +41,14 @@ const AdminJucatori = () => {
         <div className="Workspace-ADMJucatori">
              <div className="Workspace-row-ADMJucatori">
                 <div className="Workspace-row-ADMJucatori1">
-                    <label  class="label-filter-ADMJucatori" for="cauta">Cauta jucator :</label>
-                    <input type="text" id="cauta" name="cauta" class="textbox-filter-ADMJucatori"/>
-                    <label  class="label-filter-ADMJucatori" for="filtreaza">Filtreaza dupa :</label>
-                    <input type="text" id="filtreaza" name="filtreaza" class="textbox-filter-ADMJucatori"/>
+                    <label  className="label-filter-ADMJucatori" htmlFor="cauta">Cauta jucator :</label>
+                    <input type="text" id="cauta" name="cauta" className="textbox-filter-ADMJucatori"/>
+                    <label  className="label-filter-ADMJucatori" htmlFor="filtreaza">Filtreaza dupa :</label>
+                    <input type="text" id="filtreaza" name="filtreaza" className="textbox-filter-ADMJucatori"/>
                 </div>
                 <div className="Workspace-row-ADMJucatori2">
-                    <button class="button-adauga_jucator-ADMJucatori"> + Adauga Jucator </button>
-                    <label  class="label-title_j-ADMJucatori" >Lot seniori </label>
+                    <button className="button-adauga_jucator-ADMJucatori"> + Adauga Jucator </button>
+                    <label  className="label-title_j-ADMJucatori" >Lot seniori </label>
                 </div>
              </div>
              <div className="Workspace-row-ADMJucatori3">

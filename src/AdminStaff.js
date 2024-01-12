@@ -41,14 +41,14 @@ const AdminStaff = () => {
         <div className="Workspace-ADMStaff">
              <div className="Workspace-row-ADMStaff">
                 <div className="Workspace-row-ADMStaff1">
-                    <label  class="label-filter-ADMStaff" for="cauta">Cauta :</label>
-                    <input type="text" id="cauta" name="cauta" class="textbox-filter-ADMStaff"/>
-                    <label  class="label-filter-ADMStaff" for="filtreaza">Filtreaza dupa :</label>
-                    <input type="text" id="filtreaza" name="filtreaza" class="textbox-filter-ADMStaff"/>
+                    <label  className="label-filter-ADMStaff" htmlFor="cauta">Cauta :</label>
+                    <input type="text" id="cauta" name="cauta" className="textbox-filter-ADMStaff"/>
+                    <label  className="label-filter-ADMStaff" htmlFor="filtreaza">Filtreaza dupa :</label>
+                    <input type="text" id="filtreaza" name="filtreaza" className="textbox-filter-ADMStaff"/>
                 </div>
                 <div className="Workspace-row-ADMStaff2">
-                    <button class="button-adauga_jucator-ADMStaff"> + Adauga Antrenor </button>
-                    <label  class="label-title_j-ADMStaff" >Staff </label>
+                    <button className="button-adauga_jucator-ADMStaff"> + Adauga Antrenor </button>
+                    <label  className="label-title_j-ADMStaff" >Staff </label>
                 </div>
              </div>
              <div className="Workspace-row-ADMStaff3">
