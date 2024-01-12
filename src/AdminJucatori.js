@@ -85,8 +85,11 @@ const AdminJucatori = () => {
                         </div>
                     </div>
                     <div className="Workspace-actions-collumn">   
-                     <img src={PlayerEditImage} alt="" className="Action-image-ADMJucatori" />
-                     <img src={PlayerDeleteImage} alt="" className="Action-image-ADMJucatori" />      
+                     
+                     <Link to="/editeazajucator" className="ADMJucatori_options">
+                        <img src={PlayerEditImage} alt="" className="Action-image-ADMJucatori" />
+                     </Link>      
+                     <img src={PlayerDeleteImage} alt="" className="Action-image-ADMJucatori" />
                     </div>
                 </div>
 
@@ -123,7 +126,9 @@ const AdminJucatori = () => {
                         </div>
                     </div>
                     <div className="Workspace-actions-collumn">   
-                     <img src={PlayerEditImage} alt="" className="Action-image-ADMJucatori" />
+                    <Link to="/editeazajucator" className="ADMJucatori_options">
+                        <img src={PlayerEditImage} alt="" className="Action-image-ADMJucatori" />
+                     </Link> 
                      <img src={PlayerDeleteImage} alt="" className="Action-image-ADMJucatori" />      
                     </div>
                 </div>

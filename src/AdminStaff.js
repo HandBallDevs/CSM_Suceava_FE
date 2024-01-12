@@ -85,7 +85,9 @@ const AdminStaff = () => {
                         </div>
                     </div>
                     <div className="Workspace-actions-collumn">   
-                     <img src={PlayerEditImage} alt="" className="Action-image-ADMStaff" />
+                    <Link to="/editeazajucator" className="ADMJucatori_options">
+                        <img src={PlayerEditImage} alt="" className="Action-image-ADMJucatori" />
+                     </Link> 
                      <img src={PlayerDeleteImage} alt="" className="Action-image-ADMStaff" />      
                     </div>
                 </div>
@@ -123,7 +125,9 @@ const AdminStaff = () => {
                         </div>
                     </div>
                     <div className="Workspace-actions-collumn">   
-                     <img src={PlayerEditImage} alt="" className="Action-image-ADMStaff" />
+                    <Link to="/editeazajucator" className="ADMJucatori_options">
+                        <img src={PlayerEditImage} alt="" className="Action-image-ADMJucatori" />
+                     </Link> 
                      <img src={PlayerDeleteImage} alt="" className="Action-image-ADMStaff" />      
                     </div>
                 </div>
