@@ -14,16 +14,20 @@ import Meniusus from "./Meniusus";
 import Meniujos from "./Meniujos";
 import { Link } from "react-router-dom";
 import { useSpring, animated } from 'react-spring';
+import BackAdauga from "./BackAdauga";
 
 const CalendarMeciuri = () => {
   const springProps = useSpring({
     opacity: 1,
     from: { opacity: 0 },
   });
+  BackAdauga();
 
   return (
+    
     <animated.div style={springProps}>
     <div className="app-container">
+  
       <Meniusus />
       <div className="frame-overlay-meciuri">
         <img src={FrameImage} alt="" className="frame-meciuri" />

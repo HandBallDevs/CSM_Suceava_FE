@@ -18,7 +18,6 @@ import VivendiImage from "./imaginisponsori/vivendi.png";
 import { Link } from 'react-router-dom';
 
 const Meniujos = () => {
-  const handleAcasaClick = () => {};
   const handleFacebookClick = () => {
     window.location.href = "https://www.facebook.com/CSUSuceava"; // Redirectionare facebook
   };

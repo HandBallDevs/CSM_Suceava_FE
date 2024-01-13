@@ -53,7 +53,12 @@ const Noutăti = () => {
            <label  className="label_image_news-PGNoutati" >Urmatoarele meciuri</label>
            <img src={MeciuriViitoareImage} alt="" className="Clasament-Meciuri_image-PGNoutati" />
            <label  className="label_image_news-PGNoutati">Liga Clasament</label>
-           <img src={ClasamentImage} alt="" className="Clasament-Meciuri_image-PGNoutati" />
+           <iframe
+  title="Background iFrame"
+  src="https://frh.ro/clasament.php?id=552#clasament" 
+  style={{ display: 'block', margin: '0 auto' }}
+  className="Clasament-Meciuri_image-PGNoutati"
+/>
           </div>
         </div>
 

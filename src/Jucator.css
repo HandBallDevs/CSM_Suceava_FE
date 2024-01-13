@@ -38,7 +38,9 @@
 
 
 .detalii-value-senior {
-  font-size: 1.2vw;
+  font-size: 1.5vw;
+  font-weight: bold;
+  text-transform: uppercase;
 
 }
 .detail-item-senior {

@@ -14,15 +14,38 @@ import Jucator from "./Jucator";
 const ClubLotCadeti = () => {
   const [playerData, setPlayerData] = useState(null);
 
+  const formatDate = (dateString) => {
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", options);
+  };
+
+  const calculateAge = (dateString) => {
+    const birthDate = new Date(dateString);
+    const currentDate = new Date();
+
+    let age = currentDate.getFullYear() - birthDate.getFullYear();
+    const monthDiff = currentDate.getMonth() - birthDate.getMonth();
+
+    if (
+      monthDiff < 0 ||
+      (monthDiff === 0 && currentDate.getDate() < birthDate.getDate())
+    ) {
+      age--;
+    }
+
+    return age;
+  };
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://handballdevsbe.azurewebsites.net/api/staff"
+          "https://handballdevsbe.azurewebsites.net/api/staff?tipLot=2"
         );
         if (response.ok) {
           const data = await response.json();
           console.log("API Response:", data);
+          console.log("Player Data:", playerData);
           setPlayerData(data);
         } else {
           console.error("API Error:", response.statusText);
@@ -39,7 +62,6 @@ const ClubLotCadeti = () => {
     opacity: 1,
     from: { opacity: 0 },
   });
-
   return (
     <animated.div style={springProps}>
       <div className="app-container">
@@ -73,14 +95,21 @@ const ClubLotCadeti = () => {
             </Link>
           </div>
         </div>
-        <div className="jucator-container">
-          <Jucator />
-          <Jucator />
-          <Jucator />
-          <Jucator />
-          <Jucator />
-          <Jucator />
-        </div>
+        {playerData && (
+          <div className="jucator-container">
+            {playerData.map((player, index) => (
+              <Jucator
+                key={index}
+                nume={player.nume}
+                prenume={player.prenume}
+                pozitie={player.post}
+                nationalitate={player.nationalitate}
+                varsta={calculateAge(player.dataNastere)}
+                inaltimea={player.inaltime}
+              />
+            ))}
+          </div>
+        )}
 
         <Meniujos />
       </div>

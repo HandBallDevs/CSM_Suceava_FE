@@ -8,6 +8,7 @@ import DirectorIMG from "./imagini/DirectorIMG.png";
 import Meniusus from "./Meniusus";
 import Meniujos from "./Meniujos";
 
+
 import { useSpring, animated } from 'react-spring';
 
 const Contact = () => {
