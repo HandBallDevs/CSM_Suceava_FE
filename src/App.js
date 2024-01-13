@@ -13,6 +13,8 @@ import AdminMeciuri from "./AdminMeciuri";
 import AdminUsers from "./AdminUsers"
 import ClubClasament from "./ClubClasament";
 import ClubLot from "./ClubLot";
+import ClubLotJuniori from "./ClubLotJuniori";
+import ClubLotCadeti from "./ClubLotCadeti";
 import DetaliiClub from "./DetaliiClub";
 import Login from "./Login";
 import CalendarMeciuri from "./CalendarMeciuri";
@@ -29,6 +31,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/clubclasament" element={<ClubClasament />} />
         <Route path="/clublot" element={<ClubLot />} />
+        <Route path="/clublotjuniori" element={<ClubLotJuniori />} />
+        <Route path="/clublotcadeti" element={<ClubLotCadeti />} />
         <Route path="/detaliiclub" element={<DetaliiClub />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<Admin />} />
@@ -40,6 +44,8 @@ function App() {
         <Route path="/adminjucatori" element={<AdminJucatori />} />
         <Route path="/adminstaff" element={<AdminStaff />} />
         <Route path="/editeazajucator" element={<EditeazaJucator />} />
+      
+
 
        
       </Routes>

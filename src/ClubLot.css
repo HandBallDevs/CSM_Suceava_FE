@@ -47,6 +47,7 @@
 
 .frame-overlay-club-seniori {
   position: relative;
+ 
 }
 
 .words-lot-seniori {
@@ -55,18 +56,27 @@
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   font-size: 2vw;
   font-weight: bold;
+
 }
 .wordslot-list-lot-seniori {
   color: black;
   font-weight: bold;
   text-decoration: none;
-  margin: 1vw;
+  margin:0 2vw;
 }
 
+
+.wordslot-list-lot-seniori-underline
+{
+  color: black;
+  font-weight: bold;
+  text-decoration: underline;
+  margin:0 2vw;
+}
 /* Pentru playeri pentru seniori */
 
 

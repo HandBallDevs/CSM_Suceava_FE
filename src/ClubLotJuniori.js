@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import Jucator from "./Jucator";
 
-const ClubLot = () => {
+const ClubLotJuniori = () => {
   const [playerData, setPlayerData] = useState(null);
 
   useEffect(() => {
@@ -62,10 +62,10 @@ const ClubLot = () => {
         <div className="frame-overlay-club-seniori">
           <img src={FrameImage} alt="" className="frame-club-seniori" />
           <div className="words-lot-seniori">
-            <Link to="/clublot" className="wordslot-list-lot-seniori-underline">
+            <Link to="/clublot" className="wordslot-list-lot-seniori">
               LOT SENIORI
             </Link>
-            <Link to="/clublotjuniori" className="wordslot-list-lot-seniori">
+            <Link to="/clublotjuniori" className="wordslot-list-lot-seniori-underline">
               LOT JUNIORI
             </Link>
             <Link to="/clublotcadeti" className="wordslot-list-lot-seniori">
@@ -88,4 +88,4 @@ const ClubLot = () => {
   );
 };
 
-export default ClubLot;
+export default ClubLotJuniori;

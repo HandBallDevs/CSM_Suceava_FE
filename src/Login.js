@@ -6,6 +6,7 @@ import FrameImage from "./imagini/frame.png";
 import LoginFrameImage from "./imagini/LoginFrameImage.png";
 import Meniujos from "./Meniujos";
 import { useNavigate,Link } from "react-router-dom";
+import { useSpring, animated } from "react-spring";
 
 const Login = () => {
   const handleAcasaClick = () => {
@@ -17,8 +18,13 @@ const Login = () => {
     label.classList.toggle("underline");
   }
   
+  const springProps = useSpring({
+    opacity: 1,
+    from: { opacity: 0 },
+  });
 
   return (
+    <animated.div style={springProps}>
     <div className="app-container">
      <Meniusus/>
 
@@ -63,7 +69,9 @@ const Login = () => {
       
 
       <Meniujos />
+      
     </div>
+    </animated.div>
   );
 };
 
