@@ -14,6 +14,7 @@ import Meniusus from "./Meniusus";
 import Meniujos from "./Meniujos";
 import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
+import { motion } from "framer-motion";
 
 const Acasa = () => {
   const springProps = useSpring({
@@ -50,7 +51,7 @@ const Acasa = () => {
 
         <img src={LotImage} alt="" className="lot-image" />
 
-        <div className="frame-overlay">
+        <div className="frame-overlay5">
           <img src={FrameImage} alt="" className="frame-noutati" />
           <div className="word-list-4">
             <p className="word-4 ultimele">Ultimele Noutăți</p>
@@ -85,13 +86,20 @@ const Acasa = () => {
                       <p className="text-between-images2">
                         {item.scorCSUSV} - {item.scorAdversar}
                       </p>
-                      <Link to="/rezultatemeciuri">
-                        <img
-                          src={DetaliiImage}
-                          alt=""
-                          className="rezultate-image2"
-                        />
-                      </Link>
+                      <motion.div
+                        whileHover={{
+                          scale: 1.1,
+                          transition: { duration: 0.3 },
+                        }}
+                      >
+                        <Link to="/rezultatemeciuri">
+                          <img
+                            src={DetaliiImage}
+                            alt=""
+                            className="rezultate-image2"
+                          />
+                        </Link>
+                      </motion.div>
                     </div>
                     <div className="image-with-text" key={index}>
                       <img
@@ -112,23 +120,28 @@ const Acasa = () => {
             <div className="word-list-6">
               <p className="word-6 rezultate">Meciuri Viitoare</p>
               <div className="news-rezultate">
-              {RezMeciData.slice(0, 3).map((item, index) => (
+                {RezMeciData.slice(0, 3).map((item, index) => (
                   <>
                     <div className="image-with-text" key={index}>
                       <img src={LogoImage} alt="" className="rezultate-image" />
                       <p className="text-between-images">{"CSU SUCEAVA"}</p>
                     </div>
                     <div className="image-with-text" key={index}>
-                      <p className="text-between-images2">
-                        {"VS"}
-                      </p>
-                      <Link to="/rezultatemeciuri">
-                        <img
-                          src={DetaliiImage}
-                          alt=""
-                          className="rezultate-image2"
-                        />
-                      </Link>
+                      <p className="text-between-images2">{"VS"}</p>
+                      <motion.div
+                        whileHover={{
+                          scale: 1.1,
+                          transition: { duration: 0.3 },
+                        }}
+                      >
+                        <Link to="/calendarmeciuri">
+                          <img
+                            src={DetaliiImage}
+                            alt=""
+                            className="rezultate-image2"
+                          />
+                        </Link>
+                      </motion.div>
                     </div>
                     <div className="image-with-text" key={index}>
                       <img
@@ -140,9 +153,7 @@ const Acasa = () => {
                     </div>
                   </>
                 ))}
-
               </div>
-              
             </div>
           </div>
         </div>
@@ -152,7 +163,13 @@ const Acasa = () => {
             <p className="word-5 intalneste">Intâlnește echipa de seniori</p>
             <div className="news-container2">
               <div className="news-item2">
-                <img src={ButtonaiciImage} alt="" className="imageaici" />
+                <motion.div
+                  whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+                >
+                  <Link to="/clublot">
+                    <img src={ButtonaiciImage} alt="" className="imageaici" />
+                  </Link>
+                </motion.div>
               </div>
             </div>
           </div>
