@@ -15,9 +15,9 @@ const BackAdauga = () => {
           nationalitate: "ROMAN",
           tipLot: 2,
           post: "Atacant",
-          urlPoza: "https://cdn1.iconfinder.com/data/icons/bokbokstars-121-classic-stock-icons-1/512/person-man.png",
+          urlPoza: "",
           dataNastere: "1992-01-01T00:00:00.000Z",
-          inaltime: 191,
+          inaltime: 151,
           descriere: "Un jucator crucial",
         };
 

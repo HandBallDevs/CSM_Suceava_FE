@@ -45,7 +45,6 @@ const ClubLot = () => {
         if (response.ok) {
           const data = await response.json();
           console.log("API Response:", data);
-          console.log("Player Data:", playerData);
           setPlayerData(data);
         } else {
           console.error("API Error:", response.statusText);

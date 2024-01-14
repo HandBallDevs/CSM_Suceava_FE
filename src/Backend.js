@@ -11,7 +11,7 @@ const Backend = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://handballdevsbe.azurewebsites.net/api/staff"
+          "https://handballdevsbe.azurewebsites.net/api/meci"
         );
         if (response.ok) {
           const data = await response.json();
