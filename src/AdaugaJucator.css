@@ -1,0 +1,155 @@
+
+ /*Titlu*/
+
+ .frame-image-ADD {
+    width: 100%; 
+    padding-top: 1vw;
+    height: auto;
+    align-items: center;
+    display: flex;
+  }
+  
+   .title-ADD  {
+      position: relative;
+      text-align: center; 
+     
+  }
+  
+  .label-container-ADD  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    margin: 0.55vw;
+    gap:0.5vw
+  }
+  
+  
+  .label_title-ADD  {
+    font-size: 3.8vw; 
+    margin: 0.55vw; 
+   
+  }
+  
+  .row-title-ADD 
+  {
+    display: flex;
+    gap: 1vw;
+  }
+  .label_subtitle-ADD  {
+    font-size: 1.3vw; 
+   
+  }
+  
+  .label_subtitle_Admin-ADD  {
+    font-size: 1.3vw; 
+    color: white;
+  }
+  
+/*ADDeaza Jucator*/
+
+.ADD_jucator{
+    margin-top: 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 3vw;
+    
+}
+
+.ADD_jucator2{
+    margin-top: 1.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  
+}
+
+.ADD_jucator-title
+{
+    margin-top: 6vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+   
+}
+
+.ADD_jucator-title_label
+{
+    font-size: 1.7vw;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+.ADD_jucator-collumn,
+.ADD_jucator-collumn1
+
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5vw;
+}
+.ADD_jucator-collumn1
+{
+  justify-content: flex-start;
+  margin-top: -1vw;
+}
+
+.ADD_jucator-labels
+{
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+.ADD_jucator-input {
+    font-size: 1.2vw;
+    padding: 0.1vw;
+    border-radius: 25vw;
+    width: 18vw;
+    height: auto;
+    color: black;
+    background-color: #6E8BF2;
+    text-align: center;
+    border: 0.2vw solid gray;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.Incarca-imagine-jucator-ADD
+{
+    font-size: 1vw;
+    text-transform: uppercase;
+    padding: 0.1vw;
+    border-radius: 25vw;
+    width: 9vw;
+    height: 3vw;
+    color: white;
+    background-color: black;
+    text-align: center;
+    border: 0.2vw solid black;
+    box-sizing: border-box;
+    outline: none;
+   
+}
+.iamgine_jucator-ADD
+{
+    width: 15vw;
+    height: auto;
+}
+
+
+  
+
+
+  
+  

@@ -47,7 +47,9 @@ const AdminJucatori = () => {
                     <input type="text" id="filtreaza" name="filtreaza" className="textbox-filter-ADMJucatori"/>
                 </div>
                 <div className="Workspace-row-ADMJucatori2">
+                <Link to="/adaugajucator">
                     <button className="button-adauga_jucator-ADMJucatori"> + Adauga Jucator </button>
+                </Link>
                     <label  className="label-title_j-ADMJucatori" >Lot seniori </label>
                 </div>
              </div>

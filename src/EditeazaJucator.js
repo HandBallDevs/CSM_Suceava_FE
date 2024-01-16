@@ -32,6 +32,7 @@ const EditeazaJucator = () => {
              <label className="edit_jucator-labels" htmlFor="datan">Data nastere</label>
              <label className="edit_jucator-labels" htmlFor="nationalitate">Nationalitate</label>
              <label className="edit_jucator-labels" htmlFor="inaltime">Inaltime</label>
+             <label className="edit_jucator-labels" htmlFor="descriere">Descriere</label>
           </div>
           <div className='edit_jucator-collumn'>
             <input type="text" id="nume" className="edit_jucator-input" />
@@ -41,6 +42,7 @@ const EditeazaJucator = () => {
             <input type="text" id="datan" className="edit_jucator-input" />
             <input type="text" id="nationalitate" className="edit_jucator-input" />
             <input type="text" id="inaltime" className="edit_jucator-input" />
+            <input type="text" id="descriere" className="edit_jucator-input" />
           </div>
           <div className='edit_jucator-collumn1'>
             <img src={ImgJucator} alt="" className="iamgine_jucator-edit" />

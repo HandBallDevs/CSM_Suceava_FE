@@ -22,6 +22,7 @@ import RezultateMeciuri from "./RezultateMeciuri";
 import AdminJucatori from "./AdminJucatori";
 import AdminStaff from "./AdminStaff";
 import EditeazaJucator from "./EditeazaJucator";
+import AdaugaJucator from "./AdaugaJucator";
 function App() {
   return (
     <Router>
@@ -44,6 +45,7 @@ function App() {
         <Route path="/adminjucatori" element={<AdminJucatori />} />
         <Route path="/adminstaff" element={<AdminStaff />} />
         <Route path="/editeazajucator" element={<EditeazaJucator />} />
+        <Route path="/adaugajucator" element={<AdaugaJucator />} />
       
 
 
