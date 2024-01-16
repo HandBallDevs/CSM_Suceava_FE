@@ -10,6 +10,7 @@ import Meniujos from "./Meniujos";
 
 
 import { useSpring, animated } from 'react-spring';
+import BackAdaugaStaff from "./BackAdaugaStaff";
 
 const Contact = () => {
 
@@ -18,6 +19,7 @@ const Contact = () => {
     from: { opacity: 0 },
   });
 
+  BackAdaugaStaff();
   return (
     <animated.div style={springProps}>
     <div className="app-container">
@@ -120,8 +122,11 @@ const Contact = () => {
         </div>
       </div>
       <Meniujos />
+
     </div>
+    
     </animated.div>
+    
     
   );
 };

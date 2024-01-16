@@ -108,7 +108,7 @@
 .lot-frame {
  width: 100vw;
   height: 10vw;
-  padding-top: 10vw;
+  padding-top: 0vw;
   align-items: center;
   display: flex;
 }

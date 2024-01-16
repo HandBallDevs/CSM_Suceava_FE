@@ -47,19 +47,19 @@ const RezultateMeciuri = () => {
           <Link to="/calendarmeciuri" className="wordsmeciuri-list-link">
             CALENDAR MECIURI
           </Link>
-          <div className="wordsmeciuri-list-link-calendar">REZULTATE MECIURI</div>
+          <div className="wordsmeciuri-list-link-calendar">
+            REZULTATE MECIURI
+          </div>
         </div>
       </div>
 
       <div className="frame-overlay-club-rezultate">
+      <div className="wordslot-list-lot-rezultate">REZULTATE MECIURI</div>
         <img src={FrameImage} alt="" className="frame-club-rezultate" />
-
+      
         <div className="words-lot-rezultate">
-        <div className="wordslot-list-lot-rezultate">
-  REZULTATE MECIURI
-</div>
-
-          {RezultatData.slice(0, 10).map((rezultat, index) => (
+        <div className="meci-container">
+          {RezultatData.slice(0, 9).map((rezultat, index) => (
             <Meci
               key={index}
               data={new Date(rezultat.data).toLocaleDateString()}
@@ -69,6 +69,8 @@ const RezultateMeciuri = () => {
             />
           ))}
         </div>
+        </div>
+
       </div>
       <Meniujos />
     </div>

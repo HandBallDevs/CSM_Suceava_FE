@@ -68,23 +68,17 @@ const ClubLotJuniori = () => {
         <div className="frame-overlay-club">
           <img src={FrameImage} alt="" className="frame-club" />
           <div className="words-lot">
-          <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
-  <Link to="/clublot" className="wordslot-list-link-lot">
-    LOTUL CLUBULUI
-  </Link>
-</motion.div>
+            
+            <Link to="/clublot" className="wordslot-list-link-lot">
+              LOTUL CLUBULUI
+            </Link>
 
-<motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
-  <Link to="/detaliiclub" className="wordslot-list-link">
-    DETALII CLUB
-  </Link>
-</motion.div>
-
-<motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
-  <Link to="/clubclasament" className="wordslot-list-link">
-    CLASAMENT FRH
-  </Link>
-</motion.div>
+            <Link to="/detaliiclub" className="wordslot-list-link">
+              DETALII CLUB
+            </Link>
+            <Link to="/clubclasament" className="wordslot-list-link">
+              CLASAMENT FRH
+            </Link>
           </div>
         </div>
         <div className="frame-overlay-club-seniori">
@@ -93,7 +87,10 @@ const ClubLotJuniori = () => {
             <Link to="/clublot" className="wordslot-list-lot-seniori">
               LOT SENIORI
             </Link>
-            <Link to="/clublotjuniori" className="wordslot-list-lot-seniori-underline">
+            <Link
+              to="/clublotjuniori"
+              className="wordslot-list-lot-seniori-underline"
+            >
               LOT JUNIORI
             </Link>
             <Link to="/clublotcadeti" className="wordslot-list-lot-seniori">

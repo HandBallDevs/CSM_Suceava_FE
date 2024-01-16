@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 //import PlaceImage from './imagini/place.png';
 
 
-const BackAdauga = () => {
+const BackAdaugaStaff = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -13,9 +13,8 @@ const BackAdauga = () => {
           nume: "Mirel",
           prenume: "Andrei",
           nationalitate: "ROMAN",
-          tipLot: 2,
+          tipLot: 0,
           post: "Atacant",
-          urlPoza: "",
           dataNastere: "1992-01-01T00:00:00.000Z",
           inaltime: 151,
           descriere: "Un jucator crucial",
@@ -43,9 +42,10 @@ const BackAdauga = () => {
 
     fetchData();
   }, []);
+  return null;
 
 
 }
 
 
-export default BackAdauga;
+export default BackAdaugaStaff;
