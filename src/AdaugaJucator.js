@@ -5,6 +5,8 @@ import FrameImage from "./imagini/frame.png";
 import ImgJucator from "./imagini/PozaJucaror.png";
 import { useNavigate, Link } from "react-router-dom";
 
+
+
 const AdaugaJucator = () => {
   const [formData, setFormData] = useState({
     nume: '',
@@ -15,7 +17,7 @@ const AdaugaJucator = () => {
     nationalitate: '',
     inaltime: '',
     descriere: '',
-    imagine: 'https://csusvsa.blob.core.windows.net/csusvbs/Staffcf34e8a0-4a1b-410f-86ae-5663a1adfd20.png',
+    imagine: '',
   });
 
   const handleInputChange = (e) => {
@@ -32,12 +34,12 @@ const AdaugaJucator = () => {
       nume: formData.nume,
       prenume: formData.prenume,
       nationalitate: formData.nationalitate,
-      tipLot: 0, // You can modify this if needed
-      post: formData.pozitie, // Assuming "pozitie" corresponds to "post"
-      urlPoza: formData.imagine, // Assuming "imagine" is the image URL
+      tipLot: 0,
+      post: formData.pozitie,
+      urlPoza: "",
       dataNastere: formData.datan,
-      inaltime: parseInt(formData.inaltime), // Ensure inaltime is an integer
-      descriere: formData.descriere,
+      inaltime:parseFloat(formData.inaltime),
+      descriere: formData.descriere
     };
 
     const response = await fetch('https://handballdevsbe.azurewebsites.net/api/staff', {
@@ -88,7 +90,6 @@ const AdaugaJucator = () => {
         <label className="ADD_jucator-labels" htmlFor="nume">Nume</label>
              <label className="ADD_jucator-labels" htmlFor="prenume">Prenume</label>
              <label className="ADD_jucator-labels" htmlFor="pozitie">Pozitie joc</label>
-             <label className="ADD_jucator-labels" htmlFor="varsta">Varsta</label>
              <label className="ADD_jucator-labels" htmlFor="datan">Data nastere</label>
              <label className="ADD_jucator-labels" htmlFor="nationalitate">Nationalitate</label>
              <label className="ADD_jucator-labels" htmlFor="inaltime">Inaltime</label>
@@ -98,7 +99,6 @@ const AdaugaJucator = () => {
           <input type="text" id="nume" className="ADD_jucator-input" onChange={handleInputChange}/>
             <input type="text" id="prenume" className="ADD_jucator-input" onChange={handleInputChange} />
             <input type="text" id="pozitie" className="ADD_jucator-input" onChange={handleInputChange} />
-            <input type="text" id="varsta" className="ADD_jucator-input" onChange={handleInputChange}/>
             <input type="text" id="datan" className="ADD_jucator-input" onChange={handleInputChange}/>
             <input type="text" id="nationalitate" className="ADD_jucator-input" onChange={handleInputChange}/>
             <input type="text" id="inaltime" className="ADD_jucator-input" onChange={handleInputChange}/>
