@@ -1,7 +1,4 @@
 import React, { useEffect } from 'react';
-//import IconImage from './imagini/icon.png';
-//import CrossImage from './imagini/cross.png';
-//import PlaceImage from './imagini/place.png';
 
 
 const BackAdaugaStaff = () => {
@@ -10,14 +7,15 @@ const BackAdaugaStaff = () => {
       try {
         // Example data to be sent to the backend
         const newData = {
-          nume: "Mirel",
-          prenume: "Andrei",
+          nume: "Ianis",
+          prenume: "Hagi",
           nationalitate: "ROMAN",
-          tipLot: 0,
+          tipLot: 1,
           post: "Atacant",
-          dataNastere: "1992-01-01T00:00:00.000Z",
+          urlPoza: "",
+          dataNastere: "1992-01-01",
           inaltime: 151,
-          descriere: "Un jucator crucial",
+          descriere: "Un jucator crucial"
         };
 
         const response = await fetch('https://handballdevsbe.azurewebsites.net/api/staff', {
