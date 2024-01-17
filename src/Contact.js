@@ -12,6 +12,7 @@ import Meniujos from "./Meniujos";
 import { useSpring, animated } from 'react-spring';
 import BackAdaugaStaff from "./BackAdaugaStaff";
 import BackInterogare from "./BackInterogare";
+import BackDeleteStaff from "./BackDeleteStaff";
 
 const Contact = () => {
 
@@ -19,13 +20,12 @@ const Contact = () => {
     opacity: 1,
     from: { opacity: 0 },
   });
-
+  BackDeleteStaff();
   
   return (
     <animated.div style={springProps}>
     <div className="app-container">
       <Meniusus />
-      <BackInterogare/>
 
       <div className="title-PGContact">
         <img src={FrameImage} alt="" className="frame-image-PGContact" />

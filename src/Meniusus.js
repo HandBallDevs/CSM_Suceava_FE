@@ -11,7 +11,7 @@ const Meniusus = () => {
   const pathname = location.pathname;
 
   const isClubPage =
-    pathname === "/clublot" ||
+    pathname === "/clublot" || pathname === "/clublotcadeti" || pathname === "/clublotjuniori" ||
     pathname === "/detaliiclub" ||
     pathname === "/clubclasament";
   const isMeciuriPage =
