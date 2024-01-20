@@ -1,0 +1,57 @@
+.player-image-senior-ADMJucatori
+  {
+    width: 11vw;
+    height: auto;
+  }
+  
+.playercard-ADMJucatori,
+.detalii-item-ADMJucatori
+{
+  display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    flex-direction: row;
+    gap: 1vw;
+
+}
+
+  .Workspace-infoplayer-collumn {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column; 
+    gap:0.2vw; 
+  }
+
+  .detalii-label-ADMJucatori
+  {
+    font-size: 0.9vw;
+    text-transform: uppercase;
+    color: #999;
+  }
+  .detalii-label-nume-ADMJucatori{
+    color: blue;
+    font-size: 1.2vw;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .detalii-value-ADMJucatori
+  {
+    font-size: 1vw;
+  }
+  
+ .Workspace-actions-collumn
+ {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    gap:1vw; 
+  
+ } 
+
+ .Action-image-ADMJucatori{
+  width:1.5vw;
+  height: auto;
+ }

@@ -1,15 +1,64 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
+
 import './AdminJucatori.css';
 import Meniusus from "./Meniusus";
 import FrameImage from "./imagini/frame.png";
 import AdminMenuImage from "./imagini/AdminMenuImage.png";
-import AdminWorkSpaceImage from './imagini/AdminWorkSpaceImage.png';
 import { useNavigate,Link } from "react-router-dom";
-import PlayerEditImage from "./imagini/EditImage.png";
-import PlayerDeleteImage from "./imagini/DeleteImage.png";
-import AdminJucatorImage from './imagini/jucator.png';
+import AdminPlayerCard from './AdminPlayerCard';
+import { useSpring, animated } from "react-spring";
+
 
 const AdminJucatori = () => {
+  const [playerData, setPlayerData] = useState(null);
+
+  const formatDate = (dateString) => {
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", options);
+  };
+
+  const calculateAge = (dateString) => {
+    const birthDate = new Date(dateString);
+    const currentDate = new Date();
+
+    let age = currentDate.getFullYear() - birthDate.getFullYear();
+    const monthDiff = currentDate.getMonth() - birthDate.getMonth();
+
+    if (
+      monthDiff < 0 ||
+      (monthDiff === 0 && currentDate.getDate() < birthDate.getDate())
+    ) {
+      age--;
+    }
+
+    return age;
+  };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://handballdevsbe.azurewebsites.net/api/staff?tipLot=0"
+        );
+        if (response.ok) {
+          const data = await response.json();
+          console.log("API Response:", data);
+          setPlayerData(data);
+        } else {
+          console.error("API Error:", response.statusText);
+        }
+      } catch (error) {
+        console.error("API Error:", error.message);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const springProps = useSpring({
+    opacity: 1,
+    from: { opacity: 0 },
+  });
   return (
     <div className="app-container">
       <Meniusus/>
@@ -53,91 +102,24 @@ const AdminJucatori = () => {
                     <label  className="label-title_j-ADMJucatori" >Lot seniori </label>
                 </div>
              </div>
-             <div className="Workspace-row-ADMJucatori3">
-                <div className="playercard-ADMJucatori">
-                    <img src={AdminJucatorImage} alt="Player" className="player-image-senior-ADMJucatori" />     
-                    <div className="Workspace-infoplayer-collumn">   
-                        <div className="detalii-item-ADMJucatori">
-                            <span className="detalii-label-nume-ADMJucatori">NUME:</span>
-                            <span className="detalii-value-ADMJucatori">Numele </span>
-                        </div>
-                        <div className="detalii-item-ADMJucatori">
-                            <span className="detalii-label-nume-ADMJucatori">PRENUME:</span>
-                            <span className="detalii-value-ADMJucatori">Prenumele</span>
-                        </div>
-                        <div className="detalii-item-ADMJucatori">
-                            <span className="detalii-label-ADMJucatori">POZITIE DE JOC:</span>
-                            <span className="detalii-value-ADMJucatori">Pozitia</span>
-                        </div>
-                        <div className="detalii-item-ADMJucatori">
-                            <span className="detalii-label-ADMJucatori">Data nasterii:</span>
-                            <span className="detalii-value-ADMJucatori">Data</span>
-                        </div>
-                        <div className="detalii-item-ADMJucatori">
-                            <span className="detalii-label-ADMJucatori">Varsta:</span>
-                            <span className="detalii-value-ADMJucatori">Varsta</span>
-                        </div>
-                        <div className="detalii-item-ADMJucatori">
-                            <span className="detalii-label-ADMJucatori">Nationalitate:</span>
-                            <span className="detalii-value-ADMJucatori">Nationalitate</span>
-                        </div>
-                        <div className="detalii-item-ADMJucatori">
-                            <span className="detalii-label-ADMJucatori">Inaltime:</span>
-                            <span className="detalii-value-ADMJucatori">Inaltime</span>
-                        </div>
-                    </div>
-                    <div className="Workspace-actions-collumn">   
-                     
-                     <Link to="/editeazajucator" className="ADMJucatori_options">
-                        <img src={PlayerEditImage} alt="" className="Action-image-ADMJucatori" />
-                     </Link>      
-                     <img src={PlayerDeleteImage} alt="" className="Action-image-ADMJucatori" />
-                    </div>
-                </div>
-
-                <div className="playercard-ADMJucatori">
-                    <img src={AdminJucatorImage} alt="Player" className="player-image-senior-ADMJucatori" />     
-                    <div className="Workspace-infoplayer-collumn">   
-                        <div className="detalii-item-ADMJucatori">
-                            <span className="detalii-label-nume-ADMJucatori">NUME:</span>
-                            <span className="detalii-value-ADMJucatori">Numele </span>
-                        </div>
-                        <div className="detalii-item-ADMJucatori">
-                            <span className="detalii-label-nume-ADMJucatori">PRENUME:</span>
-                            <span className="detalii-value-ADMJucatori">Prenumele</span>
-                        </div>
-                        <div className="detalii-item-ADMJucatori">
-                            <span className="detalii-label-ADMJucatori">POZITIE DE JOC:</span>
-                            <span className="detalii-value-ADMJucatori">Pozitia</span>
-                        </div>
-                        <div className="detalii-item-ADMJucatori">
-                            <span className="detalii-label-ADMJucatori">Data nasterii:</span>
-                            <span className="detalii-value-ADMJucatori">Data</span>
-                        </div>
-                        <div className="detalii-item-ADMJucatori">
-                            <span className="detalii-label-ADMJucatori">Varsta:</span>
-                            <span className="detalii-value-ADMJucatori">Varsta</span>
-                        </div>
-                        <div className="detalii-item-ADMJucatori">
-                            <span className="detalii-label-ADMJucatori">Nationalitate:</span>
-                            <span className="detalii-value-ADMJucatori">Nationalitate</span>
-                        </div>
-                        <div className="detalii-item-ADMJucatori">
-                            <span className="detalii-label-ADMJucatori">Inaltime:</span>
-                            <span className="detalii-value-ADMJucatori">Inaltime</span>
-                        </div>
-                    </div>
-                    <div className="Workspace-actions-collumn">   
-                    <Link to="/editeazajucator" className="ADMJucatori_options">
-                        <img src={PlayerEditImage} alt="" className="Action-image-ADMJucatori" />
-                     </Link> 
-                     <img src={PlayerDeleteImage} alt="" className="Action-image-ADMJucatori" />      
-                    </div>
-                </div>
-
-                
-
-             </div>
+             
+             {playerData && (
+          <div className="Workspace-row-ADMJucatori3">
+            {playerData.map((player, index) => (
+              <AdminPlayerCard
+                key={index.id}
+                poza={player.urlPoza}
+                nume={player.nume}
+                prenume={player.prenume}
+                pozitie={player.post}
+                nationalitate={player.nationalitate}
+                varsta={calculateAge(player.dataNastere)}
+                inaltimea={player.inaltime}
+              />
+            ))}
+          </div>
+        )}
+              
           
         </div>
       </div>

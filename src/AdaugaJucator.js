@@ -36,10 +36,11 @@ const AdaugaJucator = () => {
       nationalitate: formData.nationalitate,
       tipLot: 0,
       post: formData.pozitie,
-      urlPoza: "",
+      urlPoza: formData.imagine,
       dataNastere: formData.datan,
       inaltime:parseFloat(formData.inaltime),
       descriere: formData.descriere
+
     };
 
     const response = await fetch('https://handballdevsbe.azurewebsites.net/api/staff', {
@@ -113,9 +114,11 @@ const AdaugaJucator = () => {
       </div>
 
       <div className='ADD_jucator2'>
+      <Link to="/adminjucatori">
         <button className="Incarca-imagine-jucator-ADD" onClick={handleAdaugaJucator}>
           Adauga jucator
         </button>
+      </Link>
       </div>
     </div>
   );
