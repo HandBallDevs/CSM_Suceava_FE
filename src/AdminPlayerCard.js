@@ -5,7 +5,7 @@ import PlayerEditImage from "./imagini/EditImage.png";
 import PlayerDeleteImage from "./imagini/DeleteImage.png";
 import AdminJucatorImage from './imagini/jucator.png';
 
-const AdminPlayerCard = ({ id,poza,nume, prenume, pozitie, nationalitate, varsta, inaltimea,onDelete}) => {
+const AdminPlayerCard = ({ id,poza,nume, prenume, pozitie, nationalitate, varsta, inaltimea,onDelete,}) => {
   const [editedData, setEditedData] = useState({
     poza,
     nume,
@@ -18,9 +18,10 @@ const AdminPlayerCard = ({ id,poza,nume, prenume, pozitie, nationalitate, varsta
   });
 
   const handleDelete = () => {
-    // Invoke the onDelete function with the player's ID
+    
     onDelete(id);
   };
+  
  
 
   return (
@@ -53,9 +54,9 @@ const AdminPlayerCard = ({ id,poza,nume, prenume, pozitie, nationalitate, varsta
                         </div>
                     </div>
                     <div className="Workspace-actions-collumn">   
-                    <Link to="/editeazajucator" className="ADMJucatori_options">
-                        <img src={PlayerEditImage} alt="" className="Action-image-ADMJucatori" />
-                     </Link> 
+                    <Link to={'/editeazajucator'} className="ADMJucatori_options">
+        <img src={PlayerEditImage} alt="" className="Action-image-ADMJucatori"/>
+      </Link>
                      <img src={PlayerDeleteImage} alt="" className="Action-image-ADMJucatori" onClick={handleDelete}/>      
                     </div>
                 </div>
