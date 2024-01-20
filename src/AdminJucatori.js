@@ -12,6 +12,8 @@ import { useSpring, animated } from "react-spring";
 const AdminJucatori = () => {
   const [playerData, setPlayerData] = useState(null);
 
+  
+
   const formatDate = (dateString) => {
     const options = { year: "numeric", month: "long", day: "numeric" };
     const date = new Date(dateString);
@@ -34,6 +36,24 @@ const AdminJucatori = () => {
 
     return age;
   };
+
+  const handleDeletePlayer = async (playerId) => {
+    try {
+      const response = await fetch(`https://handballdevsbe.azurewebsites.net/api/staff?id=${playerId}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        setPlayerData((prevData) => prevData.filter((player) => player.id !== playerId));
+        console.log('Player deleted successfully.');
+      } else {
+        console.error('Error deleting player:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error deleting player:', error.message);
+    }
+  };
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -107,14 +127,16 @@ const AdminJucatori = () => {
           <div className="Workspace-row-ADMJucatori3">
             {playerData.map((player, index) => (
               <AdminPlayerCard
-                key={index.id}
-                poza={player.urlPoza}
-                nume={player.nume}
-                prenume={player.prenume}
-                pozitie={player.post}
-                nationalitate={player.nationalitate}
-                varsta={calculateAge(player.dataNastere)}
-                inaltimea={player.inaltime}
+              key={index.id}
+              id={player.id}
+              poza={player.urlPoza}
+              nume={player.nume}
+              prenume={player.prenume}
+              pozitie={player.post}
+              nationalitate={player.nationalitate}
+              varsta={calculateAge(player.dataNastere)}
+              inaltimea={player.inaltime}
+              onDelete={handleDeletePlayer}
               />
             ))}
           </div>
