@@ -8,9 +8,10 @@ import { Link, useParams } from "react-router-dom";
 const EditeazaJucator = () => {
   const { playerId } = useParams();
 
-  
-
   console.log('Player ID from route:', playerId);
+
+  const [loading, setLoading] = useState(true);
+
   const [playerData, setPlayerData] = useState({
     nume: '',
     prenume: '',
@@ -30,32 +31,39 @@ const EditeazaJucator = () => {
           console.error('Player ID is undefined.');
           return;
         }
-        console.log('Fetching data for player ID:', playerId); // Add this line
-
+  
+        console.log('Fetching data for player ID:', playerId);
+  
         const response = await fetch(`https://handballdevsbe.azurewebsites.net/api/staff?id=${playerId}`);
         console.log('API Response:', response);
-
+  
         if (response.ok) {
           const data = await response.json();
           console.log('Fetched Data:', data);
-
-          if (data) {
+  
+          if (data && data.length > 0) {
             console.log('Fetched Data:', data);
-          
-            setPlayerData({
-              nume: data.nume,
-              prenume: data.prenume,
-              pozitie: data.post,
-              datan: data.dataNastere,
-              nationalitate: data.nationalitate,
-              inaltime: data.inaltime,
-              descriere: data.descriere,
-              imagine: data.urlPoza,
-            });
+  
+            const selectedPlayer = data.find(player => player.id === playerId);
+  
+            if (selectedPlayer) {
+              setPlayerData({
+                nume: selectedPlayer.nume,
+                prenume: selectedPlayer.prenume,
+                pozitie: selectedPlayer.post,
+                datan: selectedPlayer.dataNastere,
+                nationalitate: selectedPlayer.nationalitate,
+                inaltime: selectedPlayer.inaltime,
+                descriere: selectedPlayer.descriere,
+                imagine: selectedPlayer.urlPoza,
+              });
+            } else {
+              console.error(`Player with ID ${playerId} not found in the response.`);
+            }
+  
           } else {
             console.error('No data received from the API.');
           }
-          
         } else {
           console.error('API Error:', response.statusText);
         }
@@ -63,22 +71,18 @@ const EditeazaJucator = () => {
         console.error('API Error:', error.message);
       }
     };
-
+  
     // Fetch data when playerId changes
     if (playerId) {
       fetchPlayerData();
     }
-
   }, [playerId]);
+  
 
-  // Log updated form data after it has been set
-  useEffect(() => {
-    console.log('Updated Form Data:', playerData);
-  }, [playerData]);
+  // Rest of your code...
 
-  if (!playerId) {
-    return <p>Loading...</p>;
-  }
+ 
+
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
@@ -151,13 +155,13 @@ const EditeazaJucator = () => {
              <label className="edit_jucator-labels" htmlFor="descriere">Descriere</label>
           </div>
           <div className='edit_jucator-collumn'>
-          <input type="text" id="nume" className="edit_jucator-input" onChange={handleInputChange} value={playerData.nume} />
-          <input type="text" id="prenume" className="edit_jucator-input" onChange={handleInputChange} value={playerData.prenume} />
-          <input type="text" id="pozitie" className="edit_jucator-input" onChange={handleInputChange} value={playerData.pozitie} />
-          <input type="text" id="datan" className="edit_jucator-input" onChange={handleInputChange} value={playerData.datan} />
-          <input type="text" id="nationalitate" className="edit_jucator-input" onChange={handleInputChange} value={playerData.nationalitate} />
-          <input type="text" id="inaltime" className="edit_jucator-input" onChange={handleInputChange} value={playerData.inaltime} />
-          <input type="text" id="descriere" className="edit_jucator-input" onChange={handleInputChange} value={playerData.descriere} />
+          <input type="text" id="nume" className="edit_jucator-input" onChange={handleInputChange} value={playerData.nume ?? ''}/>
+          <input type="text" id="prenume" className="edit_jucator-input" onChange={handleInputChange} value={playerData.prenume ?? ''} />
+          <input type="text" id="pozitie" className="edit_jucator-input" onChange={handleInputChange} value={playerData.pozitie ?? ''} />
+          <input type="text" id="datan" className="edit_jucator-input" onChange={handleInputChange} value={playerData.datan ?? ''} />
+          <input type="text" id="nationalitate" className="edit_jucator-input" onChange={handleInputChange} value={playerData.nationalitate ?? ''} />
+          <input type="text" id="inaltime" className="edit_jucator-input" onChange={handleInputChange} value={playerData.inaltime ?? ''} />
+          <input type="text" id="descriere" className="edit_jucator-input" onChange={handleInputChange} value={playerData.descriere ?? ''} />
         </div>
           <div className='edit_jucator-collumn1'>
             <img src={ImgJucator} alt="" className="iamgine_jucator-edit" />
