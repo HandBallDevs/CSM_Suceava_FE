@@ -46,6 +46,8 @@ function App() {
         <Route path="/adminstaff" element={<AdminStaff />} />
         <Route path="/editeazajucator" element={<EditeazaJucator />} />
         <Route path="/adaugajucator" element={<AdaugaJucator />} />
+        <Route path="/editeazajucator/:playerId" element={<EditeazaJucator/>} />
+
       
 
 

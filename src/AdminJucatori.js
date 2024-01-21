@@ -36,6 +36,11 @@ const AdminJucatori = () => {
 
     return age;
   };
+  const handleUpdate = (id) => {
+  // Perform any logic you need before navigating or updating
+  console.log(`Update clicked for player with ID: ${id}`);
+  // Navigate to EditeazaJucator or perform other actions
+};
 
   const handleDeletePlayer = async (playerId) => {
     try {
@@ -124,23 +129,25 @@ const AdminJucatori = () => {
              </div>
              
              {playerData && (
-          <div className="Workspace-row-ADMJucatori3">
-            {playerData.map((player, index) => (
-              <AdminPlayerCard
-              key={index.id}
-              id={player.id}
-              poza={player.urlPoza}
-              nume={player.nume}
-              prenume={player.prenume}
-              pozitie={player.post}
-              nationalitate={player.nationalitate}
-              varsta={calculateAge(player.dataNastere)}
-              inaltimea={player.inaltime}
-              onDelete={handleDeletePlayer}
-              />
-            ))}
-          </div>
-        )}
+  <div className="Workspace-row-ADMJucatori3">
+    {playerData.map((player) => (
+      <AdminPlayerCard
+        key={player.id}  // Use a unique identifier as the key
+        id={player.id}
+        poza={player.urlPoza}
+        nume={player.nume}
+        prenume={player.prenume}
+        pozitie={player.post}
+        nationalitate={player.nationalitate}
+        varsta={calculateAge(player.dataNastere)}
+        inaltimea={player.inaltime}
+        onDelete={handleDeletePlayer}
+        onUpdate={handleUpdate}
+      />
+    ))}
+  </div>
+)}
+
               
           
         </div>
