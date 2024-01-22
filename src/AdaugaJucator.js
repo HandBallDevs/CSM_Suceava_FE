@@ -9,7 +9,40 @@ import { useNavigate, Link } from "react-router-dom";
 
 const AdaugaJucator = () => {
 
+    const [originalImageSrc, setOriginalImageSrc] = useState(ImgJucator);
+    const [imgSrc, setImgSrc] = useState(ImgJucator);
   
+    const handleImageChange = (event) => {
+      const file = event.target.files[0];
+  
+      if (file) {
+        const reader = new FileReader();
+  
+        reader.onload = (e) => {
+          const base64Image = e.target.result;
+  
+          if (base64Image) {
+            const imageWithoutPrefix = base64Image.replace(/^data:image\/(png|jpeg|jpg);base64,/, '');
+            setImgSrc(imageWithoutPrefix);
+            console.log('Base64 Image without prefix:', imageWithoutPrefix);
+          } else {
+            console.error('Error loading image.');
+          }
+        };
+  
+        reader.readAsDataURL(file);
+  
+        // Make a copy of the original image before conversion
+        const originalReader = new FileReader();
+        originalReader.onload = (e) => {
+          const originalBase64Image = e.target.result;
+          setOriginalImageSrc(originalBase64Image);
+        };
+        originalReader.readAsDataURL(file);
+      }
+    };
+  
+
   
   const [formData, setFormData] = useState({
     nume: '',
@@ -39,12 +72,13 @@ const AdaugaJucator = () => {
       nationalitate: formData.nationalitate,
       tipLot: 0,
       post: formData.pozitie,
-      urlPoza: formData.imagine,
+      urlPoza: imgSrc,
       dataNastere: formData.datan,
       inaltime:parseFloat(formData.inaltime),
       descriere: formData.descriere
 
     };
+    console.log('Request Payload:', newData);
 
     const response = await fetch('https://handballdevsbe.azurewebsites.net/api/staff', {
       method: 'POST',
@@ -111,19 +145,28 @@ const AdaugaJucator = () => {
             <input type="text" id="descriere" className="ADD_jucator-input" onChange={handleInputChange}/>
         </div>
         <div className='ADD_jucator-collumn1'>
-          <img src={ImgJucator} alt="" className="iamgine_jucator-ADD" />
-          <button className="Incarca-imagine-jucator-ADD" >
-  Incarca imagine
-</button>
+        <img src={originalImageSrc} alt=""  className="iamgine_jucator-ADD"  />
+        <label htmlFor="imageInput" className="custom-label">
+        Incarca Imagine
+      </label>
+      <input
+        type="file"
+        id="imageInput"
+        accept="image/*"
+        className="Incarca-imagine-jucator-ADD"
+        onChange={handleImageChange}
+        style={{ display: 'none' }}
+      />
         </div>
       </div>
 
       <div className='ADD_jucator2'>
-      <Link to="/adminjucatori">
+      <Link to="/adminjucatori" className='LINK1'>  
         <button className="Incarca-imagine-jucator-ADD" onClick={handleAdaugaJucator}>
           Adauga jucator
         </button>
-      </Link>
+        </Link>
+    
       </div>
     </div>
   );
