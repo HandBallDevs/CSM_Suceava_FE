@@ -108,6 +108,7 @@ const AdminStaff = () => {
             <Link to="/adminmeciuri" className="ADMStaff_options">Meciuri</Link>
             <Link to="/adminusers" className="ADMStaff_options">Utilizatori</Link>
             <Link to="/adminjucatori" className="ADMStaff_options">Jucatorii Seniori</Link>
+            <Link to="/adminjuniori" className="ADMStaff_options">Jucatorii Juniori</Link>
             <Link to="/adminstaff" className="ADMStaff_options">Staff</Link>
           </div>
         </div>  

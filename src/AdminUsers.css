@@ -109,9 +109,9 @@
     position: absolute; 
     display: flex;
     flex-direction: column;
-    top: 8vw;
+    top: 7vw;
     align-items: center;
-    gap: 4vw;
+    gap: 3.5vw;
     text-transform: uppercase;
   }
   

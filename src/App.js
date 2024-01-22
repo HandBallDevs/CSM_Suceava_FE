@@ -25,6 +25,9 @@ import EditeazaJucator from "./EditeazaJucator";
 import AdaugaJucator from "./AdaugaJucator";
 import AdaugaStaff from "./AdaugaStaff";
 import EditeazaStaff from "./EditeazaStaff";
+import AdminJuniori from "./AdminJuniori";
+import EditeazaJunior from "./EditeazaJunior";
+import AdaugaJunior from "./AdaugaJunior";
 function App() {
   return (
     <Router>
@@ -49,8 +52,11 @@ function App() {
         <Route path="/editeazajucator" element={<EditeazaJucator />} />
         <Route path="/adaugajucator" element={<AdaugaJucator />} />
         <Route path="/adaugastaff" element={<AdaugaStaff />} />
+        <Route path="/adaugajunior" element={<AdaugaJunior />} />
+        <Route path="/adminjuniori" element={<AdminJuniori />} />
         <Route path="/editeazajucator/:playerId" element={<EditeazaJucator/>} />
         <Route path="/editeazastaff/:playerId" element={<EditeazaStaff/>} />
+        <Route path="/editeazajunior/:playerId" element={<EditeazaJunior/>} />
 
       
 

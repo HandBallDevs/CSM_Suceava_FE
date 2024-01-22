@@ -5,11 +5,11 @@ import Meniusus from "./Meniusus";
 import FrameImage from "./imagini/frame.png";
 import AdminMenuImage from "./imagini/AdminMenuImage.png";
 import { useNavigate,Link } from "react-router-dom";
-import AdminPlayerCard from './AdminPlayerCard';
+import AdminJuniorCard from './AdminJuniorCard';
 import { useSpring, animated } from "react-spring";
 
 
-const AdminJucatori = () => {
+const AdminJuniori = () => {
   const [playerData, setPlayerData] = useState(null);
 
   
@@ -44,7 +44,7 @@ const AdminJucatori = () => {
 
   const handleDeletePlayer = async (playerId) => {
     try {
-      const response = await fetch(`https://handballdevsbe.azurewebsites.net/api/staff?tipLot=0&id=${playerId}`, {
+      const response = await fetch(`https://handballdevsbe.azurewebsites.net/api/staff?tipLot=1&id=${playerId}`, {
         method: 'DELETE',
       });
   
@@ -63,7 +63,7 @@ const AdminJucatori = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://handballdevsbe.azurewebsites.net/api/staff?tipLot=0"
+          "https://handballdevsbe.azurewebsites.net/api/staff?tipLot=1"
         );
         if (response.ok) {
           const data = await response.json();
@@ -122,7 +122,7 @@ const AdminJucatori = () => {
                     <input type="text" id="filtreaza" name="filtreaza" className="textbox-filter-ADMJucatori"/>
                 </div>
                 <div className="Workspace-row-ADMJucatori2">
-                <Link to="/adaugajucator">
+                <Link to="/adaugajunior">
                     <button className="button-adauga_jucator-ADMJucatori"> + Adauga Jucator </button>
                 </Link>
                     <label  className="label-title_j-ADMJucatori" >Lot seniori </label>
@@ -132,7 +132,7 @@ const AdminJucatori = () => {
              {playerData && (
   <div className="Workspace-row-ADMJucatori3">
     {playerData.map((player) => (
-      <AdminPlayerCard
+      <AdminJuniorCard
         key={player.id}  // Use a unique identifier as the key
         id={player.id}
         poza={player.urlPoza}
@@ -159,4 +159,4 @@ const AdminJucatori = () => {
   );
 };
 
-export default AdminJucatori;
+export default AdminJuniori;
