@@ -75,6 +75,7 @@ const AdminJucatori = () => {
       } catch (error) {
         console.error("API Error:", error.message);
       }
+     
     };
 
     fetchData();

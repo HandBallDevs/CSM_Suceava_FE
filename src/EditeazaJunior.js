@@ -124,6 +124,7 @@ const EditeazaJunior = () => {
     } catch (error) {
       console.error('API Error:', error.message);
     }
+    window.location.reload();
   };
   
   return (

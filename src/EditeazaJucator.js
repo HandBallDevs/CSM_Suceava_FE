@@ -34,7 +34,7 @@ const EditeazaJucator = () => {
   
         console.log('Fetching data for player ID:', playerId);
   
-        const response = await fetch(`https://handballdevsbe.azurewebsites.net/api/staff?tipLot=2&id=${playerId}`);
+        const response = await fetch(`https://handballdevsbe.azurewebsites.net/api/staff?tipLot=0&id=${playerId}`);
         console.log('API Response:', response);
   
         if (response.ok) {
@@ -124,6 +124,7 @@ const EditeazaJucator = () => {
     } catch (error) {
       console.error('API Error:', error.message);
     }
+    window.location.reload();
   };
   
   return (

@@ -8,6 +8,9 @@ import { useNavigate, Link } from "react-router-dom";
 
 
 const AdaugaJucator = () => {
+
+  
+  
   const [formData, setFormData] = useState({
     nume: '',
     prenume: '',
@@ -61,7 +64,9 @@ const AdaugaJucator = () => {
   } catch (error) {
     console.error('API Error:', error.message);
   }
+  window.location.reload();
 };
+
   
   
   
