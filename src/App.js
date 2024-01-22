@@ -23,6 +23,8 @@ import AdminJucatori from "./AdminJucatori";
 import AdminStaff from "./AdminStaff";
 import EditeazaJucator from "./EditeazaJucator";
 import AdaugaJucator from "./AdaugaJucator";
+import AdaugaStaff from "./AdaugaStaff";
+import EditeazaStaff from "./EditeazaStaff";
 function App() {
   return (
     <Router>
@@ -46,7 +48,9 @@ function App() {
         <Route path="/adminstaff" element={<AdminStaff />} />
         <Route path="/editeazajucator" element={<EditeazaJucator />} />
         <Route path="/adaugajucator" element={<AdaugaJucator />} />
+        <Route path="/adaugastaff" element={<AdaugaStaff />} />
         <Route path="/editeazajucator/:playerId" element={<EditeazaJucator/>} />
+        <Route path="/editeazastaff/:playerId" element={<EditeazaStaff/>} />
 
       
 

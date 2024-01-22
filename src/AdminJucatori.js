@@ -44,7 +44,7 @@ const AdminJucatori = () => {
 
   const handleDeletePlayer = async (playerId) => {
     try {
-      const response = await fetch(`https://handballdevsbe.azurewebsites.net/api/staff?id=${playerId}`, {
+      const response = await fetch(`https://handballdevsbe.azurewebsites.net/api/staff?tipLot=0&id=${playerId}`, {
         method: 'DELETE',
       });
   

@@ -5,7 +5,7 @@ import FrameImage from "./imagini/frame.png";
 import ImgJucator from "./imagini/PozaJucaror.png";
 import { Link, useParams } from "react-router-dom";
 
-const EditeazaJucator = () => {
+const EditeazaStaff = () => {
   const { playerId } = useParams();
 
   console.log('Player ID from route:', playerId);
@@ -98,7 +98,7 @@ const EditeazaJucator = () => {
         nume: playerData.nume,
         prenume: playerData.prenume,
         nationalitate: playerData.nationalitate,
-        tipLot: 0,
+        tipLot: 2,
         post: playerData.pozitie,
         urlPoza: playerData.imagine,
         dataNastere: playerData.datan,
@@ -142,7 +142,7 @@ const EditeazaJucator = () => {
           </div>
       </div>
       <div className='edit_jucator-title'>
-        <label className="edit_jucator-title_label">Editeaza jucator lot seniori</label>
+        <label className="edit_jucator-title_label">Editeaza staff</label>
       </div>
       <div className='edit_jucator'>
           <div className='edit_jucator-collumn'>
@@ -170,9 +170,9 @@ const EditeazaJucator = () => {
 
       </div>
       <div className='edit_jucator2'>
-      <Link to={'/adminjucatori'}>
+      <Link to={'/adminstaff'}>
           <button className="Incarca-imagine-jucator-ADD" onClick={handleEditeazaJucator}>
-            Editeaza jucator
+            Editeaza staff
           </button>
         </Link>
       </div>
@@ -181,4 +181,4 @@ const EditeazaJucator = () => {
   );
 };
 
-export default EditeazaJucator;
+export default EditeazaStaff;

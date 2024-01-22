@@ -191,70 +191,15 @@
   
   .Workspace-row-ADMStaff3 {
     display: flex;
+    width: 70vw;
+    margin-left: 15vw;
     justify-content: flex-start; 
     align-items: center;
     flex-direction: row;
-    gap: 2vw;
+    gap: 5vw;
     margin-top: 1.8vw;
+    flex-wrap: wrap; 
   
   }
 
-  /*Player*/
-
-  .player-image-senior-ADMStaff
-  {
-    width: 11vw;
-    height: auto;
-  }
   
-.playercard-ADMStaff,
-.detalii-item-ADMStaff
-{
-  display: flex;
-    justify-content: flex-start; 
-    align-items: center;
-    flex-direction: row;
-    gap: 1vw;
-
-}
-
-  .Workspace-infoplayer-collumn-ADMStaff{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column; 
-    gap:0.2vw; 
-  }
-
-  .detalii-label-ADMStaff
-  {
-    font-size: 0.9vw;
-    text-transform: uppercase;
-    color: #999;
-  }
-  .detalii-label-nume-ADMStaff{
-    color: blue;
-    font-size: 1.2vw;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-
-  .detalii-value-ADMStaff
-  {
-    font-size: 1vw;
-  }
-  
- .Workspace-actions-collumn
- {
-  display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; 
-    gap:1vw; 
-  
- } 
-
- .Action-image-ADMStaff{
-  width:1.5vw;
-  height: auto;
- }
