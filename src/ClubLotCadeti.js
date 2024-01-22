@@ -68,7 +68,6 @@ const ClubLotCadeti = () => {
         <div className="frame-overlay-club">
           <img src={FrameImage} alt="" className="frame-club" />
           <div className="words-lot">
-            
             <Link to="/clublot" className="wordslot-list-link-lot">
               LOTUL CLUBULUI
             </Link>

@@ -92,7 +92,7 @@
 }
 
 .rezultate-words-container span {
-  margin:0vw 5vw; /* Adjust the spacing between words as needed */
+  margin:0vw 5vw; 
   font-weight: bold;
   
 }
@@ -102,8 +102,8 @@
   
   }
   .meci {
-    /* Adjust styling for individual Jucator component as needed */
+   
   
-    margin-bottom: -0vw; /* Add some spacing between rows */
+    margin-bottom: -0vw; 
     width: 0%;
   }

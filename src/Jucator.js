@@ -16,7 +16,11 @@ const Jucator = ({ poza,nume, prenume, pozitie, nationalitate, varsta, inaltimea
 
   return (
     <div className="player-info-senior">
-      <img src={editedData.poza || JucatorImage} alt="" className="player-image-senior" />
+    <img
+  src={editedData.poza && editedData.poza.includes("https://csusvsa.blob.core.windows.net/csusvbs") ? JucatorImage : (editedData.poza || JucatorImage)}
+  alt=""
+  className="player-image-senior"
+/>
       <div className="player-detalii-senior">
         <div className="detalii-item-senior">
           <span className="detalii-label-senior-nume">NUME:</span>

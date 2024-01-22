@@ -119,7 +119,7 @@ const Acasa = () => {
             <img src={FrameImage} alt="" className="framerezultate" />
             <div className="word-list-6">
               <p className="word-6 rezultate">Meciuri Viitoare</p>
-              <div className="news-rezultate">
+              <div className="news-viitoare">
                 {RezMeciData.slice(0, 3).map((item, index) => (
                   <>
                     <div className="image-with-text" key={index}>
@@ -138,7 +138,7 @@ const Acasa = () => {
                           <img
                             src={DetaliiImage}
                             alt=""
-                            className="rezultate-image2"
+                            className="detalii-image2"
                           />
                         </Link>
                       </motion.div>
@@ -174,7 +174,7 @@ const Acasa = () => {
             </div>
           </div>
         </div>
-      </div>
+        </div>
       <Meniujos />
     </animated.div>
   );
