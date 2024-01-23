@@ -117,6 +117,7 @@ const EditeazaJucator = () => {
       if (response.ok) {
         const data = await response.json();
         console.log('API Response:', data);
+        window.location.reload();
         // Add any further logic or state updates as needed
       } else {
         console.error('API Error:', response.statusText);
@@ -124,7 +125,7 @@ const EditeazaJucator = () => {
     } catch (error) {
       console.error('API Error:', error.message);
     }
-    window.location.reload();
+  
   };
   
   return (
@@ -171,7 +172,7 @@ const EditeazaJucator = () => {
 
       </div>
       <div className='edit_jucator2'>
-      <Link to={'/adminjucatori'}>
+      <Link to={'/adminjucatori'} className="Incarca-imagine-jucator-ADD">
           <button className="Incarca-imagine-jucator-ADD" onClick={handleEditeazaJucator}>
             Editeaza jucator
           </button>

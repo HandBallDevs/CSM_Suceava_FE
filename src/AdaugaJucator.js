@@ -8,40 +8,40 @@ import { useNavigate, Link } from "react-router-dom";
 
 
 const AdaugaJucator = () => {
+  const [originalImageSrc, setOriginalImageSrc] = useState(ImgJucator);
+  const [imgSrc, setImgSrc] = useState(ImgJucator);
+  const [isImageSelected, setIsImageSelected] = useState(false); // New state for image selection
 
-    const [originalImageSrc, setOriginalImageSrc] = useState(ImgJucator);
-    const [imgSrc, setImgSrc] = useState(ImgJucator);
-  
-    const handleImageChange = (event) => {
-      const file = event.target.files[0];
-  
-      if (file) {
-        const reader = new FileReader();
-  
-        reader.onload = (e) => {
-          const base64Image = e.target.result;
-  
-          if (base64Image) {
-            const imageWithoutPrefix = base64Image.replace(/^data:image\/(png|jpeg|jpg);base64,/, '');
-            setImgSrc(imageWithoutPrefix);
-            console.log('Base64 Image without prefix:', imageWithoutPrefix);
-          } else {
-            console.error('Error loading image.');
-          }
-        };
-  
-        reader.readAsDataURL(file);
-  
-        // Make a copy of the original image before conversion
-        const originalReader = new FileReader();
-        originalReader.onload = (e) => {
-          const originalBase64Image = e.target.result;
-          setOriginalImageSrc(originalBase64Image);
-        };
-        originalReader.readAsDataURL(file);
-      }
-    };
-  
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        const base64Image = e.target.result;
+
+        if (base64Image) {
+          const imageWithoutPrefix = base64Image.replace(/^data:image\/(png|jpeg|jpg);base64,/, '');
+          setImgSrc(imageWithoutPrefix);
+          setIsImageSelected(true); // Set to true when image is selected
+          console.log('Base64 Image without prefix:', imageWithoutPrefix);
+        } else {
+          console.error('Error loading image.');
+        }
+      };
+
+      reader.readAsDataURL(file);
+
+      // Make a copy of the original image before conversion
+      const originalReader = new FileReader();
+      originalReader.onload = (e) => {
+        const originalBase64Image = e.target.result;
+        setOriginalImageSrc(originalBase64Image);
+      };
+      originalReader.readAsDataURL(file);
+    }
+  };
 
   
   const [formData, setFormData] = useState({
@@ -65,7 +65,14 @@ const AdaugaJucator = () => {
   };
 
  const handleAdaugaJucator = async () => {
-  try {
+ 
+
+    if (!isImageSelected) {
+      alert('Require photo'); // Show alert if image is not selected
+      return;
+    }
+    try {
+
     const newData = {
       nume: formData.nume,
       prenume: formData.prenume,
@@ -91,6 +98,8 @@ const AdaugaJucator = () => {
     if (response.ok) {
       const data = await response.json();
       console.log('API Response:', data);
+      window.location.reload();
+      
       // Add any further logic or state updates as needed
     } else {
       console.error('API Error:', response.statusText);
@@ -98,7 +107,7 @@ const AdaugaJucator = () => {
   } catch (error) {
     console.error('API Error:', error.message);
   }
-  window.location.reload();
+
 };
 
   
@@ -157,15 +166,28 @@ const AdaugaJucator = () => {
         onChange={handleImageChange}
         style={{ display: 'none' }}
       />
+       {isImageSelected || (
+          <label className="red-label">Require photo</label>
+        )}
         </div>
       </div>
 
       <div className='ADD_jucator2'>
-      <Link to="/adminjucatori" className='LINK1'>  
-        <button className="Incarca-imagine-jucator-ADD" onClick={handleAdaugaJucator}>
+      {isImageSelected ? (
+        <Link to="/adminjucatori" className='LINK1'>
+          <button
+            className="Incarca-imagine-jucator-ADD"
+            onClick={handleAdaugaJucator}
+            disabled={!isImageSelected} // Disable button if image is not selected
+          >
+            Adauga jucator
+          </button>
+        </Link>
+      ) : (
+        <button className="Incarca-imagine-jucator-ADD" disabled>
           Adauga jucator
         </button>
-        </Link>
+      )}
     
       </div>
     </div>

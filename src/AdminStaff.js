@@ -121,7 +121,7 @@ const AdminStaff = () => {
                     <input type="text" id="filtreaza" name="filtreaza" className="textbox-filter-ADMStaff"/>
                 </div>
                 <div className="Workspace-row-ADMStaff2">
-                <Link to="/adaugastaff">
+                <Link to="/adaugastaff" className="button-adauga_jucator-ADMStaff">
                     <button className="button-adauga_jucator-ADMStaff"> + Adauga Antrenor </button>
                 </Link>
                     <label  className="label-title_j-ADMStaff" >Staff </label>
