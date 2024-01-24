@@ -144,7 +144,7 @@
   }
 
   .workspace-row1-ADMmeciuri{
-    margin-top: -2.1vw;
+    margin-top: -2.0vw;
     gap:2vw;
     margin-left: 11vw;
     margin-right: -15vw;
@@ -166,7 +166,7 @@
 
   .workspace-collumn-ADMmeciuri
   {
-    width: 8vw;
+    
     gap:3.55vw;
   }
 
@@ -177,7 +177,7 @@
 
   .workspace-labels-ADMmeciuri
   {
-    font-size: 1.25vw;
+    font-size: 1.15vw;
     font-weight: bold;
   }
 

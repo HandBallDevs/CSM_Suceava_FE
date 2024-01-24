@@ -75,43 +75,44 @@ const AdminMeciuri = () => {
 
           <div className="workspace-row-ADMmeciuri">
             <div className="workspace-collumn-ADMmeciuri">
-              <label className="workspace-labels-ADMmeciuri" htmlFor="liga">
-                Liga:
+              <label className="workspace-labels-ADMmeciuri" htmlFor="editia">
+                Editia:
               </label>
               <label className="workspace-labels-ADMmeciuri" htmlFor="data">
                 Data:
               </label>
-              <label className="workspace-labels-ADMmeciuri" htmlFor="locatia">
-                Locatia:
-              </label>
               <label className="workspace-labels-ADMmeciuri" htmlFor="ora">
                 Ora:
               </label>
-              <label className="workspace-labels-ADMmeciuri" htmlFor="tipmeci">
-                Tip meci:
+              <label className="workspace-labels-ADMmeciuri" htmlFor="locatia">
+                Locatia:
+              </label>
+          
+              <label className="workspace-labels-ADMmeciuri" htmlFor="statusmeci">
+                Status meci:
               </label>
             </div>
 
             <div className="workspace-collumn-input-ADMmeciuri">
               <input type="text" id="liga" className="workspace-inputs-ADMmeciuri" />
               <select id="data" className="workspace-choicebox-ADMmeciuri"></select>
-              <input type="text" id="locatia" className="workspace-inputs-ADMmeciuri" />
               <select id="ora" className="workspace-choicebox-ADMmeciuri"></select>
+              <input type="text" id="locatia" className="workspace-inputs-ADMmeciuri" />
               <input type="text" id="tipmeci" className="workspace-inputs-ADMmeciuri" />
             </div>
 
             <div className="workspace-collumn-ADMmeciuri">
-              <label className="workspace-labels-ADMmeciuri" htmlFor="gazde">
-                Gazde:
+              <label className="workspace-labels-ADMmeciuri" htmlFor="numeadversar">
+                Nume adversar:
               </label>
-              <label className="workspace-labels-ADMmeciuri" htmlFor="oaspeti">
-                Oaspeti:
+              <label className="workspace-labels-ADMmeciuri" htmlFor="acasa">
+                Acasa:
               </label>
-              <label className="workspace-labels-ADMmeciuri" htmlFor="scorgazde">
-                Scor gazde:
+              <label className="workspace-labels-ADMmeciuri" htmlFor="scorcsusv">
+                 Scor CSUSV:
               </label>
-              <label className="workspace-labels-ADMmeciuri" htmlFor="scoroaspeti">
-                Scor oaspeti:
+              <label className="workspace-labels-ADMmeciuri" htmlFor="scorinamic">
+                Scor adversar:
               </label>
             </div>
 

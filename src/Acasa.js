@@ -23,6 +23,7 @@ const Acasa = () => {
   });
 
   const [RezMeciData, setRezMeciData] = useState([]);
+  const [ViMeciData, setViMeciData] = useState([]); 
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -33,6 +34,26 @@ const Acasa = () => {
           const data = await response.json();
           console.log("API Response:", data);
           setRezMeciData(data);
+        } else {
+          console.error("API Error:", response.statusText);
+        }
+      } catch (error) {
+        console.error("API Error:", error.message);
+      }
+    };
+
+    fetchData();
+  }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://handballdevsbe.azurewebsites.net/api/meci?tipCampionat=1"
+        );
+        if (response.ok) {
+          const data = await response.json();
+          console.log("API Response:", data);
+          setViMeciData(data);
         } else {
           console.error("API Error:", response.statusText);
         }
@@ -120,7 +141,7 @@ const Acasa = () => {
             <div className="word-list-6">
               <p className="word-6 rezultate">Meciuri Viitoare</p>
               <div className="news-viitoare">
-                {RezMeciData.slice(0, 3).map((item, index) => (
+                {ViMeciData.slice(0, 3).map((item, index) => (
                   <>
                     <div className="image-with-text" key={index}>
                       <img src={LogoImage} alt="" className="rezultate-image" />

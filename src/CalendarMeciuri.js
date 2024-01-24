@@ -20,6 +20,27 @@ import BackAdaugaMeci from "./BackAdaugaMeci";
 
 const CalendarMeciuri = () => {
   const [RezultatData, setRezMeciData] = useState([]);
+  const [ViMeciData, setViMeciData] = useState([]); 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://handballdevsbe.azurewebsites.net/api/meci?tipCampionat=1"
+        );
+        if (response.ok) {
+          const data = await response.json();
+          console.log("API Response:", data);
+          setRezMeciData(data);
+        } else {
+          console.error("API Error:", response.statusText);
+        }
+      } catch (error) {
+        console.error("API Error:", error.message);
+      }
+    };
+
+    fetchData();
+  }, []);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -29,7 +50,7 @@ const CalendarMeciuri = () => {
         if (response.ok) {
           const data = await response.json();
           console.log("API Response:", data);
-          setRezMeciData(data);
+          setViMeciData(data);
         } else {
           console.error("API Error:", response.statusText);
         }
@@ -107,7 +128,7 @@ const CalendarMeciuri = () => {
           <div className="word-list-viitoare">
             <p className="word-viitoare rezultate">MECIURILE VIITOARE</p>
             <div className="news-rezultate2">
-            {RezultatData.slice(0, 2).map((item, index) => (
+            {ViMeciData.slice(0, 2).map((item, index) => (
                 <>
                   <div className="image-with-text2" key={index}>
                     <p className="text-deasupra-viitoare">
