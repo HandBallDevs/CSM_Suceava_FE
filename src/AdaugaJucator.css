@@ -124,6 +124,9 @@ margin-top: -1vw;
   border: 0.2vw solid gray;
   box-sizing: border-box;
   outline: none;
+  &::placeholder {
+    color:#333; 
+  }
 }
 
 .Incarca-imagine-jucator-ADD

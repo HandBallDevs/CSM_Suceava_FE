@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 import './AdaugaJucator.css';
 import Meniusus from "./Meniusus";
 import FrameImage from "./imagini/frame.png";
@@ -8,9 +8,30 @@ import { useNavigate, Link } from "react-router-dom";
 
 
 const AdaugaJucator = () => {
+
+  const [formData, setFormData] = useState({
+    nume: '',
+    prenume: '',
+    pozitie: '',
+    datan: '',
+    nationalitate: '',
+    inaltime: '',
+    descriere: '',
+  });
+
+
+  const [allFieldsFilled, setAllFieldsFilled] = useState(false);
+
   const [originalImageSrc, setOriginalImageSrc] = useState(ImgJucator);
   const [imgSrc, setImgSrc] = useState(ImgJucator);
   const [isImageSelected, setIsImageSelected] = useState(false); // New state for image selection
+
+  useEffect(() => {
+    // Check if all fields are filled
+    const isFilled = Object.values(formData).every((value) => value !== '');
+    setAllFieldsFilled(isFilled);
+  }, [formData]);
+
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
@@ -44,33 +65,40 @@ const AdaugaJucator = () => {
   };
 
   
-  const [formData, setFormData] = useState({
-    nume: '',
-    prenume: '',
-    pozitie: '',
-    varsta: '',
-    datan: '',
-    nationalitate: '',
-    inaltime: '',
-    descriere: '',
-    imagine: '',
-  });
-
+ 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
     setFormData({
       ...formData,
       [id]: value,
     });
+    // Update allFieldsFilled
+    setAllFieldsFilled(Object.values({ ...formData, [id]: value }).every((value) => value !== ''));
   };
 
  const handleAdaugaJucator = async () => {
- 
+
+  console.log('handleAdaugaJucator called');
+  console.log('isImageSelected:', isImageSelected);
+  console.log('allFieldsFilled:', allFieldsFilled);
+
+  const isFilled = Object.values(formData).every((value) => value !== '');
+
+  if (!isImageSelected || !isFilled) {
+    const emptyFields = Object.keys(formData).filter((key) => formData[key] === '');
+    console.log('Empty Fields:', emptyFields);
 
     if (!isImageSelected) {
-      alert('Require photo'); // Show alert if image is not selected
-      return;
+      console.log('Image not selected.');
     }
+    if (!isFilled) {
+      console.log('Not all fields filled.');
+    }
+
+    alert('All fields are required');
+    return;
+  }
+
     try {
 
     const newData = {
@@ -145,13 +173,14 @@ const AdaugaJucator = () => {
              <label className="ADD_jucator-labels" htmlFor="descriere">Descriere</label>
         </div>
         <div className='ADD_jucator-collumn'>
-          <input type="text" id="nume" className="ADD_jucator-input" onChange={handleInputChange}/>
-            <input type="text" id="prenume" className="ADD_jucator-input" onChange={handleInputChange} />
-            <input type="text" id="pozitie" className="ADD_jucator-input" onChange={handleInputChange} />
-            <input type="text" id="datan" className="ADD_jucator-input" onChange={handleInputChange}/>
-            <input type="text" id="nationalitate" className="ADD_jucator-input" onChange={handleInputChange}/>
-            <input type="text" id="inaltime" className="ADD_jucator-input" onChange={handleInputChange}/>
-            <input type="text" id="descriere" className="ADD_jucator-input" onChange={handleInputChange}/>
+        <input type="text" id="nume" className="ADD_jucator-input" onChange={handleInputChange} placeholder={'Nume...'}/>
+          <input type="text" id="prenume" className="ADD_jucator-input" onChange={handleInputChange} placeholder={'Prenume...'}/>
+          <input type="text" id="pozitie" className="ADD_jucator-input" onChange={handleInputChange} placeholder={'Pozitie jucator...'}/>
+          <input type="text" id="datan" className="ADD_jucator-input" onChange={handleInputChange} placeholder={'Data : yyyy-dd-mm...'}/>
+          <input type="text" id="nationalitate" className="ADD_jucator-input" onChange={handleInputChange} placeholder={'Nationalitete...'}/>
+          <input type="text" id="inaltime" className="ADD_jucator-input" onChange={handleInputChange} placeholder={'Inaltime...'}/>
+          <input type="text" id="descriere" className="ADD_jucator-input" onChange={handleInputChange} placeholder={'Descriere...'}/>
+
         </div>
         <div className='ADD_jucator-collumn1'>
         <img src={originalImageSrc} alt=""  className="iamgine_jucator-ADD"  />
@@ -177,8 +206,14 @@ const AdaugaJucator = () => {
         <Link to="/adminjucatori" className='LINK1'>
           <button
             className="Incarca-imagine-jucator-ADD"
-            onClick={handleAdaugaJucator}
-            disabled={!isImageSelected} // Disable button if image is not selected
+            onClick={() => {
+              if (!isImageSelected || !allFieldsFilled) {
+                alert('ALL FIELDS REQUIRED');
+              } else {
+                handleAdaugaJucator();
+              }
+            }}
+            disabled={!isImageSelected || !allFieldsFilled}
           >
             Adauga jucator
           </button>
