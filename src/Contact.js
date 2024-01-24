@@ -22,12 +22,13 @@ const Contact = () => {
     opacity: 1,
     from: { opacity: 0 },
   });
- 
   return (
     <animated.div style={springProps}>
     <div className="app-container">
       <Meniusus />
       <BackDeleteMeci/>
+  
+
 
 
       <div className="title-PGContact">

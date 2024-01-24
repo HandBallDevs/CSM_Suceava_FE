@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import './AdminMeciuri.css';
 import Meniusus from './Meniusus';
 import FrameImage from './imagini/frame.png';
@@ -6,43 +6,80 @@ import AdminMenuImage from './imagini/AdminMenuImage.png';
 import AdminWorkSpaceImage from './imagini/AdminWorkSpaceImage.png';
 import AdminIndexImage from './imagini/AdminiIndexImage.png';
 import { useNavigate,Link } from "react-router-dom";
+
 const AdminMeciuri = () => {
-  useEffect(() => {
-    populateDateAndTimeOptions();
-  }, []);
+ 
+  const [meciData, setMeciData] = useState({
+    tipCampionat: 0,
+    editia: '',
+    statusMeci: '',
+    data: '',
+    urlPoza: '',
+    numeAdversar: '',
+    locatia: '',
+    linkLive: '',
+    acasa: true,
+    scorCSUSV: 0,
+    scorAdversar: 0
+  });
 
-  const populateDateAndTimeOptions = () => {
-    const dataSelect = document.getElementById('data');
-    const today = new Date();
-    dataSelect.innerHTML = '';
+   
 
-    for (let i = 0; i < 30; i++) {
-      const dateOption = new Date();
-      dateOption.setDate(today.getDate() + i);
-
-      const option = document.createElement('option');
-      option.value = dateOption.toISOString().split('T')[0];
-      option.text = dateOption.toDateString();
-      dataSelect.add(option);
-    }
-
-    const oraSelect = document.getElementById('ora');
-    oraSelect.innerHTML = '';
-
-    for (let j = 0; j < 24; j++) {
-      const hour = ('0' + j).slice(-2);
-
-      const option = document.createElement('option');
-      option.value = hour;
-      option.text = hour + ':00';
-      oraSelect.add(option);
+  const handleInputChange = (e) => {
+    const { id, value, type, checked } = e.target;
+  
+    // Update state based on input type
+    setMeciData((prevData) => {
+      const newValue = type === 'checkbox' ? checked : id.toLowerCase() === 'statusmeci' ? parseInt(value, 10) : value;
+  
+      const updatedData = {
+        ...prevData,
+        [id]: id.toLowerCase() === 'data' ? newValue.split('T')[0] : newValue,
+      };
+  
+      console.log('Updated Data:', updatedData); // Log the updated data
+  
+      return updatedData;
+    });
+  };
+  
+  
+  const handleCreateMeci = async () => {
+    try {
+      console.log('State before API call:', meciData); // Log the state before API call
+  
+      const formattedData = {
+        ...meciData,
+        data: meciData.data ? new Date(meciData.data).toISOString() : null,
+      };
+  
+      console.log('Formatted Data:', formattedData); // Log the formatted data
+  
+      const response = await fetch('https://handballdevsbe.azurewebsites.net/api/meci', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formattedData),
+      });
+  
+      console.log('API Response:', response); // Log the API response
+  
+      if (response.ok) {
+        console.log('Meci created successfully.');
+        // Optionally, you can navigate to a different page after the Meci is created
+      } else {
+        console.error('API Error:', response.statusText);
+      }
+    } catch (error) {
+      console.error('API Error:', error.message);
     }
   };
-
+  
+  
   return (
     <div className="app-container">
       <Meniusus />
-
       <div className="title-ADMmeciuri">
         <img src={FrameImage} alt="" className="frame-image-ADMmeciuri" />
         <div className="label-container-ADMmeciuri">
@@ -78,31 +115,40 @@ const AdminMeciuri = () => {
               <label className="workspace-labels-ADMmeciuri" htmlFor="editia">
                 Editia:
               </label>
-              <label className="workspace-labels-ADMmeciuri" htmlFor="data">
-                Data:
+              <label className="workspace-labels-ADMmeciuri" htmlFor="datasiora">
+                Data si ora:
               </label>
-              <label className="workspace-labels-ADMmeciuri" htmlFor="ora">
-                Ora:
-              </label>
+             
               <label className="workspace-labels-ADMmeciuri" htmlFor="locatia">
                 Locatia:
               </label>
           
-              <label className="workspace-labels-ADMmeciuri" htmlFor="statusmeci">
+              <label className="workspace-labels-ADMmeciuri" htmlFor="statusMeci">
                 Status meci:
               </label>
             </div>
 
             <div className="workspace-collumn-input-ADMmeciuri">
-              <input type="text" id="liga" className="workspace-inputs-ADMmeciuri" />
-              <select id="data" className="workspace-choicebox-ADMmeciuri"></select>
-              <select id="ora" className="workspace-choicebox-ADMmeciuri"></select>
-              <input type="text" id="locatia" className="workspace-inputs-ADMmeciuri" />
-              <input type="text" id="tipmeci" className="workspace-inputs-ADMmeciuri" />
+            <input type="text" id="editia" className="workspace-inputs-ADMmeciuri" value={meciData.editia} onChange={handleInputChange} />
+            <input
+  type="date"
+  id="data"
+  className="workspace-inputs-ADMmeciuri"
+  defaultValue={meciData.data}
+  onChange={handleInputChange}
+/>
+        <input type="text" id="locatia" className="workspace-inputs-ADMmeciuri" value={meciData.locatia} onChange={handleInputChange} />
+        <input
+  type="text"
+  id="statusMeci"
+  className="workspace-inputs-ADMmeciuri"
+  value={meciData.statusMeci}
+  onChange={handleInputChange}
+/>
             </div>
 
             <div className="workspace-collumn-ADMmeciuri">
-              <label className="workspace-labels-ADMmeciuri" htmlFor="numeadversar">
+              <label className="workspace-labels-ADMmeciuri" htmlFor="numeAdversar">
                 Nume adversar:
               </label>
               <label className="workspace-labels-ADMmeciuri" htmlFor="acasa">
@@ -111,21 +157,29 @@ const AdminMeciuri = () => {
               <label className="workspace-labels-ADMmeciuri" htmlFor="scorcsusv">
                  Scor CSUSV:
               </label>
-              <label className="workspace-labels-ADMmeciuri" htmlFor="scorinamic">
+              <label className="workspace-labels-ADMmeciuri" htmlFor="scoradversar">
                 Scor adversar:
               </label>
             </div>
 
             <div className="workspace-collumn-input-ADMmeciuri">
-              <input type="text" id="gazde" className="workspace-inputs-ADMmeciuri" />
-              <input type="text" id="oaspeti" className="workspace-inputs-ADMmeciuri" />
-              <input type="text" id="scorgazde" className="workspace-inputs-ADMmeciuri" />
-              <input type="text" id="scoroaspeti" className="workspace-inputs-ADMmeciuri" />
+            <input type="text" id="numeAdversar" className="workspace-inputs-ADMmeciuri" value={meciData.numeadversar} onChange={handleInputChange} />
+            <input
+    type="checkbox"
+    id="acasa"
+    className="workspace-checkbox-ADMmeciuri"
+    checked={meciData.acasa}
+    onChange={handleInputChange}
+  />
+        <input type="text" id="scorcsusv" className="workspace-inputs-ADMmeciuri" value={meciData.scorcsusv} onChange={handleInputChange} />
+        <input type="text" id="scoradversar" className="workspace-inputs-ADMmeciuri" value={meciData.scoradversar} onChange={handleInputChange} />
             </div>
           </div>
 
           <div className="workspace-row1-ADMmeciuri">
-            <button className="workspace-button-submit-ADMmeciuri">Creaza meci nou</button>
+          <button className="workspace-button-submit-ADMmeciuri" onClick={handleCreateMeci}>
+          Creaza meci nou
+        </button>
             <button className="workspace-button-submit-ADMmeciuri">Actualizeaza meci</button>
           </div>
 

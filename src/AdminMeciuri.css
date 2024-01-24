@@ -132,7 +132,7 @@
 
   .workspace-row-ADMmeciuri,
   .workspace-row1-ADMmeciuri {
-    margin-top: 4vw;
+    margin-top: 5vw;
     display: flex;
     align-items: flex-start;
     gap:0;
@@ -144,10 +144,10 @@
   }
 
   .workspace-row1-ADMmeciuri{
-    margin-top: -2.0vw;
+    margin-top: 3.0vw;
     gap:2vw;
-    margin-left: 11vw;
-    margin-right: -15vw;
+    margin-left: 0vw;
+    margin-right: 0vw;
   }
 
   

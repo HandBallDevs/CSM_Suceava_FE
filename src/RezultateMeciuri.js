@@ -21,7 +21,7 @@ const RezultateMeciuri = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://handballdevsbe.azurewebsites.net/api/meci?tipCampionat=0"
+          "https://handballdevsbe.azurewebsites.net/api/meci?statusMeci=0&tipCampionat=0"
         );
         if (response.ok) {
           const data = await response.json();
@@ -57,8 +57,13 @@ const RezultateMeciuri = () => {
         <img src={FrameImage} alt="" className="frame-club-rezultate" />
       
         <div className="words-lot-rezultate">
+          
         <div className="meci-container">
-          {RezultatData.slice(0, 9).map((rezultat, index) => (
+       
+         
+          
+          
+          {RezultatData.slice(0,10 ).map((rezultat, index) => (
             <Meci
               key={index}
               data={new Date(rezultat.data).toLocaleDateString()}

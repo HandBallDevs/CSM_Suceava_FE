@@ -71,7 +71,7 @@ const CalendarMeciuri = () => {
     <animated.div style={springProps}>
       <div className="app-container">
         <Meniusus />
-        <BackAdaugaMeci />
+
 
         <div className="frame-overlay-meciuri">
           <img src={FrameImage} alt="" className="frame-meciuri" />

@@ -67,9 +67,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 2vw;
+  font-size: 1.7vw;
   font-weight: bold;
   text-align: center;
+  text-transform: uppercase;
 }
 .wordslot-list-lot-rezultate {
   position: absolute;
@@ -94,6 +95,7 @@
 .rezultate-words-container span {
   margin:0vw 5vw; 
   font-weight: bold;
+
   
 }
 .meci-container {
@@ -107,3 +109,5 @@
     margin-bottom: -0vw; 
     width: 0%;
   }
+
+  
