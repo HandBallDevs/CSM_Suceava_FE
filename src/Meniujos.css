@@ -155,6 +155,8 @@
   white-space: pre-line;
   font-weight: bold;
   font-size: 1.0rem;
+
+
 }
 
 .editie {
@@ -171,13 +173,14 @@
 }
 
 
+div.image-item a {
+  text-decoration: none;
+  color: inherit;
+}
 
-
-
-
-
-
-
+div.image-item a:hover {
+  text-decoration: none;
+}
 
 .frame-overlay{
   padding-top: 10vw;

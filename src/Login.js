@@ -6,6 +6,7 @@ import LoginFrameImage from "./imagini/LoginFrameImage.png";
 import Meniujos from "./Meniujos";
 import { useNavigate, Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
+import { motion } from 'framer-motion';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -142,9 +143,14 @@ const Login = () => {
               </Link>
             ) : (
               <>
-                <button className="Submit-LOGIN" onClick={handleLogin}>
+                <motion.button
+                  className="Submit-LOGIN"
+                  onClick={handleLogin}
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.3 }}
+                >
                   Conecteaza-te
-                </button>
+                </motion.button>
                 {error && (
                   <p className="error-message" style={{ color: "red" }}>
                     {error}

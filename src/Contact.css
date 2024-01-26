@@ -115,6 +115,10 @@
     font-size: 1vw;
     outline: none;
     border: 0.1vw solid #999;
+  
+}
+.invalid {
+  color: red;
 }
 
 .textbox_mesaj-PGContact {
@@ -158,7 +162,7 @@
 .contact-PGContact {
   margin-top: 2vw;
   align-items: center;
-  margin-bottom: 10vw;
+  margin-bottom: 0vw;
   
 }
 .row_contact_1-PGContact {
