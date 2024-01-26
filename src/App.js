@@ -15,6 +15,7 @@ import ClubClasament from "./ClubClasament";
 import ClubLot from "./ClubLot";
 import ClubLotJuniori from "./ClubLotJuniori";
 import ClubLotCadeti from "./ClubLotCadeti";
+import ClubLotStaff from "./ClubLotStaff";
 import DetaliiClub from "./DetaliiClub";
 import Login from "./Login";
 import CalendarMeciuri from "./CalendarMeciuri";
@@ -28,6 +29,7 @@ import EditeazaStaff from "./EditeazaStaff";
 import AdminJuniori from "./AdminJuniori";
 import EditeazaJunior from "./EditeazaJunior";
 import AdaugaJunior from "./AdaugaJunior";
+
 function App() {
   return (
     <Router>
@@ -39,6 +41,7 @@ function App() {
         <Route path="/clublot" element={<ClubLot />} />
         <Route path="/clublotjuniori" element={<ClubLotJuniori />} />
         <Route path="/clublotcadeti" element={<ClubLotCadeti />} />
+        <Route path="/clublotstaff" element={<ClubLotStaff />} />
         <Route path="/detaliiclub" element={<DetaliiClub />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<Admin />} />

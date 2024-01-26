@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import Jucator from "./Jucator";
 import { motion } from "framer-motion";
-const ClubLotCadeti = () => {
+const ClubLotStaff = () => {
   const [playerData, setPlayerData] = useState(null);
 
   const formatDate = (dateString) => {
@@ -38,7 +38,7 @@ const ClubLotCadeti = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://handballdevsbe.azurewebsites.net/api/staff?tipLot=2"
+          "https://handballdevsbe.azurewebsites.net/api/staff?tipLot=3"
         );
         if (response.ok) {
           const data = await response.json();
@@ -68,6 +68,7 @@ const ClubLotCadeti = () => {
         <div className="frame-overlay-club">
           <img src={FrameImage} alt="" className="frame-club" />
           <div className="words-lot">
+            
             <Link to="/clublot" className="wordslot-list-link-lot">
               LOTUL CLUBULUI
             </Link>
@@ -86,16 +87,16 @@ const ClubLotCadeti = () => {
             <Link to="/clublot" className="wordslot-list-lot-seniori">
               LOT SENIORI
             </Link>
-            <Link to="/clublotjuniori" className="wordslot-list-lot-seniori">
+            <Link
+              to="/clublotjuniori"
+              className="wordslot-list-lot-seniori" 
+            >
               LOT JUNIORI
             </Link>
-            <Link
-              to="/clublotcadeti"
-              className="wordslot-list-lot-seniori-underline"
-            >
+            <Link to="/clublotcadeti" className="wordslot-list-lot-seniori">
               LOT CADETI
             </Link>
-            <Link to="/clublotstaff" className="wordslot-list-lot-seniori">
+            <Link to="/clublotstaff"  className="wordslot-list-lot-seniori-underline">
               STAFF
             </Link>
           </div>
@@ -122,4 +123,4 @@ const ClubLotCadeti = () => {
   );
 };
 
-export default ClubLotCadeti;
+export default ClubLotStaff;

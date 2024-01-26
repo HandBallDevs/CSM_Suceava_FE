@@ -96,6 +96,9 @@ const ClubLotJuniori = () => {
             <Link to="/clublotcadeti" className="wordslot-list-lot-seniori">
               LOT CADETI
             </Link>
+            <Link to="/clublotstaff" className="wordslot-list-lot-seniori">
+              STAFF
+            </Link>
           </div>
         </div>
         {playerData && (
