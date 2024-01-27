@@ -99,9 +99,10 @@ const AdminMeciuri = () => {
           <div className="options_ADMmeciuri">
             <Link to="/adminstiri" className="ADMmeciuri_options">Stiri</Link>
             <Link to="/adminmeciuri" className="ADMmeciuri_options">Meciuri</Link>
-            <Link to="/adminusers" className="ADMmeciuri_options">Utilizatori</Link>
             <Link to="/adminjucatori" className="ADMmeciuri_options">Jucatorii Seniori</Link>
+           
             <Link to="/adminjuniori" className="ADMmeciuri_options">Jucatorii Juniori</Link>
+            <Link to="/admincadeti" className="ADMmeciuri_options">Jucatori Cadeti</Link>
             <Link to="/adminstaff" className="ADMmeciuri_options">Staff</Link>
           </div>
         </div>  

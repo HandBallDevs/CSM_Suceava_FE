@@ -107,9 +107,10 @@ const AdminJuniori = () => {
           <div className="options_ADMJucatori">
             <Link to="/adminstiri" className="ADMJucatori_options">Stiri</Link>
             <Link to="/adminmeciuri" className="ADMJucatori_options">Meciuri</Link>
-            <Link to="/adminusers" className="ADMJucatori_options">Utilizatori</Link>
+            
             <Link to="/adminjucatori" className="ADMJucatori_options">Jucatorii Seniori</Link>
             <Link to="/adminjuniori" className="ADMJucatori_options">Jucatorii Juniori</Link>
+            <Link to="/admincadeti" className="ADMJucatori_options">Jucatori Cadeti</Link>
             <Link to="/adminstaff" className="ADMJucatori_options">Staff</Link>
           </div>
         </div>  

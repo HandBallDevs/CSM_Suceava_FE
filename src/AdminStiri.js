@@ -69,9 +69,9 @@ const AdminStiri = () => {
           <div className="options_ADMStiri">
             <Link to="/adminstiri" className="ADMStiri_options">Stiri</Link>
             <Link to="/adminmeciuri" className="ADM_options">Meciuri</Link>
-            <Link to="/adminusers" className="ADMStiri_options">Utilizatori</Link>
             <Link to="/adminjucatori" className="ADMStiri_options">Jucatorii Seniori</Link>
             <Link to="/adminjuniori" className="ADMStiri_options">Jucatorii Juniori</Link>
+            <Link to="/admincadeti" className="ADMStiri_options">Jucatori Cadeti</Link>
             <Link to="/adminstaff" className="ADMStiri_options">Staff</Link>
           </div>
         </div>  

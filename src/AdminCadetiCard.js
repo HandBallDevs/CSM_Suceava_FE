@@ -5,7 +5,7 @@ import PlayerEditImage from "./imagini/EditImage.png";
 import PlayerDeleteImage from "./imagini/DeleteImage.png";
 import AdminJucatorImage from './imagini/jucator.png';
 
-const AdminStaffCard = ({ id,poza,nume, prenume, pozitie, nationalitate, varsta, inaltimea,onDelete,onUpdate}) => {
+const AdminJuniorCard = ({ id,poza,nume, prenume, pozitie, nationalitate, varsta, inaltimea,onDelete,onUpdate}) => {
   const [editedData, setEditedData] = useState({
     poza,
     nume,
@@ -14,7 +14,6 @@ const AdminStaffCard = ({ id,poza,nume, prenume, pozitie, nationalitate, varsta,
     nationalitate,
     varsta,
     inaltimea,
-    
   
   });
 
@@ -61,7 +60,7 @@ const AdminStaffCard = ({ id,poza,nume, prenume, pozitie, nationalitate, varsta,
                         </div>
                     </div>
                     <div className="Workspace-actions-collumn">   
-                    <Link to={`/editeazastaff/${id}`} className="ADMJucatori_options" onClick={handleUpdate}>
+                    <Link to={`/editeazacadeti/${id}`} className="ADMJucatori_options" onClick={handleUpdate}>
         <img src={PlayerEditImage} alt="" className="Action-image-ADMJucatori"/>
       </Link>
                      <img src={PlayerDeleteImage} alt="" className="Action-image-ADMJucatori" onClick={handleDelete}/>      
@@ -70,4 +69,4 @@ const AdminStaffCard = ({ id,poza,nume, prenume, pozitie, nationalitate, varsta,
   );
 };
 
-export default AdminStaffCard;
+export default AdminJuniorCard;

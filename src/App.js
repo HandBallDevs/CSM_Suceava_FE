@@ -10,7 +10,7 @@ import Contact from "./Contact";
 import Admin from "./Admin";
 import AdminStiri from "./AdminStiri";
 import AdminMeciuri from "./AdminMeciuri";
-import AdminUsers from "./AdminUsers"
+import AdminCadeti from "./AdminCadeti"
 import ClubClasament from "./ClubClasament";
 import ClubLot from "./ClubLot";
 import ClubLotJuniori from "./ClubLotJuniori";
@@ -29,6 +29,7 @@ import EditeazaStaff from "./EditeazaStaff";
 import AdminJuniori from "./AdminJuniori";
 import EditeazaJunior from "./EditeazaJunior";
 import AdaugaJunior from "./AdaugaJunior";
+import AdaugaCadeti from "./AdaugaCadeti";
 
 function App() {
   return (
@@ -49,7 +50,7 @@ function App() {
         <Route path="/adminmeciuri" element={<AdminMeciuri />} />
         <Route path="/calendarmeciuri" element={<CalendarMeciuri />} />
         <Route path="/rezultatemeciuri" element={<RezultateMeciuri />} />
-        <Route path="/adminusers" element={<AdminUsers />} />
+        <Route path="/admincadeti" element={<AdminCadeti />} />
         <Route path="/adminjucatori" element={<AdminJucatori />} />
         <Route path="/adminstaff" element={<AdminStaff />} />
         <Route path="/editeazajucator" element={<EditeazaJucator />} />
@@ -60,6 +61,7 @@ function App() {
         <Route path="/editeazajucator/:playerId" element={<EditeazaJucator/>} />
         <Route path="/editeazastaff/:playerId" element={<EditeazaStaff/>} />
         <Route path="/editeazajunior/:playerId" element={<EditeazaJunior/>} />
+        <Route path="/adaugacadeti" element={<AdaugaCadeti/>} />
 
       
 

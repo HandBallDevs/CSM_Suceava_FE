@@ -5,7 +5,7 @@ import FrameImage from './imagini/frame.png';
 import ImgJucator from './imagini/PozaJucaror.png';
 import { Link } from 'react-router-dom';
 import { isDisabled } from '@testing-library/user-event/dist/utils';
-const AdaugaStaff = () => {
+const AdaugaCadeti = () => {
   const [formData, setFormData] = useState({
     nume: '',
     prenume: '',
@@ -148,7 +148,7 @@ const AdaugaStaff = () => {
         nume: formData.nume,
         prenume: formData.prenume,
         nationalitate: formData.nationalitate,
-        tipLot: 3,
+        tipLot: 2,
         post: formData.pozitie,
         urlPoza: imgSrc,
         dataNastere: formData.datan,
@@ -195,7 +195,7 @@ const AdaugaStaff = () => {
       </div>
 
       <div className='ADD_jucator-title'>
-        <label className="ADD_jucator-title_label">Adauga jucator lot seniori</label>
+        <label className="ADD_jucator-title_label">Adauga jucator lot Cadeti</label>
       </div>
 
       <div className='ADD_jucator'>
@@ -232,7 +232,7 @@ const AdaugaStaff = () => {
         style={{ display: 'none' }}
       />
        {isImageSelected || (
-          <label className="red-label">Require photo</label>
+          <label className="red-label">Imaginea este obligatorie</label>
         )}
         </div>
       </div>
@@ -256,7 +256,7 @@ const AdaugaStaff = () => {
             Adauga jucator
           </button>
         ) : (
-          <Link to="/adminstaff" className="Incarca-imagine-jucator-ADD">
+          <Link to="/admincadeti" className="Incarca-imagine-jucator-ADD">
             <button
               className="Incarca-imagine-jucator-ADD"
               onClick={handleAdaugaJucator}
@@ -270,4 +270,4 @@ const AdaugaStaff = () => {
   );
 };
 
-export default AdaugaStaff;
+export default AdaugaCadeti;

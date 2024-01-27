@@ -59,17 +59,53 @@ const AdaugaJucator = () => {
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
+    let sanitizedValue = value;
+    let isValid = true;
+  
+    switch (id) {
+      case 'datan':
+        // Validate and format datan as yyyy-mm-dd
+        isValid = validateDateFormat(value);
+        sanitizedValue = isValid ? value : '';
+        break;
+      case 'inaltime':
+        // Validate inaltime as a numeric value
+        isValid = validateNumeric(value);
+        sanitizedValue = isValid ? value : '';
+        break;
+      default:
+        // For other fields, just trim leading/trailing spaces
+        sanitizedValue = sanitizedValue.trim();
+    }
+  
     setFormData({
       ...formData,
-      [id]: value,
+      [id]: sanitizedValue,
     });
-
-    const isFieldFilled = value.trim() !== '';
-    setAllFieldsFilled(Object.values({ ...formData, [id]: value }).every((value) => value !== ''));
+  
+    const isFieldFilled = sanitizedValue !== '';
+    setAllFieldsFilled(Object.values({ ...formData, [id]: sanitizedValue }).every((value) => value !== ''));
     setEmptyFields((prevEmptyFields) =>
       isFieldFilled ? prevEmptyFields.filter((field) => field !== id) : [...prevEmptyFields, id]
     );
+  
+    // Show error message if the format is incorrect
+    const labelElement = document.querySelector(`label[for=${id}]`);
+    if (labelElement) {
+      isValid ? labelElement.classList.remove('unfilled-field') : labelElement.classList.add('unfilled-field');
+    }
   };
+  
+  const validateDateFormat = (dateString) => {
+    const regex = /^\d{4}-\d{2}-\d{2}$/;
+    return regex.test(dateString);
+  };
+  
+  const validateNumeric = (value) => {
+    // Validate if the value is a number (integer or double)
+    return !isNaN(value);
+  };
+  
 
   const handleLabelStyling = () => {
     const labels = document.querySelectorAll('.ADD_jucator-labels');
@@ -220,7 +256,7 @@ const AdaugaJucator = () => {
             Adauga jucator
           </button>
         ) : (
-          <Link to="/adminjucatori">
+          <Link to="/adminjucatori" className="Incarca-imagine-jucator-ADD">
             <button
               className="Incarca-imagine-jucator-ADD"
               onClick={handleAdaugaJucator}

@@ -32,7 +32,7 @@ const AdminJuniorCard = ({ id,poza,nume, prenume, pozitie, nationalitate, varsta
 
   return (
     <div className="playercard-ADMJucatori">
-                    <img src={AdminJucatorImage} alt="Player" className="player-image-senior-ADMJucatori" />     
+                    <img src={editedData.poza} alt="Player" className="player-image-senior-ADMJucatori" />     
                     <div className="Workspace-infoplayer-collumn">   
                         <div className="detalii-item-ADMJucatori">
                             <span className="detalii-label-nume-ADMJucatori">NUME:</span>

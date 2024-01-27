@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { useSpring, animated } from "react-spring";
-import './AdminStaff.css';
+
+import './AdminJucatori.css';
 import Meniusus from "./Meniusus";
 import FrameImage from "./imagini/frame.png";
 import AdminMenuImage from "./imagini/AdminMenuImage.png";
-import AdminWorkSpaceImage from './imagini/AdminWorkSpaceImage.png';
 import { useNavigate,Link } from "react-router-dom";
-import AdminStaffCard from "./AdminStaffCard";
+import AdminCadetiCard from './AdminCadetiCard';
+import { useSpring, animated } from "react-spring";
 
-const AdminStaff = () => {
-    const [playerData, setPlayerData] = useState(null);
+
+const AdminCadeti = () => {
+  const [playerData, setPlayerData] = useState(null);
 
   
 
@@ -43,7 +44,7 @@ const AdminStaff = () => {
 
   const handleDeletePlayer = async (playerId) => {
     try {
-      const response = await fetch(`https://handballdevsbe.azurewebsites.net/api/staff?tipLot=3&id=${playerId}`, {
+      const response = await fetch(`https://handballdevsbe.azurewebsites.net/api/staff?tipLot=2&id=${playerId}`, {
         method: 'DELETE',
       });
   
@@ -62,7 +63,7 @@ const AdminStaff = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://handballdevsbe.azurewebsites.net/api/staff?tipLot=3"
+          "https://handballdevsbe.azurewebsites.net/api/staff?tipLot=2"
         );
         if (response.ok) {
           const data = await response.json();
@@ -74,6 +75,7 @@ const AdminStaff = () => {
       } catch (error) {
         console.error("API Error:", error.message);
       }
+     
     };
 
     fetchData();
@@ -87,51 +89,52 @@ const AdminStaff = () => {
     <div className="app-container">
       <Meniusus/>
 
-      <div className="title-ADMStaff">
-        <img src={FrameImage} alt="" className="frame-image-ADMStaff" />
-        <div className="label-container-ADMStaff">
-          <label className="label_title-ADMStaff">Panou Administrator</label>
-          <div className="row-title-ADMStaff">
-            <label className="label_subtitle-ADMStaff">Acasa</label>
-            <label className="label_subtitle-ADMStaff">/</label>
-            <label className="label_subtitle_admin-ADMStaff">Panou Administrator</label>
+      <div className="title-ADMJucatori">
+        <img src={FrameImage} alt="" className="frame-image-ADMJucatori" />
+        <div className="label-container-ADMJucatori">
+          <label className="label_title-ADMJucatori">Panou Administrator</label>
+          <div className="row-title-ADMJucatori">
+            <label className="label_subtitle-ADMJucatori">Acasa</label>
+            <label className="label_subtitle-ADMJucatori">/</label>
+            <label className="label_subtitle_admin-ADMJucatori">Panou Administrator</label>
           </div>
         </div>
       </div>
 
-      <div className="Container-ADMStaff">
-        <div className="Menu-ADMStaff">
-          <img src={AdminMenuImage} alt="" className="Admin-menu-img-ADMStaff" />
-          <label className="ADMStaff_titles">Panou Administrator</label>
-          <div className="options_ADMStaff">
-            <Link to="/adminstiri" className="ADMStaff_options">Stiri</Link>
-            <Link to="/adminmeciuri" className="ADMStaff_options">Meciuri</Link>
-            <Link to="/adminjucatori" className="ADMStaff_options">Jucatorii Seniori</Link>
-            <Link to="/adminjuniori" className="ADMStaff_options">Jucatorii Juniori</Link>
-            <Link to="/admincadeti" className="ADMStaff_options">Jucatori Cadeti</Link>
-            <Link to="/adminstaff" className="ADMStaff_options">Staff</Link>
+      <div className="Container-ADMJucatori">
+        <div className="Menu-ADMJucatori">
+          <img src={AdminMenuImage} alt="" className="Admin-menu-img-ADMJucatori" />
+          <label className="ADMJucatori_titles">Panou Administrator</label>
+          <div className="options_ADMJucatori">
+            <Link to="/adminstiri" className="ADMJucatori_options">Stiri</Link>
+            <Link to="/adminmeciuri" className="ADMJucatori_options">Meciuri</Link>
+            <Link to="/adminjucatori" className="ADMJucatori_options">Jucatorii Seniori</Link>
+         
+            <Link to="/adminjuniori" className="ADMJucatori_options">Jucatorii Juniori</Link>
+            <Link to="/admincadeti" className="ADMJucatori_options">Jucatori Cadeti</Link>
+            <Link to="/adminstaff" className="ADMJucatori_options">Staff</Link>
           </div>
         </div>  
-        <div className="Workspace-ADMStaff">
-             <div className="Workspace-row-ADMStaff">
-                <div className="Workspace-row-ADMStaff1">
-                    <label  className="label-filter-ADMStaff" htmlFor="cauta">Cauta :</label>
-                    <input type="text" id="cauta" name="cauta" className="textbox-filter-ADMStaff"/>
-                    <label  className="label-filter-ADMStaff" htmlFor="filtreaza">Filtreaza dupa :</label>
-                    <input type="text" id="filtreaza" name="filtreaza" className="textbox-filter-ADMStaff"/>
+        <div className="Workspace-ADMJucatori">
+             <div className="Workspace-row-ADMJucatori">
+                <div className="Workspace-row-ADMJucatori1">
+                    <label  className="label-filter-ADMJucatori" htmlFor="cauta">Cauta jucator :</label>
+                    <input type="text" id="cauta" name="cauta" className="textbox-filter-ADMJucatori"/>
+                    <label  className="label-filter-ADMJucatori" htmlFor="filtreaza">Filtreaza dupa :</label>
+                    <input type="text" id="filtreaza" name="filtreaza" className="textbox-filter-ADMJucatori"/>
                 </div>
-                <div className="Workspace-row-ADMStaff2">
-                <Link to="/adaugastaff" className="button-adauga_jucator-ADMStaff">
-                    <button className="button-adauga_jucator-ADMStaff"> + Adauga Antrenor </button>
+                <div className="Workspace-row-ADMJucatori2">
+                <Link to="/adaugacadeti" className="Workspace-row-ADMJucatori2">
+                    <button className="button-adauga_jucator-ADMJucatori"> + Adauga Jucator  </button>
                 </Link>
-                    <label  className="label-title_j-ADMStaff" >Staff </label>
+                    <label  className="label-title_j-ADMJucatori" >Lot seniori </label>
                 </div>
              </div>
              
              {playerData && (
-  <div className="Workspace-row-ADMStaff3">
+  <div className="Workspace-row-ADMJucatori3">
     {playerData.map((player) => (
-      <AdminStaffCard
+      <AdminCadetiCard
         key={player.id}  // Use a unique identifier as the key
         id={player.id}
         poza={player.urlPoza}
@@ -147,6 +150,8 @@ const AdminStaff = () => {
     ))}
   </div>
 )}
+
+              
           
         </div>
       </div>
@@ -156,4 +161,4 @@ const AdminStaff = () => {
   );
 };
 
-export default AdminStaff;
+export default AdminCadeti;
