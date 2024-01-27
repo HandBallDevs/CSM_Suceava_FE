@@ -175,13 +175,19 @@ font-size: 1.1vw;
 display: block;
 }
 
-.red-label
-{
-  font-size: 1.5vw;
+
+
+
+
+.unfilled-field {
   color: red;
+  font-size: 1.5vw;
+  font-weight: bold;
 }
 
+.red-label{
+  font-size: 1.5vw;
+  color:red;
 
-
-
+}
 

@@ -1,14 +1,11 @@
-import React, { useState ,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import './AdaugaJucator.css';
-import Meniusus from "./Meniusus";
-import FrameImage from "./imagini/frame.png";
-import ImgJucator from "./imagini/PozaJucaror.png";
-import { useNavigate, Link } from "react-router-dom";
-
-
-
+import Meniusus from './Meniusus';
+import FrameImage from './imagini/frame.png';
+import ImgJucator from './imagini/PozaJucaror.png';
+import { Link } from 'react-router-dom';
+import { isDisabled } from '@testing-library/user-event/dist/utils';
 const AdaugaJucator = () => {
-
   const [formData, setFormData] = useState({
     nume: '',
     prenume: '',
@@ -19,19 +16,16 @@ const AdaugaJucator = () => {
     descriere: '',
   });
 
-
   const [allFieldsFilled, setAllFieldsFilled] = useState(false);
-
+  const [emptyFields, setEmptyFields] = useState([]);
   const [originalImageSrc, setOriginalImageSrc] = useState(ImgJucator);
   const [imgSrc, setImgSrc] = useState(ImgJucator);
-  const [isImageSelected, setIsImageSelected] = useState(false); // New state for image selection
+  const [isImageSelected, setIsImageSelected] = useState(false);
 
   useEffect(() => {
-    // Check if all fields are filled
     const isFilled = Object.values(formData).every((value) => value !== '');
     setAllFieldsFilled(isFilled);
   }, [formData]);
-
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
@@ -45,7 +39,7 @@ const AdaugaJucator = () => {
         if (base64Image) {
           const imageWithoutPrefix = base64Image.replace(/^data:image\/(png|jpeg|jpg);base64,/, '');
           setImgSrc(imageWithoutPrefix);
-          setIsImageSelected(true); // Set to true when image is selected
+          setIsImageSelected(true);
           console.log('Base64 Image without prefix:', imageWithoutPrefix);
         } else {
           console.error('Error loading image.');
@@ -54,7 +48,6 @@ const AdaugaJucator = () => {
 
       reader.readAsDataURL(file);
 
-      // Make a copy of the original image before conversion
       const originalReader = new FileReader();
       originalReader.onload = (e) => {
         const originalBase64Image = e.target.result;
@@ -64,82 +57,89 @@ const AdaugaJucator = () => {
     }
   };
 
-  
- 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
     setFormData({
       ...formData,
       [id]: value,
     });
-    // Update allFieldsFilled
+
+    const isFieldFilled = value.trim() !== '';
     setAllFieldsFilled(Object.values({ ...formData, [id]: value }).every((value) => value !== ''));
+    setEmptyFields((prevEmptyFields) =>
+      isFieldFilled ? prevEmptyFields.filter((field) => field !== id) : [...prevEmptyFields, id]
+    );
   };
 
- const handleAdaugaJucator = async () => {
+  const handleLabelStyling = () => {
+    const labels = document.querySelectorAll('.ADD_jucator-labels');
+  
+    labels.forEach((label) => {
+      const id = label.getAttribute('for');
+      const input = document.getElementById(id);
+  
+      if (input && input.value.trim() === '') {
+        label.classList.add('unfilled-field');
+      } else {
+        label.classList.remove('unfilled-field');
+      }
+    });
+  };
 
-  console.log('handleAdaugaJucator called');
-  console.log('isImageSelected:', isImageSelected);
-  console.log('allFieldsFilled:', allFieldsFilled);
+  const handleAdaugaJucator = async () => {
+    console.log('handleAdaugaJucator called');
+    console.log('isImageSelected:', isImageSelected);
+    console.log('allFieldsFilled:', allFieldsFilled);
 
-  const isFilled = Object.values(formData).every((value) => value !== '');
-
-  if (!isImageSelected || !isFilled) {
-    const emptyFields = Object.keys(formData).filter((key) => formData[key] === '');
-    console.log('Empty Fields:', emptyFields);
-
-    if (!isImageSelected) {
-      console.log('Image not selected.');
-    }
-    if (!isFilled) {
+    if (!isImageSelected || !allFieldsFilled) {
       console.log('Not all fields filled.');
+
+      emptyFields.forEach((field) => {
+        const labelElement = document.querySelector(`label[for=${field}]`);
+        if (labelElement) {
+          labelElement.classList.add('unfilled-field');
+        }
+      });
+
+      alert('ALL FIELDS REQUIRED');
+      return;
     }
 
-    alert('All fields are required');
-    return;
-  }
+
 
     try {
+      const newData = {
+        nume: formData.nume,
+        prenume: formData.prenume,
+        nationalitate: formData.nationalitate,
+        tipLot: 0,
+        post: formData.pozitie,
+        urlPoza: imgSrc,
+        dataNastere: formData.datan,
+        inaltime: parseFloat(formData.inaltime),
+        descriere: formData.descriere,
+      };
+      console.log('Request Payload:', newData);
 
-    const newData = {
-      nume: formData.nume,
-      prenume: formData.prenume,
-      nationalitate: formData.nationalitate,
-      tipLot: 0,
-      post: formData.pozitie,
-      urlPoza: imgSrc,
-      dataNastere: formData.datan,
-      inaltime:parseFloat(formData.inaltime),
-      descriere: formData.descriere
+      const response = await fetch('https://handballdevsbe.azurewebsites.net/api/staff', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newData),
+      });
 
-    };
-    console.log('Request Payload:', newData);
-
-    const response = await fetch('https://handballdevsbe.azurewebsites.net/api/staff', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newData),
-    });
-
-    if (response.ok) {
-      const data = await response.json();
-      console.log('API Response:', data);
-      window.location.reload();
-      
-      // Add any further logic or state updates as needed
-    } else {
-      console.error('API Error:', response.statusText);
+      if (response.ok) {
+        const data = await response.json();
+        console.log('API Response:', data);
+        window.location.reload();
+      } else {
+        console.error('API Error:', response.statusText);
+      }
+    } catch (error) {
+      console.error('API Error:', error.message);
     }
-  } catch (error) {
-    console.error('API Error:', error.message);
-  }
-
-};
-
-  
-  
+  };
   
 
   return (
@@ -202,29 +202,34 @@ const AdaugaJucator = () => {
       </div>
 
       <div className='ADD_jucator2'>
-      {isImageSelected ? (
-        <Link to="/adminjucatori" className='LINK1'>
+      
+      {(!isImageSelected || !allFieldsFilled) ? (
           <button
             className="Incarca-imagine-jucator-ADD"
             onClick={() => {
-              if (!isImageSelected || !allFieldsFilled) {
-                alert('ALL FIELDS REQUIRED');
-              } else {
-                handleAdaugaJucator();
-              }
+              emptyFields.forEach((field) => {
+                const labelElement = document.querySelector(`label[for=${field}]`);
+                if (labelElement) {
+                  labelElement.classList.add('unfilled-field');
+                }
+              });
+              
+              handleLabelStyling();
             }}
-            disabled={!isImageSelected || !allFieldsFilled}
           >
             Adauga jucator
           </button>
-        </Link>
-      ) : (
-        <button className="Incarca-imagine-jucator-ADD" disabled>
-          Adauga jucator
-        </button>
-      )}
-    
-      </div>
+        ) : (
+          <Link to="/adminjucatori">
+            <button
+              className="Incarca-imagine-jucator-ADD"
+              onClick={handleAdaugaJucator}
+            >
+              Adauga jucator
+            </button>
+          </Link>
+        )}
+</div>
     </div>
   );
 };
