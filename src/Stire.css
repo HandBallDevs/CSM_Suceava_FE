@@ -1,0 +1,96 @@
+
+/* Pentru stire*/
+.player-info-stire {
+  display: flex;
+  align-items: center;
+  padding-top: 5vw;
+  padding-left:10vw;
+ 
+}
+
+.player-image-stire {
+
+  max-height: 12vw;
+  max-width: 18vw;
+
+}
+
+.player-detalii-stire {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2vw;
+  
+}
+
+.detalii-label-stire {
+  font-weight: none;
+  margin-bottom: 0.5vw; 
+  margin-right: 0.5vw; 
+  color:gray;
+  font-size: 1.5vw;
+
+}
+
+.detalii-label-stire-nume {
+  font-weight: bold;
+  margin-bottom: 0.5vw; 
+  margin-right: 0.5vw; 
+  width: 5vw;
+  font-size: 2vw;
+  color:blue;
+ 
+}
+
+
+.detalii-value-stire {
+  font-size: 1.5vw;
+ 
+  word-wrap: break-word;
+  max-width: 60vw;
+
+}
+
+
+.detalii-value-stire-data {
+  font-size: 1.0vw;
+  font-weight: normal;
+  
+ 
+
+
+
+}
+.detalii-value-stire-titlu {
+  font-size: 3vw;
+  font-weight: bold;
+  
+
+
+}
+.detalii-value-stire-hashtag {
+  font-size: 0.8vw;
+  font-weight: normal;
+
+  
+
+
+}
+
+
+
+
+.detalii-item-stire {
+  display: flex;
+  align-items: center;
+ 
+
+}
+.stire-container {
+  
+    flex-wrap:wrap;
+    align-items: center;
+    padding-top:2vw;
+    flex-direction: column;
+    
+  
+  }

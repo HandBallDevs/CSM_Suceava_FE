@@ -2,14 +2,14 @@ import React from "react";
 import "./Noutati.css";
 
 import FrameImage from "./imagini/frame.png";
-import FrameNoutatiImage from './imagini/frame_noutati.png';
-import Stire1Image from './imagini/stire1.png';
-import Stire2Image from './imagini/stire2.png';
-import MeciuriViitoareImage from './imagini/meciuri_viitoare.png';
-import ClasamentImage from './imagini/clasament.png';
+import Stire1Image from "./imagini/stire1.png";
 import Meniusus from "./Meniusus";
 import Meniujos from "./Meniujos";
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated } from "react-spring";
+import { useState } from "react";
+import { useEffect } from "react";
+
+import Stire from "./Stire";
 
 const Noutăti = () => {
   const springProps = useSpring({
@@ -17,55 +17,112 @@ const Noutăti = () => {
     from: { opacity: 0 },
   });
 
- 
+  const [StiriData, setStiriData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://handballdevsbe.azurewebsites.net/api/stire"
+        );
+        if (response.ok) {
+          const data = await response.json();
+          console.log("API Response:", data);
+
+          const ids = data.map((item) => item.id);
+          console.log("IDs:", ids);
+
+          setStiriData(data);
+        } else {
+          console.error("API Error:", response.statusText);
+        }
+      } catch (error) {
+        console.error("API Error:", error.message);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const getRelativeTime = (timestamp) => {
+    const now = new Date();
+    const diffInSeconds = Math.floor((now - new Date(timestamp)) / 1000);
+
+    const intervals = {
+      year: 31536000,
+      month: 2592000,
+      week: 604800,
+      day: 86400,
+      hour: 3600,
+      minute: 60,
+    };
+
+    for (const [unit, seconds] of Object.entries(intervals)) {
+      const interval = Math.floor(diffInSeconds / seconds);
+  
+      if (interval >= 1) {
+        // Switch for unit-specific pluralization
+        let unitString;
+        switch (unit) {
+          case 'year':
+            unitString = interval === 1 ? 'an' : 'ani';
+            break;
+          case 'month':
+            unitString = interval === 1 ? 'lună' : 'luni';
+            break;
+          case 'week':
+            unitString = interval === 1 ? 'săptămână' : 'săptămâni';
+            break;
+          case 'day':
+            unitString = interval === 1 ? 'zi' : 'zile';
+            break;
+          case 'hour':
+            unitString = interval === 1 ? 'oră' : 'ore';
+            break;
+          case 'minute':
+            unitString = interval === 1 ? 'minut' : 'minute';
+            break;
+          default:
+            unitString = unit;
+        }
+  
+        return `Acum ${interval} ${unitString}${interval > 1 ? "" : ""}`;
+      }
+    }
+  
+    return "Chiar acum";
+  };
   return (
     <animated.div style={springProps}>
-    <div className="app-container">
-      <Meniusus />
-      <div className="title-PGNoutati">
-        <img src={FrameImage} alt="" className="frame-image-PGNoutati" />
-        <div className="label-container-PGNoutati">
-          <label className="label_title-PGNoutati">Noutăți</label>
-          <div className="row-title-PGNoutati">
-            <label className="label_subtitle-PGNoutati">Acasa</label>
-            <label className="label_subtitle-PGNoutati">/</label>
-            <label className="label_subtitle_admin-PGNoutati">Noutăți</label>
+      <div className="app-container">
+        <Meniusus />
+        <div className="title-PGNoutati">
+          <img src={FrameImage} alt="" className="frame-image-PGNoutati" />
+          <div className="label-container-PGNoutati">
+            <label className="label_title-PGNoutati">Noutăți</label>
+            <div className="row-title-PGNoutati">
+              <label className="label_subtitle-PGNoutati">Acasa</label>
+              <label className="label_subtitle-PGNoutati">/</label>
+              <label className="label_subtitle_admin-PGNoutati">Noutăți</label>
+            </div>
           </div>
         </div>
+        {StiriData && (
+          <div className="stire-container">
+            {StiriData.map((stire, index) => (
+              <Stire
+              key={index}
+                poza={Stire1Image}
+                   data={getRelativeTime(stire.dataPostare)}
+                titlu={stire.titlu}
+                continut={stire.continut}
+                hashtag={stire.hashTaguri}
+              />
+            ))}
+          </div>
+        )}
       </div>
-
-      
-      <div className="News-PGNoutati">
-        <img src={FrameNoutatiImage} alt="" className="FrameNoutati_image-PGNoutati" />
-        <div className="Filter-row-PGNoutati">
-          <label  className="label_Filter-PGNoutati" htmlFor="categorie">Categorie</label>
-          <input type="text" id="categorie" name="categorie" className="textbox_filter-PGNoutati"/>
-          <label  className="label_Filter-PGNoutati" htmlFor="ordine">Ordine</label>
-          <input type="text" id="ordine" name="ordine" className="textbox_filter-PGNoutati"/>
-          <button className="button_filtreaza-PGNoutati">Filtreaza</button>
-        </div>
-        <div className="news-row-PGNoutati">
-          <div className="news-column-PGNoutati"> 
-           <img src={Stire1Image} alt="" className="Stiri_image-PGNoutati" />
-            <img src={Stire2Image} alt="" className="Stiri_image-PGNoutati" />
-          </div>
-          <div className="news-column_1-PGNoutati"> 
-           <label  className="label_image_news-PGNoutati" >Urmatoarele meciuri</label>
-           <img src={MeciuriViitoareImage} alt="" className="Clasament-Meciuri_image-PGNoutati" />
-           <label  className="label_image_news-PGNoutati">Liga Clasament</label>
-           <iframe
-  title="Background iFrame"
-  src="https://frh.ro/clasament.php?id=552#clasament" 
-  style={{ display: 'block', margin: '0 auto' }}
-  className="Clasament-Meciuri_image-PGNoutati"
-/>
-          </div>
-        </div>
-
-      </div>
-
-      <Meniujos/>
-    </div>
+      <Meniujos />
     </animated.div>
   );
 };
