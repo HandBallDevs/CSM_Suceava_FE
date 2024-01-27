@@ -30,6 +30,7 @@ import AdminJuniori from "./AdminJuniori";
 import EditeazaJunior from "./EditeazaJunior";
 import AdaugaJunior from "./AdaugaJunior";
 import AdaugaCadeti from "./AdaugaCadeti";
+import EditeazaCadeti from "./EditeazaCadeti";
 
 function App() {
   return (
@@ -62,7 +63,7 @@ function App() {
         <Route path="/editeazastaff/:playerId" element={<EditeazaStaff/>} />
         <Route path="/editeazajunior/:playerId" element={<EditeazaJunior/>} />
         <Route path="/adaugacadeti" element={<AdaugaCadeti/>} />
-
+        <Route path="/editeazacadeti/:playerId" element={<EditeazaCadeti/>} />
       
 
 

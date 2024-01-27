@@ -27,6 +27,9 @@ const EditeazaJucator = () => {
   const [originalImageSrc, setOriginalImageSrc] = useState(ImgJucator);
   const [imgSrc, setImgSrc] = useState(ImgJucator);
   const [isImageSelected, setIsImageSelected] = useState(false);
+  const [allFieldsFilled, setAllFieldsFilled] = useState(false);
+  const [emptyFields, setEmptyFields] = useState([]);
+ 
 
   useEffect(() => {
     const fetchPlayerData = async () => {
@@ -125,15 +128,89 @@ const EditeazaJucator = () => {
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
+    let sanitizedValue = value;
+    let isValid = true;
+  
+    switch (id) {
+      case 'datan':
+        // Validate and format datan as yyyy-mm-dd
+        isValid = validateDateFormat(value);
+        
+        
+       
+        break;
+      case 'inaltime':
+        // Validate inaltime as a numeric value
+        isValid = validateNumeric(value);
+        sanitizedValue = isValid ? value : '';
+        break;
+      default:
+        // For other fields, just trim leading/trailing spaces
+        sanitizedValue = sanitizedValue.trim();
+    }
+  
     setPlayerData({
       ...playerData,
-      [id]: value,
+      [id]: sanitizedValue,
     });
-    // Update allFieldsFilled
-    setIsImageSelected(Object.values({ ...playerData, [id]: value }).every((value) => value !== ''));
+  
+    const isFieldFilled = sanitizedValue !== '';
+    setAllFieldsFilled(Object.values({ ...playerData, [id]: sanitizedValue }).every((value) => value !== ''));
+    setEmptyFields((prevEmptyFields) =>
+      isFieldFilled ? prevEmptyFields.filter((field) => field !== id) : [...prevEmptyFields, id]
+    );
+  
+    // Show error message if the format is incorrect
+    const labelElement = document.querySelector(`label[for=${id}]`);
+    if (labelElement) {
+      isValid ? labelElement.classList.remove('unfilled-field') : labelElement.classList.add('unfilled-field');
+    }
+  };
+  
+  const validateDateFormat = (dateString) => {
+    const regex = /^\d{4}-\d{2}-\d{2}$/;
+    return regex.test(dateString) && !/[a-zA-Z]/.test(dateString);
+};
+  
+  const validateNumeric = (value) => {
+    // Validate if the value is a number (integer or double)
+    return !isNaN(value);
+  };
+  
+
+  const handleLabelStyling = () => {
+    const labels = document.querySelectorAll('.ADD_jucator-labels');
+  
+    labels.forEach((label) => {
+      const id = label.getAttribute('for');
+      const input = document.getElementById(id);
+  
+      if (input && input.value.trim() === '') {
+        label.classList.add('unfilled-field');
+      } else {
+        label.classList.remove('unfilled-field');
+      }
+    });
   };
 
   const handleEditeazaJucator = async () => {
+    console.log('handleAdaugaJucator called');
+    console.log('isImageSelected:', isImageSelected);
+    console.log('allFieldsFilled:', allFieldsFilled);
+
+    if (!isImageSelected || !allFieldsFilled) {
+      console.log('Not all fields filled.');
+
+      emptyFields.forEach((field) => {
+        const labelElement = document.querySelector(`label[for=${field}]`);
+        if (labelElement) {
+          labelElement.classList.add('unfilled-field');
+        }
+      });
+
+      alert('ALL FIELDS REQUIRED');
+      return;
+    }
     try {
       const updatedData = {
         nume: playerData.nume,
@@ -282,11 +359,32 @@ const EditeazaJucator = () => {
         </div>
       </div>
       <div className="edit_jucator2">
-        <Link to={'/adminjucatori'} className="Incarca-imagine-jucator-ADD">
-          <button className="Incarca-imagine-jucator-ADD" onClick={handleEditeazaJucator}>
+      {(!isImageSelected || !allFieldsFilled) ? (
+          <button
+            className="Incarca-imagine-jucator-ADD"
+            onClick={() => {
+              emptyFields.forEach((field) => {
+                const labelElement = document.querySelector(`label[for=${field}]`);
+                if (labelElement) {
+                  labelElement.classList.add('unfilled-field');
+                }
+              });
+              
+              handleLabelStyling();
+            }}
+          >
             Editeaza jucator
           </button>
-        </Link>
+        ) : (
+          <Link to="/adminjucatori" className="Incarca-imagine-jucator-ADD">
+            <button
+              className="Incarca-imagine-jucator-ADD"
+              onClick={handleEditeazaJucator}
+            >
+              Editeaza jucator
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );

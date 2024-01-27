@@ -5,7 +5,7 @@ import FrameImage from './imagini/frame.png';
 import ImgJucator from './imagini/PozaJucaror.png';
 import { Link, useParams } from 'react-router-dom';
 
-const EditeazaStaff = () => {
+const EditeazaCadeti= () => {
   const { playerId } = useParams();
 
   console.log('Player ID from route:', playerId);
@@ -42,7 +42,7 @@ const EditeazaStaff = () => {
         console.log('Fetching data for player ID:', playerId);
 
         const response = await fetch(
-          `https://handballdevsbe.azurewebsites.net/api/staff?tipLot=3&id=${playerId}`
+          `https://handballdevsbe.azurewebsites.net/api/staff?tipLot=2&id=${playerId}`
         );
         console.log('API Response:', response);
 
@@ -216,7 +216,7 @@ const EditeazaStaff = () => {
         nume: playerData.nume,
         prenume: playerData.prenume,
         nationalitate: playerData.nationalitate,
-        tipLot: 3,
+        tipLot: 2,
         post: playerData.pozitie,
         urlPoza: imgSrc,
         dataNastere: playerData.datan,
@@ -226,7 +226,7 @@ const EditeazaStaff = () => {
       console.log('Request Payload:', updatedData); // Log the payload
 
       const response = await fetch(
-        `https://handballdevsbe.azurewebsites.net/api/staff/?tipLot=3&id=${playerId}`,
+        `https://handballdevsbe.azurewebsites.net/api/staff/?tipLot=2&id=${playerId}`,
         {
           method: 'PUT',
           headers: {
@@ -376,7 +376,7 @@ const EditeazaStaff = () => {
             Editeaza jucator
           </button>
         ) : (
-          <Link to="/adminstaff" className="Incarca-imagine-jucator-ADD">
+          <Link to="/admincadeti" className="Incarca-imagine-jucator-ADD">
             <button
               className="Incarca-imagine-jucator-ADD"
               onClick={handleEditeazaJucator}
@@ -390,4 +390,4 @@ const EditeazaStaff = () => {
   );
 };
 
-export default EditeazaStaff;
+export default EditeazaCadeti;
