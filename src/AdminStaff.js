@@ -9,8 +9,53 @@ import { useNavigate,Link } from "react-router-dom";
 import AdminStaffCard from "./AdminStaffCard";
 
 const AdminStaff = () => {
-    const [playerData, setPlayerData] = useState(null);
+  const [playerData, setPlayerData] = useState(null);
 
+  const [searchName, setSearchName] = useState("");
+  const [searchPosition, setSearchPosition] = useState("");
+  
+
+  // ... (other functions)
+
+  const handleSearchNameChange = (e) => {
+    setSearchName(e.target.value);
+  };
+
+  const handleSearchPositionChange = (e) => {
+    setSearchPosition(e.target.value);
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://handballdevsbe.azurewebsites.net/api/staff?tipLot=3"
+        );
+        if (response.ok) {
+          const data = await response.json();
+
+          // Filter players based on search criteria
+          const filteredData = data.filter((player) => {
+            const fullName = `${player.nume} ${player.prenume}`.toLowerCase();
+            const position = player.post.toLowerCase();
+
+            return (
+              fullName.includes(searchName.toLowerCase()) &&
+              position.includes(searchPosition.toLowerCase())
+            );
+          });
+
+          setPlayerData(filteredData);
+        } else {
+          console.error("API Error:", response.statusText);
+        }
+      } catch (error) {
+        console.error("API Error:", error.message);
+      }
+    };
+
+    fetchData();
+  }, [searchName, searchPosition]);
   
 
   const formatDate = (dateString) => {
@@ -116,9 +161,11 @@ const AdminStaff = () => {
              <div className="Workspace-row-ADMStaff">
                 <div className="Workspace-row-ADMStaff1">
                     <label  className="label-filter-ADMStaff" htmlFor="cauta">Cauta :</label>
-                    <input type="text" id="cauta" name="cauta" className="textbox-filter-ADMStaff"/>
+                    <input type="text" id="cauta" name="cauta" className="textbox-filter-ADMStaff" value={searchName}
+          onChange={handleSearchNameChange}/>
                     <label  className="label-filter-ADMStaff" htmlFor="filtreaza">Filtreaza dupa :</label>
-                    <input type="text" id="filtreaza" name="filtreaza" className="textbox-filter-ADMStaff"/>
+                    <input type="text" id="filtreaza" name="filtreaza" className="textbox-filter-ADMStaff" value={searchPosition}
+          onChange={handleSearchPositionChange}/>
                 </div>
                 <div className="Workspace-row-ADMStaff2">
                 <Link to="/adaugastaff" className="button-adauga_jucator-ADMStaff">

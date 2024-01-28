@@ -12,7 +12,51 @@ import { useSpring, animated } from "react-spring";
 const AdminJucatori = () => {
   const [playerData, setPlayerData] = useState(null);
 
+  const [searchName, setSearchName] = useState("");
+  const [searchPosition, setSearchPosition] = useState("");
   
+
+  // ... (other functions)
+
+  const handleSearchNameChange = (e) => {
+    setSearchName(e.target.value);
+  };
+
+  const handleSearchPositionChange = (e) => {
+    setSearchPosition(e.target.value);
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://handballdevsbe.azurewebsites.net/api/staff?tipLot=0"
+        );
+        if (response.ok) {
+          const data = await response.json();
+
+          // Filter players based on search criteria
+          const filteredData = data.filter((player) => {
+            const fullName = `${player.nume} ${player.prenume}`.toLowerCase();
+            const position = player.post.toLowerCase();
+
+            return (
+              fullName.includes(searchName.toLowerCase()) &&
+              position.includes(searchPosition.toLowerCase())
+            );
+          });
+
+          setPlayerData(filteredData);
+        } else {
+          console.error("API Error:", response.statusText);
+        }
+      } catch (error) {
+        console.error("API Error:", error.message);
+      }
+    };
+
+    fetchData();
+  }, [searchName, searchPosition]);
 
   const formatDate = (dateString) => {
     const options = { year: "numeric", month: "long", day: "numeric" };
@@ -118,10 +162,28 @@ const AdminJucatori = () => {
         <div className="Workspace-ADMJucatori">
              <div className="Workspace-row-ADMJucatori">
                 <div className="Workspace-row-ADMJucatori1">
-                    <label  className="label-filter-ADMJucatori" htmlFor="cauta">Cauta jucator :</label>
-                    <input type="text" id="cauta" name="cauta" className="textbox-filter-ADMJucatori"/>
-                    <label  className="label-filter-ADMJucatori" htmlFor="filtreaza">Filtreaza dupa :</label>
-                    <input type="text" id="filtreaza" name="filtreaza" className="textbox-filter-ADMJucatori"/>
+                <label className="label-filter-ADMJucatori" htmlFor="cauta">
+          Cauta jucator:
+        </label>
+        <input
+          type="text"
+          id="cauta"
+          name="cauta"
+          className="textbox-filter-ADMJucatori"
+          value={searchName}
+          onChange={handleSearchNameChange}
+        />
+        <label className="label-filter-ADMJucatori" htmlFor="filtreaza">
+          Filtreaza :
+        </label>
+        <input
+          type="text"
+          id="filtreaza"
+          name="filtreaza"
+          className="textbox-filter-ADMJucatori"
+          value={searchPosition}
+          onChange={handleSearchPositionChange}
+        />
                 </div>
                 <div className="Workspace-row-ADMJucatori2">
                 <Link to="/adaugajucator" className="Workspace-row-ADMJucatori2">
