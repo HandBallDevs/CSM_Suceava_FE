@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import Backend from "./Backend";
 
-import BackAdaugaMeci from "./BackAdaugaMeci";
+
 
 const CalendarMeciuri = () => {
   const [RezultatData, setRezMeciData] = useState([]);

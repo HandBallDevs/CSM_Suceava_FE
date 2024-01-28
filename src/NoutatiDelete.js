@@ -23,7 +23,7 @@ const NoutatiDelete = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://handballdevsbe.azurewebsites.net/api/stire"
+          "https://handballdevsbe.azurewebsites.net/api/stire?utilizatorId=95d60880-cab8-4888-9f71-20e44eb60113"
         );
         if (response.ok) {
           const data = await response.json();
@@ -49,7 +49,7 @@ const NoutatiDelete = () => {
   const handleDeleteStire = async (id) => {
     try {
       const response = await fetch(
-        `https://handballdevsbe.azurewebsites.net/api/stire/${id}`,
+        `https://handballdevsbe.azurewebsites.net/api/stire?utilizatorId=95d60880-cab8-4888-9f71-20e44eb60113&id=${id}`,
         {
           method: "DELETE",
           headers: {

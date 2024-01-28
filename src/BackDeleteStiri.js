@@ -5,12 +5,13 @@ const BackDeleteStiri = () => {
     const fetchMeciIds = async () => {
       try {
         const response = await fetch(
-          'https://handballdevsbe.azurewebsites.net/api/stire/'
+          'https://handballdevsbe.azurewebsites.net/api/stire?utilizatorId=95d60880-cab8-4888-9f71-20e44eb60113'
         );
 
         if (response.ok) {
           const data = await response.json();
           const meciIdsToDelete = data.map((meci) => meci.id);
+          console.log(data)
           deleteMecisByIds(meciIdsToDelete);
         } else {
           console.error('API Error:', response.statusText);
@@ -24,7 +25,7 @@ const BackDeleteStiri = () => {
       try {
         for (const id of ids) {
           const response = await fetch(
-            `https://handballdevsbe.azurewebsites.net/api/stire/${id}`,
+            `https://handballdevsbe.azurewebsites.net/api/stire?utilizatorId=95d60880-cab8-4888-9f71-20e44eb60113&id=${id}`,
             {
               method: 'DELETE',
               headers: {
