@@ -28,7 +28,7 @@ const Acasa = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://handballdevsbe.azurewebsites.net/api/meci?tipCampionat=0"
+          "https://handballdevsbe.azurewebsites.net/api/meci?statusMeci=1&tipCampionat=0"
         );
         if (response.ok) {
           const data = await response.json();
@@ -49,7 +49,7 @@ const Acasa = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://handballdevsbe.azurewebsites.net/api/meci?tipCampionat=1"
+          "https://handballdevsbe.azurewebsites.net/api/meci?statusMeci=0&tipCampionat=0"
         );
         if (response.ok) {
           const data = await response.json();
@@ -101,7 +101,7 @@ const Acasa = () => {
             <div className="word-list-6">
               <p className="word-6 rezultate">REZULTATE MECIURI</p>
               <div className="news-rezultate">
-                {RezMeciData.slice(0, 4).map((item, index) => (
+                {RezMeciData.slice(0, 3).map((item, index) => (
                   <>
                     <div className="image-with-text" key={index}>
                       <img src={LogoImage} alt="" className="rezultate-image" />

@@ -5,7 +5,7 @@ const BackDeleteStiri = () => {
     const fetchMeciIds = async () => {
       try {
         const response = await fetch(
-          'https://handballdevsbe.azurewebsites.net/api/stire'
+          'https://handballdevsbe.azurewebsites.net/api/stire/'
         );
 
         if (response.ok) {

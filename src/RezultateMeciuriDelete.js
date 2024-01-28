@@ -12,7 +12,7 @@ const RezultateMeciuriDelete = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://handballdevsbe.azurewebsites.net/api/meci?statusMeci=0&tipCampionat=0"
+          "https://handballdevsbe.azurewebsites.net/api/meci?tipCampionat=0"
         );
         if (response.ok) {
           const data = await response.json();
@@ -49,7 +49,7 @@ const RezultateMeciuriDelete = () => {
 
       if (response.ok) {
         console.log(`Meci with ID ${id} deleted successfully.`);
-        // Update the state after deletion
+    
         setRezMeciData((prevData) => prevData.filter((meci) => meci.id !== id));
       } else {
         console.error("API Error:", response.statusText);
@@ -63,20 +63,10 @@ const RezultateMeciuriDelete = () => {
   return (
     <div className="app-container">
       <Meniusus />
-      <div className="frame-overlay-meciuri">
-        <img src={FrameImage} alt="" className="frame-meciuri" />
-        <div className="words-club">
-          <Link to="/calendarmeciuri" className="wordsmeciuri-list-link">
-            CALENDAR MECIURI
-          </Link>
-          <div className="wordsmeciuri-list-link-calendar">
-            REZULTATE MECIURI
-          </div>
-        </div>
-      </div>
+   
 
       <div className="frame-overlay-club-rezultate">
-      <div className="wordslot-list-lot-rezultate">REZULTATE MECIURI</div>
+      <div className="wordslot-list-lot-rezultate">MECIURI</div>
         <img src={FrameImage} alt="" className="frame-club-rezultate" />
       
         <div className="words-lot-rezultate">
@@ -86,7 +76,7 @@ const RezultateMeciuriDelete = () => {
          
           
           
-          {RezultatData.slice(0,10 ).map((rezultat, index) => (
+          {RezultatData.slice(0,12 ).map((rezultat, index) => (
             <Meci
             key={rezultat.id}
             data={new Date(rezultat.data).toLocaleDateString()}

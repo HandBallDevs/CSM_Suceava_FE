@@ -59,6 +59,7 @@
 
 .frame-viitoare {
   padding-bottom: 8vw;
+  padding-top:5vw;
 }
 
 
@@ -108,7 +109,7 @@
 .lot-frame {
  width: 100vw;
   height: 10vw;
-  padding-top: 0vw;
+  padding-top: 10vw;
   align-items: center;
   display: flex;
 }
