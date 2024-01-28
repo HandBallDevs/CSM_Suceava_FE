@@ -23,7 +23,9 @@ const Acasa = () => {
   });
 
   const [RezMeciData, setRezMeciData] = useState([]);
-  const [ViMeciData, setViMeciData] = useState([]); 
+  const [ViMeciData, setViMeciData] = useState([]);
+  const [StiriData, setStiriData] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -62,14 +64,36 @@ const Acasa = () => {
       } catch (error) {
         console.error("API Error:", error.message);
       }
-
-      
     };
 
     fetchData();
   }, []);
 
-  return (
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://handballdevsbe.azurewebsites.net/api/stire");
+        if (response.ok) {
+          const data = await response.json();
+  
+        
+          const sortedData = data.sort((a, b) => b.dataPostare.localeCompare(a.dataPostare));
+  
+          console.log("Sorted Data:", sortedData);
+  
+          setStiriData(sortedData);
+        } else {
+          console.error("API Error:", response.statusText);
+        }
+      } catch (error) {
+        console.error("API Error:", error.message);
+      }
+    };
+  
+    fetchData();
+  }, []);
+
+  return (  
     <animated.div style={springProps}>
       <div className="app-container">
         <Meniusus />
@@ -81,18 +105,12 @@ const Acasa = () => {
           <div className="word-list-4">
             <p className="word-4 ultimele">Ultimele Noutăți</p>
             <div className="noutati-container">
-              <div className="news-item">
-                <p className="word-4 meciul">Meci decisiv pentru CSU Suceava</p>
-                <img src={IntoarcereImage} alt="" className="imageintoarcere" />
-              </div>
-              <div className="news-item">
-                <p className="word-4 intoarcere">Întoarcere de situație</p>
-                <img src={IntoarcereImage} alt="" className="imageintoarcere" />
-              </div>
-              <div className="news-item">
-                <p className="word-4 noile">Noile calificări</p>
-                <img src={IntoarcereImage} alt="" className="imageintoarcere" />
-              </div>
+              {StiriData.slice(0, 3).map((item, index) => (
+                <div className="news-item" key={index}>
+                  <p className="word-4 meciul">{item.titlu}</p>
+                  <img src={item.urlPoza} alt="" className="imageintoarcere" />
+                </div>
+              ))}
             </div>
           </div>
 
@@ -145,7 +163,7 @@ const Acasa = () => {
             <div className="word-list-6">
               <p className="word-6 rezultate">Meciuri Viitoare</p>
               <div className="news-viitoare">
-                {ViMeciData.slice(0, 4).map((item, index) => (
+                {ViMeciData.slice(0, 3).map((item, index) => (
                   <>
                     <div className="image-with-text" key={index}>
                       <img src={LogoImage} alt="" className="rezultate-image" />
@@ -199,7 +217,7 @@ const Acasa = () => {
             </div>
           </div>
         </div>
-        </div>
+      </div>
       <Meniujos />
     </animated.div>
   );

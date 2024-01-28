@@ -73,7 +73,6 @@ const Contact = () => {
     }
   };
 
-BackDeleteStiri();
   return (
     <animated.div style={springProps}>
       <div className="app-container">

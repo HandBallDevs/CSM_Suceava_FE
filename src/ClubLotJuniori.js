@@ -107,6 +107,7 @@ const ClubLotJuniori = () => {
               <Jucator
                 key={index}
                 nume={player.nume}
+                poza={player.urlPoza}
                 prenume={player.prenume}
                 pozitie={player.post}
                 nationalitate={player.nationalitate}

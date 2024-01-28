@@ -108,6 +108,7 @@ const ClubLotStaff = () => {
                 key={index}
                 nume={player.nume}
                 prenume={player.prenume}
+                poza={player.urlPoza}
                 pozitie={player.post}
                 nationalitate={player.nationalitate}
                 varsta={calculateAge(player.dataNastere)}
