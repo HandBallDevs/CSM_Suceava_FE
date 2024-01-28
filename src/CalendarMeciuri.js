@@ -15,7 +15,7 @@ import Meniujos from "./Meniujos";
 import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import Backend from "./Backend";
-import BackAdaugaStaff from "./BackAdaugaStaff";
+
 import BackAdaugaMeci from "./BackAdaugaMeci";
 
 const CalendarMeciuri = () => {

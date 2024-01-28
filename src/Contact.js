@@ -13,7 +13,7 @@ import { motion } from "framer-motion";
 
 
 import { useSpring, animated } from "react-spring";
-import BackAdaugaStaff from "./BackAdaugaStaff";
+
 import BackInterogare from "./BackInterogare";
 import BackDeleteStaff from "./BackDeleteMeci";
 import Backend from "./Backend";

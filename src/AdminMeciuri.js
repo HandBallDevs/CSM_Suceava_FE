@@ -23,11 +23,15 @@ const AdminMeciuri = () => {
     scorCSUSV: 0,
     scorAdversar: 0,
   });
+
+  const [inputErrors, setInputErrors] = useState({});
   const [successMessages, setSuccessMessages] = useState([]);
+
   const handleInputChange = (e) => {
     const { id, value, type, checked } = e.target;
 
-    // Update state based on input type
+    setInputErrors((prevErrors) => ({ ...prevErrors, [id]: false }));
+
     setMeciData((prevData) => {
       const newValue =
         type === "checkbox"
@@ -36,28 +40,49 @@ const AdminMeciuri = () => {
           ? parseInt(value, 10)
           : value;
 
+      if (id.toLowerCase() === "data") {
+        const currentDate = new Date();
+        const selectedDate = new Date(value);
+
+        const isPastDate = selectedDate < currentDate;
+
+        const updatedData = {
+          ...prevData,
+          [id]: value.split("T")[0],
+          statusMeci: isPastDate ? 0 : 1,
+        };
+
+        console.log("Updated Data:", updatedData);
+
+        return updatedData;
+      }
+
       const updatedData = {
         ...prevData,
-        [id]: id.toLowerCase() === "data" ? newValue.split("T")[0] : newValue,
+        [id]: newValue,
       };
 
-      console.log("Updated Data:", updatedData); // Log the updated data
+      console.log("Updated Data:", updatedData);
 
       return updatedData;
     });
   };
 
   const handleCreateMeci = async () => {
+    if (!validateInputs()) {
+      console.error("Validation failed. Please fill in all required fields.");
+      return;
+    }
+
     try {
-      console.log("State before API call:", meciData); // Log the state before API call
+      console.log("State before API call:", meciData);
 
       const formattedData = {
         ...meciData,
         data: meciData.data ? new Date(meciData.data).toISOString() : null,
       };
 
-      console.log("Formatted Data:", formattedData); // Log the formatted data
-
+      console.log("Formatted Data:", formattedData);
       const response = await fetch(
         "https://handballdevsbe.azurewebsites.net/api/meci",
         {
@@ -69,7 +94,7 @@ const AdminMeciuri = () => {
         }
       );
 
-      console.log("API Response:", response); // Log the API response
+      console.log("API Response:", response);
 
       if (response.ok) {
         console.log("Meci created successfully.");
@@ -77,21 +102,48 @@ const AdminMeciuri = () => {
         const newSuccessMessage = `Meciul dintre CSU Suceava si ${meciData.numeAdversar} a fost adaugat cu succes`;
         setSuccessMessages((prevMessages) => {
           if (prevMessages.length >= 8) {
-            // Clear all messages
             return [{ message: newSuccessMessage, id: timestamp }];
           } else {
-            // Add the new message
-            return [...prevMessages, { message: newSuccessMessage, id: timestamp }];
+            return [
+              ...prevMessages,
+              { message: newSuccessMessage, id: timestamp },
+            ];
           }
         });
-
-        // Optionally, you can navigate to a different page after the Meci is created
       } else {
         console.error("API Error:", response.statusText);
       }
     } catch (error) {
       console.error("API Error:", error.message);
     }
+  };
+
+  const validateInputs = () => {
+    const requiredFields = [
+      "editia",
+      "numeAdversar",
+      "locatia",
+      "scorCSUSV",
+      "scorAdversar",
+    ];
+    const errors = {};
+
+    requiredFields.forEach((field) => {
+      const fieldName =
+        field === "scorCSUSV"
+          ? "scorcsusv"
+          : field === "scorAdversar"
+          ? "scoradversar"
+          : field;
+
+      if (meciData[fieldName] === "" || meciData[fieldName] === null) {
+        errors[fieldName] = true;
+      }
+    });
+
+    setInputErrors(errors);
+
+    return Object.keys(errors).length === 0;
   };
 
   const [selectedImage, setSelectedImage] = useState(null);
@@ -128,7 +180,6 @@ const AdminMeciuri = () => {
   };
 
   const handleSelectImage = () => {
-    // Trigger the click event of the file input
     if (fileInputRef.current) {
       fileInputRef.current.click();
     }
@@ -205,7 +256,12 @@ const AdminMeciuri = () => {
 
           <div className="workspace-row-ADMmeciuri">
             <div className="workspace-collumn-ADMmeciuri">
-              <label className="workspace-labels-ADMmeciuri" htmlFor="editia">
+              <label
+                className={`workspace-labels-ADMmeciuri${
+                  inputErrors.editia ? " error" : ""
+                }`}
+                htmlFor="editia"
+              >
                 Editia:
               </label>
               <label
@@ -214,8 +270,12 @@ const AdminMeciuri = () => {
               >
                 Data si ora:
               </label>
-
-              <label className="workspace-labels-ADMmeciuri" htmlFor="locatia">
+              <label
+                className={`workspace-labels-ADMmeciuri${
+                  inputErrors.locatia ? " error" : ""
+                }`}
+                htmlFor="locatia"
+              >
                 Locatia:
               </label>
 
@@ -231,7 +291,9 @@ const AdminMeciuri = () => {
               <input
                 type="text"
                 id="editia"
-                className="workspace-inputs-ADMmeciuri"
+                className={`workspace-inputs-ADMmeciuri${
+                  inputErrors.editia ? " error" : ""
+                }`}
                 value={meciData.editia}
                 onChange={handleInputChange}
               />
@@ -245,7 +307,9 @@ const AdminMeciuri = () => {
               <input
                 type="text"
                 id="locatia"
-                className="workspace-inputs-ADMmeciuri"
+                className={`workspace-inputs-ADMmeciuri${
+                  inputErrors.locatia ? " error" : ""
+                }`}
                 value={meciData.locatia}
                 onChange={handleInputChange}
               />
@@ -253,14 +317,20 @@ const AdminMeciuri = () => {
                 type="text"
                 id="statusMeci"
                 className="workspace-inputs-ADMmeciuri"
-                value={meciData.statusMeci}
-                onChange={handleInputChange}
+                value={
+                  meciData.statusMeci === 0
+                    ? "Meci neinceput"
+                    : "Meci din viitor"
+                }
+                readOnly
               />
             </div>
 
             <div className="workspace-collumn-ADMmeciuri">
               <label
-                className="workspace-labels-ADMmeciuri"
+                className={`workspace-labels-ADMmeciuri${
+                  inputErrors.numeAdversar ? " error" : ""
+                }`}
                 htmlFor="numeAdversar"
               >
                 Nume adversar:
@@ -268,15 +338,21 @@ const AdminMeciuri = () => {
               <label className="workspace-labels-ADMmeciuri" htmlFor="acasa">
                 Acasa:
               </label>
+
               <label
-                className="workspace-labels-ADMmeciuri"
-                htmlFor="scorcsusv"
+                className={`workspace-labels-ADMmeciuri${
+                  inputErrors.scorCSUSV ? " error" : ""
+                }`}
+                htmlFor="scorCSUSV"
               >
                 Scor CSUSV:
               </label>
+
               <label
-                className="workspace-labels-ADMmeciuri"
-                htmlFor="scoradversar"
+                className={`workspace-labels-ADMmeciuri${
+                  inputErrors.scorAdversar ? " error" : ""
+                }`}
+                htmlFor="scorAdversar"
               >
                 Scor adversar:
               </label>
@@ -286,7 +362,9 @@ const AdminMeciuri = () => {
               <input
                 type="text"
                 id="numeAdversar"
-                className="workspace-inputs-ADMmeciuri"
+                className={`workspace-inputs-ADMmeciuri${
+                  inputErrors.numeAdversar ? " error" : ""
+                }`}
                 value={meciData.numeadversar}
                 onChange={handleInputChange}
               />
@@ -300,15 +378,20 @@ const AdminMeciuri = () => {
               <input
                 type="text"
                 id="scorCSUSV"
-                className="workspace-inputs-ADMmeciuri"
-                value={meciData.scorcsusv}
-                onChange={handleInputChange}
+                className={`workspace-inputs-ADMmeciuri${
+                  inputErrors.scorCSUSV ? " error" : ""
+                }`}
+                value={meciData.statusMeci === 1 ? 0 : meciData.scorcsusv}
+                readOnly={meciData.statusMeci === 1}
               />
               <input
                 type="text"
                 id="scorAdversar"
-                className="workspace-inputs-ADMmeciuri"
-                value={meciData.scoradversar}
+                className={`workspace-inputs-ADMmeciuri${
+                  inputErrors.scoraAversar ? " error" : ""
+                }`}
+                value={meciData.statusMeci === 1 ? 0 : meciData.scoradversar}
+                readOnly={meciData.statusMeci === 1} 
                 onChange={handleInputChange}
               />
             </div>
@@ -362,10 +445,7 @@ const AdminMeciuri = () => {
               </div>
             ))}
           </div>
-
-          
         </div>
-        
       </div>
     </div>
   );

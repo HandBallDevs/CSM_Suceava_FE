@@ -270,3 +270,7 @@
   /* Add any other styles you want for the text */
   padding-top: 1vw;
 }
+.error {
+  color: red;
+  /* You can add additional styling for errors, such as border, background, etc. */
+}

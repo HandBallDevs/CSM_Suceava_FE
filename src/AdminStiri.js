@@ -16,9 +16,10 @@ const AdminStiri = () => {
     urlPoza: "",
     hashTaguri: "",
   });
-
   const [selectedImage, setSelectedImage] = useState(null);
   const fileInputRef = useRef(null);
+  const [inputErrors, setInputErrors] = useState({});
+  const [successMessages, setSuccessMessages] = useState([]);
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
@@ -26,6 +27,9 @@ const AdminStiri = () => {
       ...prevData,
       [id]: value,
     }));
+
+ 
+    setInputErrors((prevErrors) => ({ ...prevErrors, [id]: false }));
   };
 
   const handleImageChange = (event) => {
@@ -60,15 +64,20 @@ const AdminStiri = () => {
   };
 
   const handleSelectImage = () => {
-    // Trigger the click event of the file input
     if (fileInputRef.current) {
       fileInputRef.current.click();
     }
   };
-  const [successMessages, setSuccessMessages] = useState([]);
+
   const handleCreateStire = async () => {
+   
+    if (!validateInputs()) {
+      console.error("Validation failed. Please fill in all required fields.");
+      return;
+    }
+
     try {
-      console.log("State before API call:", StiriData); // Log the state before API call
+      console.log("State before API call:", StiriData);
 
       const response = await fetch(
         "https://handballdevsbe.azurewebsites.net/api/stire?creatorId=95d60880-cab8-4888-9f71-20e44eb60113",
@@ -89,13 +98,16 @@ const AdminStiri = () => {
         const newSuccessMessage = `Stirea cu titlul  ${StiriData.titlu} a fost adaugata`;
         setSuccessMessages((prevMessages) => {
           if (prevMessages.length >= 7) {
-            // Clear all messages
             return [{ message: newSuccessMessage, id: timestamp }];
           } else {
-            // Add the new message
-            return [...prevMessages, { message: newSuccessMessage, id: timestamp }];
+            return [
+              ...prevMessages,
+              { message: newSuccessMessage, id: timestamp },
+            ];
           }
         });
+
+        
         console.log("State after API call:", StiriData);
       } else {
         console.error("API Error:", response.statusText);
@@ -103,6 +115,24 @@ const AdminStiri = () => {
     } catch (error) {
       console.error("API Error:", error.message);
     }
+  };
+
+  const validateInputs = () => {
+    const requiredFields = ["titlu", "hashTaguri", "continut"];
+    const errors = {};
+
+
+    requiredFields.forEach((field) => {
+      if (StiriData[field] === "" || StiriData[field] === null) {
+        errors[field] = true;
+      }
+    });
+
+    
+    setInputErrors(errors);
+
+  
+    return Object.keys(errors).length === 0;
   };
 
   return (
@@ -174,37 +204,50 @@ const AdminStiri = () => {
             Creaza Stire Noua / Editeaza stire
           </label>
           <div className="workspace-row-ADMStiri">
-            <label className="workspace-labels-ADMStiri" htmlFor="titlu">
+            <label
+              className={`workspace-labels-ADMStiri${
+                inputErrors.titlu ? " error" : ""
+              }`}
+              htmlFor="titlu"
+            >
               Titlu
             </label>
             <input
               type="text"
               id="titlu"
-              className="workspace-inputs-ADMStiri"
+              className={`workspace-inputs-ADMStiri${
+                inputErrors.titlu ? " error" : ""
+              }`}
               onChange={handleInputChange}
             />
 
-            <label className="workspace-labels-ADMStiri" htmlFor="hashTaguri">
+            <label
+              className={`workspace-labels-ADMStiri${
+                inputErrors.hashTaguri ? " error" : ""
+              }`}
+              htmlFor="hashTaguri"
+            >
               HashTaguri #
             </label>
             <input
               type="text"
               id="hashTaguri"
-              className="workspace-inputs-ADMStiri"
+              className={`workspace-inputs-ADMStiri${
+                inputErrors.hashTaguri ? " error" : ""
+              }`}
               onChange={handleInputChange}
             />
           </div>
 
           <div className="workspace-row1-ADMStiri">
-            <label className="workspace-labels1-ADMStiri" htmlFor="continut">
+          <label className={`workspace-labels1-ADMStiri${inputErrors.continut ? " error" : ""}`} htmlFor="continut">
               Continut
             </label>
-            <input
-              type="text"
+            <textarea
               id="continut"
-              className="workspace-inputs-descriere-ADMStiri"
+              className={`workspace-inputs-descriere-ADMStiri${inputErrors.continut ? " error" : ""}`}
               onChange={handleInputChange}
-            />
+            ></textarea>
             <button
               className="workspace-button-ADMStiri"
               onClick={handleCreateStire}
@@ -219,7 +262,7 @@ const AdminStiri = () => {
 
           <div className="workspace-row3-ADMStiri">
             <label className="workspace-labels-ADMStiri">
-              Incarca intr-o postare:
+              Incarca poza intr-o postare:
             </label>
             <input
               type="file"
