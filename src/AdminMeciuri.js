@@ -211,36 +211,48 @@ const AdminMeciuri = () => {
           />
           <label className="ADMmeciuri_titles">Panou Administrator</label>
           <div className="options_ADMmeciuri">
-             <Link to="/adminstiri" className="ADMmeciuri_options" >
-            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
-              Stiri
-            </motion.div>
-              </Link>
+            <Link to="/adminstiri" className="ADMmeciuri_options">
+              <motion.div
+                whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+              >
+                Stiri
+              </motion.div>
+            </Link>
             <Link to="/adminmeciuri" className="ADMmeciuri_options1">
-            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
-              Meciuri
+              <motion.div
+                whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+              >
+                Meciuri
               </motion.div>
-              </Link>
+            </Link>
             <Link to="/adminjucatori" className="ADMmeciuri_options">
-            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
-              Jucatorii Seniori
+              <motion.div
+                whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+              >
+                Jucatorii Seniori
               </motion.div>
-              </Link>
+            </Link>
             <Link to="/adminjuniori" className="ADMmeciuri_options">
-            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
-              Jucatorii Juniori
+              <motion.div
+                whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+              >
+                Jucatorii Juniori
               </motion.div>
-              </Link>
+            </Link>
             <Link to="/admincadeti" className="ADMmeciuri_options">
-            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
-              Jucatori Cadeti
+              <motion.div
+                whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+              >
+                Jucatori Cadeti
               </motion.div>
             </Link>
             <Link to="/adminstaff" className="ADMmeciuri_options">
-            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
-              Staff
+              <motion.div
+                whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+              >
+                Staff
               </motion.div>
-              </Link>
+            </Link>
           </div>
         </div>
 
@@ -319,7 +331,7 @@ const AdminMeciuri = () => {
                 className="workspace-inputs-ADMmeciuri"
                 value={
                   meciData.statusMeci === 0
-                    ? "Meci neinceput"
+                    ? "Meci terminat"
                     : "Meci din viitor"
                 }
                 readOnly
@@ -391,7 +403,7 @@ const AdminMeciuri = () => {
                   inputErrors.scoraAversar ? " error" : ""
                 }`}
                 value={meciData.statusMeci === 1 ? 0 : meciData.scoradversar}
-                readOnly={meciData.statusMeci === 1} 
+                readOnly={meciData.statusMeci === 1}
                 onChange={handleInputChange}
               />
             </div>
@@ -405,9 +417,14 @@ const AdminMeciuri = () => {
               Creaza meci nou
             </button>
 
-            <button className="workspace-button-submit-ADMmeciuri">
-              Actualizeaza meci
-            </button>
+            
+              <Link
+                to="/stergemeci"
+                className="workspace-button-submit-ADMmeciuri"
+              >
+                Sterge meci
+              </Link>
+       
             <input
               type="file"
               onChange={handleImageChange}

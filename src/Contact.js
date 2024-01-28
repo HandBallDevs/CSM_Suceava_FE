@@ -19,6 +19,7 @@ import BackDeleteStaff from "./BackDeleteMeci";
 import Backend from "./Backend";
 import BackDeleteMeci from "./BackDeleteMeci";
 import BackendStiri from "./BackendStiri";
+import BackDeleteStiri from "./BackDeleteStiri";
 
 const Contact = () => {
   const springProps = useSpring({
@@ -72,7 +73,7 @@ const Contact = () => {
     }
   };
 
-  BackendStiri();
+BackDeleteStiri();
   return (
     <animated.div style={springProps}>
       <div className="app-container">

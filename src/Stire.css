@@ -14,6 +14,13 @@
   max-width: 18vw;
 
 }
+.player-image-stire-delete {
+
+  max-height: 3vw;
+  max-width: 3vw;
+  padding-left: 1vw;
+
+}
 
 .player-detalii-stire {
   display: flex;

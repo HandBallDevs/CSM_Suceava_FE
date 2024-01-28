@@ -244,7 +244,6 @@
   .workspace-button-programare-ADMStiri{
     
     width: 20%;
-    height: 2vw;
     border-radius: 25vw;
     padding: 0.6vw;
     text-align: center;
@@ -254,10 +253,12 @@
     background-color: black;
     color:white;
     text-transform: uppercase;
-    font-size: 0.7vw;
+    font-size: 0.8vw;
     margin-top:-6vw;
     outline: none;
     border: 0.1vw solid black;
+    text-decoration: none;
+    
 }
 
 .workspace-button-programare-ADMStiri

@@ -28,7 +28,6 @@ const AdminStiri = () => {
       [id]: value,
     }));
 
- 
     setInputErrors((prevErrors) => ({ ...prevErrors, [id]: false }));
   };
 
@@ -70,7 +69,6 @@ const AdminStiri = () => {
   };
 
   const handleCreateStire = async () => {
-   
     if (!validateInputs()) {
       console.error("Validation failed. Please fill in all required fields.");
       return;
@@ -107,7 +105,6 @@ const AdminStiri = () => {
           }
         });
 
-        
         console.log("State after API call:", StiriData);
       } else {
         console.error("API Error:", response.statusText);
@@ -121,17 +118,14 @@ const AdminStiri = () => {
     const requiredFields = ["titlu", "hashTaguri", "continut"];
     const errors = {};
 
-
     requiredFields.forEach((field) => {
       if (StiriData[field] === "" || StiriData[field] === null) {
         errors[field] = true;
       }
     });
 
-    
     setInputErrors(errors);
 
-  
     return Object.keys(errors).length === 0;
   };
 
@@ -162,36 +156,48 @@ const AdminStiri = () => {
           />
           <label className="ADMStiri_titles">Panou Administrator</label>
           <div className="options_ADMStiri">
-              <Link to="/adminstiri" className="ADMStiri_options1" >
-            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
-              Stiri
-            </motion.div>
-              </Link>
+            <Link to="/adminstiri" className="ADMStiri_options1">
+              <motion.div
+                whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+              >
+                Stiri
+              </motion.div>
+            </Link>
             <Link to="/adminmeciuri" className="ADMStiri_options">
-            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
-              Meciuri
+              <motion.div
+                whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+              >
+                Meciuri
               </motion.div>
-              </Link>
+            </Link>
             <Link to="/adminjucatori" className="ADMStiri_options">
-            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
-              Jucatorii Seniori
+              <motion.div
+                whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+              >
+                Jucatorii Seniori
               </motion.div>
-              </Link>
+            </Link>
             <Link to="/adminjuniori" className="ADMStiri_options">
-            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
-              Jucatorii Juniori
+              <motion.div
+                whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+              >
+                Jucatorii Juniori
               </motion.div>
-              </Link>
+            </Link>
             <Link to="/admincadeti" className="ADMStiri_options">
-            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
-              Jucatori Cadeti
+              <motion.div
+                whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+              >
+                Jucatori Cadeti
               </motion.div>
             </Link>
             <Link to="/adminstaff" className="ADMStiri_options">
-            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
-              Staff
+              <motion.div
+                whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+              >
+                Staff
               </motion.div>
-              </Link>
+            </Link>
           </div>
         </div>
         <div className="Workspace-ADMStiri">
@@ -240,12 +246,19 @@ const AdminStiri = () => {
           </div>
 
           <div className="workspace-row1-ADMStiri">
-          <label className={`workspace-labels1-ADMStiri${inputErrors.continut ? " error" : ""}`} htmlFor="continut">
+            <label
+              className={`workspace-labels1-ADMStiri${
+                inputErrors.continut ? " error" : ""
+              }`}
+              htmlFor="continut"
+            >
               Continut
             </label>
             <textarea
               id="continut"
-              className={`workspace-inputs-descriere-ADMStiri${inputErrors.continut ? " error" : ""}`}
+              className={`workspace-inputs-descriere-ADMStiri${
+                inputErrors.continut ? " error" : ""
+              }`}
               onChange={handleInputChange}
             ></textarea>
             <button
@@ -255,9 +268,9 @@ const AdminStiri = () => {
               Posteaza stire
             </button>
 
-            <button className="workspace-button-ADMStiri">
-              Actualizeaza stire
-            </button>
+            <Link to="/noutatidelete" className="workspace-button-ADMStiri">
+              Șterge stire
+            </Link>
           </div>
 
           <div className="workspace-row3-ADMStiri">

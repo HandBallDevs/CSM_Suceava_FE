@@ -2,21 +2,15 @@ import React, { useState } from "react";
 import "./Stire.css";
 import Stire1Image from "./imagini/stire1.png";
 
-const Stire = ({
-  data,
-  titlu,
-  continut,
-  hashtag,
-  poza
-
-}) => {
+const Stire = ({ id, data, titlu, continut, hashtag, poza, pozadelete, onDelete }) => {
   const [editedData, setEditedData] = useState({
+    id,
     data,
     titlu,
     continut,
     hashtag,
-    poza
-
+    poza,
+    pozadelete,
   });
 
   return (
@@ -36,14 +30,16 @@ const Stire = ({
             {editedData.hashtag}
           </span>
         </div>
-       
-       
       </div>
-      <img
-        src={editedData.poza}
-        alt=""
-        className="player-image-stire"
-      />
+      <img src={editedData.poza} alt="" className="player-image-stire" />
+      {onDelete && (
+        <img
+          src={editedData.pozadelete}
+          alt=""
+          className="player-image-stire-delete"
+          onClick={() => onDelete(editedData.id)}
+        />
+      )}
     </div>
   );
 };

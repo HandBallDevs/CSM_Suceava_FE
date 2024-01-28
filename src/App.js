@@ -4,6 +4,7 @@ import React from "react";
 //import Layout from './layout';
 import Acasa from "./Acasa";
 import Noutati from "./Noutati";
+import NoutatiDelete from "./NoutatiDelete";
 import Contact from "./Contact";
 //import Meniusus from "./Meniusus";
 //import Meniujos from "./Meniujos";
@@ -20,6 +21,7 @@ import DetaliiClub from "./DetaliiClub";
 import Login from "./Login";
 import CalendarMeciuri from "./CalendarMeciuri";
 import RezultateMeciuri from "./RezultateMeciuri";
+import RezultateMeciuriDelete from "./RezultateMeciuriDelete";
 import AdminJucatori from "./AdminJucatori";
 import AdminStaff from "./AdminStaff";
 import EditeazaJucator from "./EditeazaJucator";
@@ -38,6 +40,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Acasa />} />
         <Route path="/noutati" element={<Noutati/>} />
+        <Route path="/noutatidelete" element={<NoutatiDelete/>} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/clubclasament" element={<ClubClasament />} />
         <Route path="/clublot" element={<ClubLot />} />
@@ -51,6 +54,7 @@ function App() {
         <Route path="/adminmeciuri" element={<AdminMeciuri />} />
         <Route path="/calendarmeciuri" element={<CalendarMeciuri />} />
         <Route path="/rezultatemeciuri" element={<RezultateMeciuri />} />
+        <Route path="/stergemeci" element={<RezultateMeciuriDelete />} />
         <Route path="/admincadeti" element={<AdminCadeti />} />
         <Route path="/adminjucatori" element={<AdminJucatori />} />
         <Route path="/adminstaff" element={<AdminStaff />} />

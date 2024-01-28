@@ -221,7 +221,7 @@ font-size: 1vw;
   .workspace-button-submit-ADMmeciuri
   {
     width: 12vw;
-    height: 2.1vw;
+  
     border-radius: 25vw;
     padding: 0.4vw;
     text-align: center;
@@ -234,6 +234,7 @@ font-size: 1vw;
     font-size: 0.8vw;
     outline: none;
     border: 0.1vw solid black;
+    text-decoration: none;
 
   }
 

@@ -84,7 +84,7 @@ const Login = () => {
         <div className="title-LOGIN">
           <img src={FrameImage} alt="" className="frame-image-LOGIN" />
           <div className="label-container-LOGIN">
-            <label className="label_title-LOGIN">Panou Administartor</label>
+            <label className="label_title-LOGIN">Panou Administrator</label>
             <div className="row-title-LOGIN">
               <label className="label_subtitle-LOGIN">Acasa</label>
               <label className="label_subtitle-LOGIN">/</label>
