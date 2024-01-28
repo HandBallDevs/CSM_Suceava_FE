@@ -274,3 +274,18 @@
    
 }
   
+
+.overlay-text-container-stiri {
+
+  text-align: center;
+  width: 100%;
+  top:50vw;
+  display: flex;
+}
+
+.overlay-text-stiri {
+  font-size: 1.3vw;
+  color: white;  /* Adjust the color as needed */
+  /* Add any other styles you want for the text */
+  padding-top: 1vw;
+}

@@ -64,7 +64,7 @@ const AdminStiri = () => {
       fileInputRef.current.click();
     }
   };
-
+  const [successMessages, setSuccessMessages] = useState([]);
   const handleCreateStire = async () => {
     try {
       console.log("State before API call:", StiriData); // Log the state before API call
@@ -80,12 +80,22 @@ const AdminStiri = () => {
         }
       );
 
-      console.log("API Response:", response); // Log the API response
+      console.log("API Response:", response);
 
       if (response.ok) {
         console.log("Stire created successfully.");
-        // Optionally, you can navigate to a different page after the Meci is created
-        console.log("State after API call:", StiriData); // Log the state before API call
+        const timestamp = new Date().getTime();
+        const newSuccessMessage = `Stirea cu titlul  ${StiriData.titlu} a fost adaugata`;
+        setSuccessMessages((prevMessages) => {
+          if (prevMessages.length >= 7) {
+            // Clear all messages
+            return [{ message: newSuccessMessage, id: timestamp }];
+          } else {
+            // Add the new message
+            return [...prevMessages, { message: newSuccessMessage, id: timestamp }];
+          }
+        });
+        console.log("State after API call:", StiriData);
       } else {
         console.error("API Error:", response.statusText);
       }
@@ -220,26 +230,22 @@ const AdminStiri = () => {
                 style={{
                   maxWidth: "12vw",
                   maxHeight: "12vw",
-                 
                 }}
               />
             )}
           </div>
-
-        
 
           <div className="workspace-row-ADMStiri">
             <label className="workspace-labels-upper-ADMStiri">
               Stiri publicate
             </label>
           </div>
-
-          <div className="workspace-row-ADMStiri">
-            <img
-              src={AdminIndexImage}
-              alt=""
-              className="AdminIndexImage-ADMStiri"
-            />
+          <div className="workspace-row-index-ADMmeciuri">
+            {successMessages.map(({ message, id }) => (
+              <div key={id} className="overlay-text-container-stiri">
+                <div className="overlay-text-stiri">{message}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

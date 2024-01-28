@@ -227,7 +227,7 @@
   .workspace-row-index-ADMmeciuri
   {
     margin-top: 2.7vw;
-    display: flex;
+  
     justify-content:center;
     align-items: center;
     gap: 1.7vw;
@@ -245,7 +245,22 @@
 .AdminIndexImage-ADMmeciuri{
   width: 64vw;
   height: auto;
-  margin-top: -0.8vw
+  margin-top: -0.2vw
    
 }
   
+
+.overlay-text-container-meci {
+
+  text-align: center;
+  width: 100%;
+  top:70vw;
+  display: flex;
+}
+
+.overlay-text-meci {
+  font-size: 1.2vw;
+  color: white;  /* Adjust the color as needed */
+  /* Add any other styles you want for the text */
+  padding-top: 1vw;
+}

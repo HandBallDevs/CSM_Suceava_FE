@@ -11,18 +11,18 @@ import { useRef } from "react";
 const AdminMeciuri = () => {
   const [meciData, setMeciData] = useState({
     tipCampionat: 0,
-    editia: '',
-    statusMeci: '',
-    data: '',
-    urlPoza: '',
-    numeAdversar: '',
-    locatia: '',
-    linkLive: '',
+    editia: "",
+    statusMeci: "",
+    data: "",
+    urlPoza: "",
+    numeAdversar: "",
+    locatia: "",
+    linkLive: "",
     acasa: true,
     scorCSUSV: 0,
-    scorAdversar: 0
+    scorAdversar: 0,
   });
-
+  const [successMessages, setSuccessMessages] = useState([]);
   const handleInputChange = (e) => {
     const { id, value, type, checked } = e.target;
 
@@ -72,6 +72,18 @@ const AdminMeciuri = () => {
 
       if (response.ok) {
         console.log("Meci created successfully.");
+        const timestamp = new Date().getTime();
+        const newSuccessMessage = `Meciul dintre CSU Suceava si ${meciData.numeAdversar} a fost adaugat cu succes`;
+        setSuccessMessages((prevMessages) => {
+          if (prevMessages.length >= 8) {
+            // Clear all messages
+            return [{ message: newSuccessMessage, id: timestamp }];
+          } else {
+            // Add the new message
+            return [...prevMessages, { message: newSuccessMessage, id: timestamp }];
+          }
+        });
+
         // Optionally, you can navigate to a different page after the Meci is created
       } else {
         console.error("API Error:", response.statusText);
@@ -297,6 +309,7 @@ const AdminMeciuri = () => {
             >
               Creaza meci nou
             </button>
+
             <button className="workspace-button-submit-ADMmeciuri">
               Actualizeaza meci
             </button>
@@ -331,13 +344,16 @@ const AdminMeciuri = () => {
             </label>
           </div>
           <div className="workspace-row-index-ADMmeciuri">
-            <img
-              src={AdminIndexImage}
-              alt=""
-              className="AdminIndexImage-ADMmeciuri"
-            />
+            {successMessages.map(({ message, id }) => (
+              <div key={id} className="overlay-text-container-meci">
+                <div className="overlay-text-meci">{message}</div>
+              </div>
+            ))}
           </div>
+
+          
         </div>
+        
       </div>
     </div>
   );
