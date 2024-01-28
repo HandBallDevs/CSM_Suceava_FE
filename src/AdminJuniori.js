@@ -201,7 +201,7 @@ const AdminJuniori = () => {
                     <button className="button-adauga_jucator-ADMJucatori"> + Adauga Jucator </button>
                     </motion.div>
                 </Link>
-                    <label  className="label-title_j-ADMJucatori" >Lot seniori </label>
+                    <label  className="label-title_j-ADMJucatori" >Lot juniori </label>
                 </div>
              </div>
              

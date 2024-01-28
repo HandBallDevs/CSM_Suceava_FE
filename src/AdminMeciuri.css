@@ -189,7 +189,7 @@
 
   .workspace-inputs-ADMmeciuri, .workspace-choicebox-ADMmeciuri{
     width: 75%;
-    height: auto;
+    height: 1.1vw;
     border-radius: 25vw; 
     padding: 0.4vw;
     font-size: 1vw;
@@ -209,6 +209,13 @@
     background-repeat: no-repeat;
     background-position: 95% 50%; /* Adjust the position of the arrow */
     background-size: 1vw; /* Adjust the size of the arrow */
+    font-size: 1.5vw;
+    padding: 0.1vw;
+    
+  }
+  .workspace-choicebox-ADMmeciuri::placeholder
+  {
+font-size: 1vw;
   }
 
   .workspace-button-submit-ADMmeciuri
@@ -274,3 +281,13 @@
   color: red;
   /* You can add additional styling for errors, such as border, background, etc. */
 }
+
+.workspace-checkbox-ADMmeciuri {
+  width: 2vw;
+  height: 2vw;
+  border: 0.1vw solid transparent; 
+  border-radius: 0.1vw;
+  padding: 0.1vw;
+  transform: scale(0.8);
+}
+
