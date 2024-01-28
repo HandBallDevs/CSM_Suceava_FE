@@ -196,7 +196,7 @@ const AdminCadeti = () => {
           onChange={handleSearchPositionChange}/>
                 </div>
                 <div className="Workspace-row-ADMJucatori2">
-                <Link to="/adaugacadeti" className="Workspace-row-ADMJucatori2">
+                <Link to="/adaugacadeti" className="button-adauga_jucator-ADMJucatori">
                     <button className="button-adauga_jucator-ADMJucatori"> + Adauga Jucator  </button>
                 </Link>
                     <label  className="label-title_j-ADMJucatori" >Lot Cadeti </label>
