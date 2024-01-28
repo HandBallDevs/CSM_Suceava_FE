@@ -1,51 +1,99 @@
-import React, { useEffect } from 'react';
-import './AdminStiri.css';
-import Meniusus from './Meniusus';
-import FrameImage from './imagini/frame.png';
-import AdminMenuImage from './imagini/AdminMenuImage.png';
-import AdminWorkSpaceImage from './imagini/AdminWorkSpaceImage.png';
-import AdminIndexImage from './imagini/AdminiIndexImage.png';
+import React, { useRef } from "react";
+import "./AdminStiri.css";
+import Meniusus from "./Meniusus";
+import FrameImage from "./imagini/frame.png";
+import AdminMenuImage from "./imagini/AdminMenuImage.png";
+import AdminWorkSpaceImage from "./imagini/AdminWorkSpaceImage.png";
+import AdminIndexImage from "./imagini/AdminiIndexImage.png";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const AdminStiri = () => {
-  
-  useEffect(() => {
-    populateDateAndTimeOptions();
-  }, []); // Empty dependency array ensures this effect runs only once after mount
+  const [StiriData, setStiriData] = useState({
+    titlu: "",
+    continut: "",
+    urlPoza: "",
+    hashTaguri: "",
+  });
 
-  const populateDateAndTimeOptions = () => {
-    // Populate date options for the next 30 days
-    const dataSelect = document.getElementById('data');
-    const today = new Date();
+  const [selectedImage, setSelectedImage] = useState(null);
+  const fileInputRef = useRef(null);
 
-    // Clear existing options
-    dataSelect.innerHTML = '';
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setStiriData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
 
-    for (let i = 0; i < 30; i++) {
-      const dateOption = new Date();
-      dateOption.setDate(today.getDate() + i);
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
 
-      const option = document.createElement('option');
-      option.value = dateOption.toISOString().split('T')[0];
-      option.text = dateOption.toDateString();
-      dataSelect.add(option);
-    }
+    if (file) {
+      const reader = new FileReader();
 
-    // Populate time options for hours (24-hour format)
-    const oraSelect = document.getElementById('ora');
+      reader.onload = (e) => {
+        const base64Image = e.target.result;
 
-    // Clear existing options
-    oraSelect.innerHTML = '';
+        if (base64Image) {
+          const imageWithoutPrefix = base64Image.replace(
+            /^data:image\/(png|jpeg|jpg);base64,/,
+            ""
+          );
 
-    for (let j = 0; j < 24; j++) {
-      const hour = ('0' + j).slice(-2);
+          setStiriData((prevData) => ({
+            ...prevData,
+            urlPoza: imageWithoutPrefix,
+          }));
 
-      const option = document.createElement('option');
-      option.value = hour;
-      option.text = hour + ':00';
-      oraSelect.add(option);
+          setSelectedImage(base64Image);
+          console.log("Base64 Image without prefix:", imageWithoutPrefix);
+        } else {
+          console.error("Error loading image.");
+        }
+      };
+
+      reader.readAsDataURL(file);
     }
   };
+
+  const handleSelectImage = () => {
+    // Trigger the click event of the file input
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
+    }
+  };
+
+  const handleCreateStire = async () => {
+    try {
+      console.log("State before API call:", StiriData); // Log the state before API call
+
+      const response = await fetch(
+        "https://handballdevsbe.azurewebsites.net/api/stire?creatorId=95d60880-cab8-4888-9f71-20e44eb60113",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(StiriData),
+        }
+      );
+
+      console.log("API Response:", response); // Log the API response
+
+      if (response.ok) {
+        console.log("Stire created successfully.");
+        // Optionally, you can navigate to a different page after the Meci is created
+        console.log("State after API call:", StiriData); // Log the state before API call
+      } else {
+        console.error("API Error:", response.statusText);
+      }
+    } catch (error) {
+      console.error("API Error:", error.message);
+    }
+  };
+
   return (
     <div className="app-container">
       <Meniusus />
@@ -57,77 +105,142 @@ const AdminStiri = () => {
           <div className="row-title-ADMStiri">
             <label className="label_subtitle-ADMStiri">Acasa</label>
             <label className="label_subtitle-ADMStiri">/</label>
-            <label className="label_subtitle_admin-ADMStiri">Panou Administrator</label>
+            <label className="label_subtitle_admin-ADMStiri">
+              Panou Administrator
+            </label>
           </div>
         </div>
       </div>
 
       <div className="Container-ADMStiri">
         <div className="Menu-ADMStiri">
-          <img src={AdminMenuImage} alt="" className="Admin-menu-img-ADMStiri" />
+          <img
+            src={AdminMenuImage}
+            alt=""
+            className="Admin-menu-img-ADMStiri"
+          />
           <label className="ADMStiri_titles">Panou Administrator</label>
           <div className="options_ADMStiri">
-            <Link to="/adminstiri" className="ADMStiri_options">Stiri</Link>
-            <Link to="/adminmeciuri" className="ADM_options">Meciuri</Link>
-            <Link to="/adminjucatori" className="ADMStiri_options">Jucatorii Seniori</Link>
-            <Link to="/adminjuniori" className="ADMStiri_options">Jucatorii Juniori</Link>
-            <Link to="/admincadeti" className="ADMStiri_options">Jucatori Cadeti</Link>
-            <Link to="/adminstaff" className="ADMStiri_options">Staff</Link>
+            <Link to="/adminstiri" className="ADMStiri_options">
+              Stiri
+            </Link>
+            <Link to="/adminmeciuri" className="ADM_options">
+              Meciuri
+            </Link>
+            <Link to="/adminjucatori" className="ADMStiri_options">
+              Jucatorii Seniori
+            </Link>
+            <Link to="/adminjuniori" className="ADMStiri_options">
+              Jucatorii Juniori
+            </Link>
+            <Link to="/admincadeti" className="ADMStiri_options">
+              Jucatori Cadeti
+            </Link>
+            <Link to="/adminstaff" className="ADMStiri_options">
+              Staff
+            </Link>
           </div>
-        </div>  
+        </div>
         <div className="Workspace-ADMStiri">
-          <img src={AdminWorkSpaceImage} alt="" className="Admin-workspace-img-ADMStiri" />
-          <label className="admin_titles1-ADMStiri">Creaza Stire Noua / Editeaza stire</label>
+          <img
+            src={AdminWorkSpaceImage}
+            alt=""
+            className="Admin-workspace-img-ADMStiri"
+          />
+          <label className="admin_titles1-ADMStiri">
+            Creaza Stire Noua / Editeaza stire
+          </label>
           <div className="workspace-row-ADMStiri">
             <label className="workspace-labels-ADMStiri" htmlFor="titlu">
               Titlu
             </label>
-            <input type="text" id="titlu" className="workspace-inputs-ADMStiri" />
+            <input
+              type="text"
+              id="titlu"
+              className="workspace-inputs-ADMStiri"
+              onChange={handleInputChange}
+            />
 
-            <label className="workspace-labels-ADMStiri" htmlFor="definire">
-              Definire #
+            <label className="workspace-labels-ADMStiri" htmlFor="hashTaguri">
+              HashTaguri #
             </label>
-            <input type="text" id="definire" className="workspace-inputs-ADMStiri" />
+            <input
+              type="text"
+              id="hashTaguri"
+              className="workspace-inputs-ADMStiri"
+              onChange={handleInputChange}
+            />
           </div>
 
           <div className="workspace-row1-ADMStiri">
-            <label className="workspace-labels1-ADMStiri" htmlFor="descriere">
-              Descriere
+            <label className="workspace-labels1-ADMStiri" htmlFor="continut">
+              Continut
             </label>
-            <input type="text" id="descriere" className="workspace-inputs-descriere-ADMStiri" />
-            <button className="workspace-button-ADMStiri">Posteaza stire</button>
-            <button className="workspace-button-ADMStiri">Salveaza draft</button>
-            <button className="workspace-button-ADMStiri">Actualizeaza stire</button>
-          </div>
+            <input
+              type="text"
+              id="continut"
+              className="workspace-inputs-descriere-ADMStiri"
+              onChange={handleInputChange}
+            />
+            <button
+              className="workspace-button-ADMStiri"
+              onClick={handleCreateStire}
+            >
+              Posteaza stire
+            </button>
 
-          <div className="workspace-row2-ADMStiri">
-            <label className="workspace-labels-ADMStiri1">Programeaza postare stire:</label>
-            <label className="workspace-labels-ADMStiri" htmlFor="data">
-              Data:
-            </label>
-            <select id="data" className="workspace-choicebox-ADMStiri"></select>
-
-            <label className="workspace-labels-ADMStiri" htmlFor="ora">
-              Ora:
-            </label>
-            <select id="ora" className="workspace-choicebox-ADMStiri"></select>
-            <button className="workspace-button-programare-ADMStiri">Programeaza stire</button>
+            <button className="workspace-button-ADMStiri">
+              Actualizeaza stire
+            </button>
           </div>
 
           <div className="workspace-row3-ADMStiri">
-            <label className="workspace-labels-ADMStiri">Incarca intr-o postare:</label>
-            <button className="workspace-button-programare-ADMStiri">Alege Foto/Video</button>
-            <button className="workspace-button-programare-ADMStiri">Incarca</button>
+            <label className="workspace-labels-ADMStiri">
+              Incarca intr-o postare:
+            </label>
+            <input
+              type="file"
+              onChange={handleImageChange}
+              accept="image/*"
+              ref={fileInputRef}
+              style={{ display: "none" }}
+            />
+
+            <button
+              className="workspace-button-programare-ADMStiri"
+              onClick={handleSelectImage}
+            >
+              Incarca poza
+            </button>
+
+            {selectedImage && (
+              <img
+                src={selectedImage}
+                alt="Selected"
+                style={{
+                  maxWidth: "12vw",
+                  maxHeight: "12vw",
+                 
+                }}
+              />
+            )}
+          </div>
+
+        
+
+          <div className="workspace-row-ADMStiri">
+            <label className="workspace-labels-upper-ADMStiri">
+              Stiri publicate
+            </label>
           </div>
 
           <div className="workspace-row-ADMStiri">
-            <label className="workspace-labels-upper-ADMStiri">Stiri publicate</label>
+            <img
+              src={AdminIndexImage}
+              alt=""
+              className="AdminIndexImage-ADMStiri"
+            />
           </div>
-          
-          <div className="workspace-row-ADMStiri">
-            <img src={AdminIndexImage} alt="" className="AdminIndexImage-ADMStiri" />
-          </div>
-
         </div>
       </div>
     </div>

@@ -76,7 +76,7 @@
 
 .Workspace-ADMStiri
 {
-  width: 70%;
+  width: 80%;
   height: auto;
   align-items: center;
   display: flex;
@@ -160,7 +160,7 @@
 .workspace-row3-ADMStiri
 {
   margin-top: 2vw;
-  margin-left: 6vw;
+  margin-left: 10vw;
   gap:1.2vw;
   width: 60vw;
   display: flex;
@@ -230,6 +230,7 @@
     font-size: 1vw;
     outline: none;
     border: 0.1vw solid #999;
+    padding-right: 10vw;
   }
 
   .workspace-button-ADMStiri , 

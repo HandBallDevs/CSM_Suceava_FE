@@ -112,11 +112,12 @@ const Noutăti = () => {
             {StiriData.map((stire, index) => (
               <Stire
               key={index}
-                poza={Stire1Image}
+                poza={stire.urlPoza}
                    data={getRelativeTime(stire.dataPostare)}
                 titlu={stire.titlu}
                 continut={stire.continut}
                 hashtag={stire.hashTaguri}
+  
               />
             ))}
           </div>

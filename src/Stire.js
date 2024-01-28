@@ -7,6 +7,7 @@ const Stire = ({
   titlu,
   continut,
   hashtag,
+  poza
 
 }) => {
   const [editedData, setEditedData] = useState({
@@ -14,6 +15,7 @@ const Stire = ({
     titlu,
     continut,
     hashtag,
+    poza
 
   });
 
@@ -38,7 +40,7 @@ const Stire = ({
        
       </div>
       <img
-        src={editedData.poza || Stire1Image}
+        src={editedData.poza}
         alt=""
         className="player-image-stire"
       />
