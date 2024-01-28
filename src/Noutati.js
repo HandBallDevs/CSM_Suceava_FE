@@ -22,17 +22,16 @@ const Noutăti = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          "https://handballdevsbe.azurewebsites.net/api/stire"
-        );
+        const response = await fetch("https://handballdevsbe.azurewebsites.net/api/stire");
         if (response.ok) {
           const data = await response.json();
-          console.log("API Response:", data);
-
-          const ids = data.map((item) => item.id);
-          console.log("IDs:", ids);
-
-          setStiriData(data);
+  
+          // Sort the data by dataPostare in descending order
+          const sortedData = data.sort((a, b) => b.dataPostare.localeCompare(a.dataPostare));
+  
+          console.log("Sorted Data:", sortedData);
+  
+          setStiriData(sortedData);
         } else {
           console.error("API Error:", response.statusText);
         }
@@ -40,10 +39,9 @@ const Noutăti = () => {
         console.error("API Error:", error.message);
       }
     };
-
+  
     fetchData();
   }, []);
-
   const getRelativeTime = (timestamp) => {
     const now = new Date();
     const diffInSeconds = Math.floor((now - new Date(timestamp)) / 1000);

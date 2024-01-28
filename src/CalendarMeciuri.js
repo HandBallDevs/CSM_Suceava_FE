@@ -29,8 +29,11 @@ const CalendarMeciuri = () => {
         );
         if (response.ok) {
           const data = await response.json();
-          console.log("API Response:", data);
-          setRezMeciData(data);
+           // Sort the data by data in descending order
+           const sortedData = data.sort((a, b) => b.data.localeCompare(a.data));
+
+           console.log("Sorted Data:", sortedData);
+          setRezMeciData(sortedData);
         } else {
           console.error("API Error:", response.statusText);
         }
@@ -49,8 +52,10 @@ const CalendarMeciuri = () => {
         );
         if (response.ok) {
           const data = await response.json();
-          console.log("API Response:", data);
-          setViMeciData(data);
+          const sortedData = data.sort((a, b) => b.data.localeCompare(a.data));
+
+          console.log("Sorted Data:", sortedData);
+          setViMeciData(sortedData);
         } else {
           console.error("API Error:", response.statusText);
         }
@@ -128,7 +133,7 @@ const CalendarMeciuri = () => {
           <div className="word-list-viitoare">
             <p className="word-viitoare rezultate">MECIURILE VIITOARE</p>
             <div className="news-rezultate2">
-            {ViMeciData.slice(0, 2).map((item, index) => (
+            {ViMeciData.slice(1, 4).map((item, index) => (
                 <>
                   <div className="image-with-text2" key={index}>
                     <p className="text-deasupra-viitoare">

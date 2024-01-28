@@ -25,7 +25,13 @@ const RezultateMeciuri = () => {
         );
         if (response.ok) {
           const data = await response.json();
-          setRezMeciData(data);
+
+          // Sort the data by data in descending order
+          const sortedData = data.sort((a, b) => b.data.localeCompare(a.data));
+
+          console.log("Sorted Data:", sortedData);
+
+          setRezMeciData(sortedData);
         } else {
           console.error("API Error:", response.statusText);
         }

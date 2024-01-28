@@ -52,8 +52,9 @@ const Acasa = () => {
         );
         if (response.ok) {
           const data = await response.json();
-          console.log("API Response:", data);
-          setViMeciData(data);
+          const sortedData = data.sort((a, b) => b.data.localeCompare(a.data));
+          console.log("Sorted Data:", sortedData);
+          setViMeciData(sortedData);
         } else {
           console.error("API Error:", response.statusText);
         }
@@ -97,7 +98,7 @@ const Acasa = () => {
             <div className="word-list-6">
               <p className="word-6 rezultate">REZULTATE MECIURI</p>
               <div className="news-rezultate">
-                {RezMeciData.slice(0, 3).map((item, index) => (
+                {RezMeciData.slice(0, 4).map((item, index) => (
                   <>
                     <div className="image-with-text" key={index}>
                       <img src={LogoImage} alt="" className="rezultate-image" />
@@ -141,7 +142,7 @@ const Acasa = () => {
             <div className="word-list-6">
               <p className="word-6 rezultate">Meciuri Viitoare</p>
               <div className="news-viitoare">
-                {ViMeciData.slice(0, 3).map((item, index) => (
+                {ViMeciData.slice(0, 4).map((item, index) => (
                   <>
                     <div className="image-with-text" key={index}>
                       <img src={LogoImage} alt="" className="rezultate-image" />
