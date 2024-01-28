@@ -4,6 +4,7 @@ import Meniusus from './Meniusus';
 import FrameImage from './imagini/frame.png';
 import ImgJucator from './imagini/PozaJucaror.png';
 import { Link, useParams } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const EditeazaJucator = () => {
   const { playerId } = useParams();
@@ -345,7 +346,9 @@ const EditeazaJucator = () => {
         <div className="edit_jucator-collumn1">
           <img src={originalImageSrc} alt="" className="iamgine_jucator-edit" />
           <label htmlFor="imageInput" className="custom-label">
+          <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
             Incarca Imagine
+            </motion.div>
           </label>
           <input
             type="file"
@@ -372,16 +375,18 @@ const EditeazaJucator = () => {
               
               handleLabelStyling();
             }}
-          >
+          >  <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
             Editeaza jucator
+            </motion.div >
           </button>
         ) : (
           <Link to="/adminjucatori" className="Incarca-imagine-jucator-ADD">
             <button
               className="Incarca-imagine-jucator-ADD"
               onClick={handleEditeazaJucator}
-            >
+            >  <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
               Editeaza jucator
+              </motion.div >
             </button>
           </Link>
         )}

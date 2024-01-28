@@ -4,6 +4,7 @@ import { useNavigate,Link } from "react-router-dom";
 import PlayerEditImage from "./imagini/EditImage.png";
 import PlayerDeleteImage from "./imagini/DeleteImage.png";
 import AdminJucatorImage from './imagini/jucator.png';
+import { motion } from "framer-motion";
 
 const AdminPlayerCard = ({ id,poza,nume, prenume, pozitie, nationalitate, varsta, inaltimea,onDelete,onUpdate}) => {
   const [editedData, setEditedData] = useState({
@@ -32,7 +33,9 @@ const AdminPlayerCard = ({ id,poza,nume, prenume, pozitie, nationalitate, varsta
 
   return (
     <div className="playercard-ADMJucatori">
-                    <img src={editedData.poza} alt="Player" className="player-image-senior-ADMJucatori" />     
+                    <div className="borderimage">
+                    <img src={editedData.poza} alt="Player" className="player-image-senior-ADMJucatori" />    
+                    </div> 
                     <div className="Workspace-infoplayer-collumn">   
                         <div className="detalii-item-ADMJucatori">
                             <span className="detalii-label-nume-ADMJucatori">NUME:</span>
@@ -61,9 +64,13 @@ const AdminPlayerCard = ({ id,poza,nume, prenume, pozitie, nationalitate, varsta
                     </div>
                     <div className="Workspace-actions-collumn">   
                     <Link to={`/editeazajucator/${id}`} className="ADMJucatori_options" onClick={handleUpdate}>
-        <img src={PlayerEditImage} alt="" className="Action-image-ADMJucatori"/>
-      </Link>
-                     <img src={PlayerDeleteImage} alt="" className="Action-image-ADMJucatori" onClick={handleDelete}/>      
+                    <motion.div className="Workspace-actions-collumn" whileHover={{ scale: 1.2, transition: { duration: 0.3 } }}>
+                       <img src={PlayerEditImage} alt="" className="Action-image-ADMJucatori"/>
+                    </motion.div>
+                     </Link>
+                     <motion.div className="Workspace-actions-collumn" whileHover={{ scale: 1.2, transition: { duration: 0.3 } }}>
+                     <img src={PlayerDeleteImage} alt="" className="Action-image-ADMJucatori" onClick={handleDelete}/>     
+                     </motion.div> 
                     </div>
                 </div>
   );

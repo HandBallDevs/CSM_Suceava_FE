@@ -4,7 +4,7 @@ import Meniusus from './Meniusus';
 import FrameImage from './imagini/frame.png';
 import ImgJucator from './imagini/PozaJucaror.png';
 import { Link } from 'react-router-dom';
-import { isDisabled } from '@testing-library/user-event/dist/utils';
+import { motion } from 'framer-motion';
 const AdaugaStaff = () => {
   const [formData, setFormData] = useState({
     nume: '',
@@ -221,7 +221,9 @@ const AdaugaStaff = () => {
         <div className='ADD_jucator-collumn1'>
         <img src={originalImageSrc} alt=""  className="iamgine_jucator-ADD"  />
         <label htmlFor="imageInput" className="custom-label">
+        <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
         Incarca Imagine
+        </motion.div>
       </label>
       <input
         type="file"
@@ -253,15 +255,18 @@ const AdaugaStaff = () => {
               handleLabelStyling();
             }}
           >
+             <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
             Adauga jucator
+            </motion.div>
           </button>
         ) : (
           <Link to="/adminstaff" className="Incarca-imagine-jucator-ADD">
             <button
               className="Incarca-imagine-jucator-ADD"
               onClick={handleAdaugaJucator}
-            >
+            > <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
               Adauga jucator
+              </motion.div>
             </button>
           </Link>
         )}

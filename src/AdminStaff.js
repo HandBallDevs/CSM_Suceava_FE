@@ -194,7 +194,9 @@ const AdminStaff = () => {
                 </div>
                 <div className="Workspace-row-ADMStaff2">
                 <Link to="/adaugastaff" className="button-adauga_jucator-ADMStaff">
+                <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
                     <button className="button-adauga_jucator-ADMStaff"> + Adauga Antrenor </button>
+                    </motion.div >
                 </Link>
                     <label  className="label-title_j-ADMStaff" >Staff </label>
                 </div>

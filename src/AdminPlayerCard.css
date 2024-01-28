@@ -1,7 +1,9 @@
 .player-image-senior-ADMJucatori
   {
-    width: 11vw;
+    width: auto;
     height: auto;
+    max-height: 11vw;
+    max-width: 11vw;
   }
   
 .playercard-ADMJucatori,
@@ -14,6 +16,10 @@
     gap: 1vw;
 
 }
+.playercard-ADMJucatori
+{
+  margin-left: -2vw;
+}
 
   .Workspace-infoplayer-collumn {
     display: flex;
@@ -21,6 +27,9 @@
     align-items: flex-start;
     flex-direction: column; 
     gap:0.2vw; 
+    max-width: 14vw;
+    min-width: 14vw;
+    
   }
 
   .detalii-label-ADMJucatori
@@ -55,3 +64,26 @@
   width:1.5vw;
   height: auto;
  }
+ 
+ .borderimage
+ {
+  width: 11vw;
+  height: 11vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+
+ }
+
+ .player-image-senior-ADMJucatori
+  {
+    min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  display: block; 
+  object-fit: contain;
+  }

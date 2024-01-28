@@ -197,7 +197,9 @@ const AdminJuniori = () => {
                 <div className="Workspace-row-ADMJucatori2">
                 <Link to="/adaugajunior"
                 className="button-adauga_jucator-ADMJucatori">
+                  <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
                     <button className="button-adauga_jucator-ADMJucatori"> + Adauga Jucator </button>
+                    </motion.div>
                 </Link>
                     <label  className="label-title_j-ADMJucatori" >Lot seniori </label>
                 </div>
