@@ -7,6 +7,7 @@ import AdminMenuImage from "./imagini/AdminMenuImage.png";
 import AdminWorkSpaceImage from './imagini/AdminWorkSpaceImage.png';
 import { useNavigate,Link } from "react-router-dom";
 import AdminStaffCard from "./AdminStaffCard";
+import { motion } from "framer-motion";
 
 const AdminStaff = () => {
   const [playerData, setPlayerData] = useState(null);
@@ -149,12 +150,36 @@ const AdminStaff = () => {
           <img src={AdminMenuImage} alt="" className="Admin-menu-img-ADMStaff" />
           <label className="ADMStaff_titles">Panou Administrator</label>
           <div className="options_ADMStaff">
-            <Link to="/adminstiri" className="ADMStaff_options">Stiri</Link>
-            <Link to="/adminmeciuri" className="ADMStaff_options">Meciuri</Link>
-            <Link to="/adminjucatori" className="ADMStaff_options">Jucatorii Seniori</Link>
-            <Link to="/adminjuniori" className="ADMStaff_options">Jucatorii Juniori</Link>
-            <Link to="/admincadeti" className="ADMStaff_options">Jucatori Cadeti</Link>
-            <Link to="/adminstaff" className="ADMStaff_options">Staff</Link>
+          <Link to="/adminstiri" className="ADMJucatori_options" >
+            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
+              Stiri
+            </motion.div>
+              </Link>
+            <Link to="/adminmeciuri" className="ADMJucatori_options">
+            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
+              Meciuri
+              </motion.div>
+              </Link>
+            <Link to="/adminjucatori" className="ADMJucatori_options">
+            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
+              Jucatorii Seniori
+              </motion.div>
+              </Link>
+            <Link to="/adminjuniori" className="ADMJucatori_options">
+            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
+              Jucatorii Juniori
+              </motion.div>
+              </Link>
+            <Link to="/admincadeti" className="ADMJucatori_options">
+            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
+              Jucatori Cadeti
+              </motion.div>
+            </Link>
+            <Link to="/adminstaff" className="ADMJucatori_options1">
+            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
+              Staff
+              </motion.div>
+              </Link>
           </div>
         </div>  
         <div className="Workspace-ADMStaff">

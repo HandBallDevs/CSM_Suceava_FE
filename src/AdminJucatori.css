@@ -116,9 +116,16 @@
     text-transform: uppercase;
   }
   
-  .ADMJucatori_options
+  .ADMJucatori_options {
+    font-size:1.5vw;
+    text-decoration: none; 
+    color: inherit;
+  }
+  
+  .ADMJucatori_options1
   {
     font-size:1.5vw;
+    color: black;
   }
 
   /* Admin Jucatori*/
@@ -201,5 +208,7 @@
     flex-wrap: wrap; 
   
   }
+
+  
 
   

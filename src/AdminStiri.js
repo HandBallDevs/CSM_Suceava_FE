@@ -7,6 +7,7 @@ import AdminWorkSpaceImage from "./imagini/AdminWorkSpaceImage.png";
 import AdminIndexImage from "./imagini/AdminiIndexImage.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const AdminStiri = () => {
   const [StiriData, setStiriData] = useState({
@@ -131,24 +132,36 @@ const AdminStiri = () => {
           />
           <label className="ADMStiri_titles">Panou Administrator</label>
           <div className="options_ADMStiri">
-            <Link to="/adminstiri" className="ADMStiri_options">
+              <Link to="/adminstiri" className="ADMStiri_options1" >
+            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
               Stiri
-            </Link>
-            <Link to="/adminmeciuri" className="ADM_options">
+            </motion.div>
+              </Link>
+            <Link to="/adminmeciuri" className="ADMStiri_options">
+            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
               Meciuri
-            </Link>
+              </motion.div>
+              </Link>
             <Link to="/adminjucatori" className="ADMStiri_options">
+            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
               Jucatorii Seniori
-            </Link>
+              </motion.div>
+              </Link>
             <Link to="/adminjuniori" className="ADMStiri_options">
+            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
               Jucatorii Juniori
-            </Link>
+              </motion.div>
+              </Link>
             <Link to="/admincadeti" className="ADMStiri_options">
+            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
               Jucatori Cadeti
+              </motion.div>
             </Link>
             <Link to="/adminstaff" className="ADMStiri_options">
+            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
               Staff
-            </Link>
+              </motion.div>
+              </Link>
           </div>
         </div>
         <div className="Workspace-ADMStiri">

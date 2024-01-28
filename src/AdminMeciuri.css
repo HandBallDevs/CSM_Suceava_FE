@@ -115,11 +115,17 @@
     text-transform: uppercase;
   }
   
-  .ADMmeciuri_options
+  .ADMmeciuri_options1
   {
     font-size:1.5vw;
+    color: black;
   }
 
+  .ADMmeciuri_options {
+    font-size:1.5vw;
+    text-decoration: none; 
+    color: inherit;
+  }
   /*Editeaza Meciuri*/
 
   .admin_titles1-ADMmeciuri{

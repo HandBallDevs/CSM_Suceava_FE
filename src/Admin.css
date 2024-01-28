@@ -114,7 +114,10 @@
   text-transform: uppercase;
 }
 
-.ADM_options
-{
+
+.ADM_options {
   font-size:1.5vw;
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Use the default text color */
 }
+

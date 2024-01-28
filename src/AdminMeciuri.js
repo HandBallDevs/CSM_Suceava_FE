@@ -7,6 +7,7 @@ import AdminWorkSpaceImage from "./imagini/AdminWorkSpaceImage.png";
 import AdminIndexImage from "./imagini/AdminiIndexImage.png";
 import { useNavigate, Link } from "react-router-dom";
 import { useRef } from "react";
+import { motion } from "framer-motion";
 
 const AdminMeciuri = () => {
   const [meciData, setMeciData] = useState({
@@ -159,25 +160,36 @@ const AdminMeciuri = () => {
           />
           <label className="ADMmeciuri_titles">Panou Administrator</label>
           <div className="options_ADMmeciuri">
-            <Link to="/adminstiri" className="ADMmeciuri_options">
+             <Link to="/adminstiri" className="ADMmeciuri_options" >
+            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
               Stiri
-            </Link>
-            <Link to="/adminmeciuri" className="ADMmeciuri_options">
+            </motion.div>
+              </Link>
+            <Link to="/adminmeciuri" className="ADMmeciuri_options1">
+            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
               Meciuri
-            </Link>
+              </motion.div>
+              </Link>
             <Link to="/adminjucatori" className="ADMmeciuri_options">
+            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
               Jucatorii Seniori
-            </Link>
-
+              </motion.div>
+              </Link>
             <Link to="/adminjuniori" className="ADMmeciuri_options">
+            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
               Jucatorii Juniori
-            </Link>
+              </motion.div>
+              </Link>
             <Link to="/admincadeti" className="ADMmeciuri_options">
+            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
               Jucatori Cadeti
+              </motion.div>
             </Link>
             <Link to="/adminstaff" className="ADMmeciuri_options">
+            <motion.div whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}>
               Staff
-            </Link>
+              </motion.div>
+              </Link>
           </div>
         </div>
 

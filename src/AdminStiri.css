@@ -115,9 +115,16 @@
   text-transform: uppercase;
 }
 
-.ADMStiri_options
+.ADMStiri_options1
 {
   font-size:1.5vw;
+  color: black;
+}
+
+.ADMStiri_options {
+  font-size:1.5vw;
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Use the default text color */
 }
 
 /*Editeaza Stiri*/
