@@ -48,7 +48,7 @@ const CalendarMeciuri = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://handballdevsbe.azurewebsites.net/api/meci?statusMeci=1&tipCampionat=0"
+          "https://handballdevsbe.azurewebsites.net/api/meci?statusMeci=1&tipCampionat=1"
         );
         if (response.ok) {
           const data = await response.json();
