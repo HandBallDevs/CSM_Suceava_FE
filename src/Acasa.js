@@ -41,7 +41,7 @@ const Acasa = () => {
           console.error("API Error:", response.statusText);
         }
       } catch (error) {
-        console.error("API Error:", error.message);
+        console.error("API Errossr:", error.message);
       }
     };
 
